@@ -10,7 +10,7 @@ aliases = ["sites","other-sites","websites"]
 
 * A Custome Home Improvements website, [JR Custom Home Improvements](https://jrcustomhomeimprovements.com/)
 
-![params.portrait](/static/img/jrrcustomhomes.png)
+![params.portrait](/static/img/jrrcustomhomes.png/)
 
 
 
