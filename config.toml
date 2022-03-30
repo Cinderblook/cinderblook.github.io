@@ -155,7 +155,7 @@ disableHugoGeneratorInject = false
   [params.portrait]
     path     = "/img/Portrait_Austin.jpg"
     alt      = "Portrait"
-    maxWidth = "75px"
+    maxWidth = "100px"
 
   # Social icons
   [[params.social]]
@@ -180,21 +180,16 @@ disableHugoGeneratorInject = false
     weight    = 1
     copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
 
-  [languages.fr]
-    subtitle  = "Hello Friend NG Theme"
-    weight    = 2
-    copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
-
   # And you can even create generic menu
   [[menu.main]]
-    identifier = "blog"
-    name       = "Blog"
+    identifier = "projects"
+    name       = "Projects"
     url        = "/posts"
   [[menu.main]]
     identifier = "about"
     name       = "About"
     url        = "/about"
   [[menu.main]]
-    identifier = "stuff"
-    name       = "Stuff"
-    url        = "/stuff"
+    identifier = "sites"
+    name       = "Sites"
+    url        = "/sites"

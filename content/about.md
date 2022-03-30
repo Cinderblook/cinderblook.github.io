@@ -1,19 +1,33 @@
 +++
 title = "About"
-date = "2014-04-09"
-aliases = ["about-us","about-hugo","contact"]
+date = "2022-03-33"
+aliases = ["about-us","about-austin","about-cinderblook","contact"]
 [ author ]
-  name = "Hugo Authors"
+  name = "Austin Barnes"
 +++
 
-Hugo is the **world’s fastest framework for building websites**. It is written in Go.
+Hello! I a tech enthusiast. Professionaly I am a Network Speciliast enrolled at Pennsylvania College of Technology for Network Admnistration and Engineering.
 
-It makes use of a variety of open source projects including:
+In my free time I like to tackle mini projects of all sort. This site being one of them. 
 
-* https://github.com/russross/blackfriday
-* https://github.com/alecthomas/chroma
-* https://github.com/muesli/smartcrop
-* https://github.com/spf13/cobra
-* https://github.com/spf13/viper
+Just to name a few odd ball things I find interest in;
 
-Learn more and contribute on [GitHub](https://github.com/gohugoio).
+Information Technology related 
+* IaaS with the Terraform platform
+* All things Networking
+* Dabbling in mostly AWS and Azure cloud
+* Homelab stuff powered by Proxmox and Kubernetes
+* Websites mostly built with Wordpress & Hugo
+* Kubernetes! K3s and Rancher
+
+Outside of Tech
+* Snowboarding
+* Hiking
+* Hunting/Fishing
+
+As for certificaitons, I have obtained
+* CompTIA Network + 
+* CompTIA Security +
+* Actively working on CCNA
+
+Please feel free to check out some of my projects here in [Projects](https://cinderblook.github.io) and on [GitHub](https://github.com/gohugoio).
