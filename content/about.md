@@ -1,6 +1,6 @@
 +++
 title = "About"
-date = "2022-03-33"
+date = "2022-03-30"
 aliases = ["about-us","about-austin","about-cinderblook","contact"]
 [ author ]
   name = "Austin Barnes"
@@ -21,6 +21,7 @@ Information Technology related
 * Kubernetes! K3s and Rancher
 
 Outside of Tech
+* Drones & Photography
 * Snowboarding
 * Hiking
 * Hunting/Fishing
