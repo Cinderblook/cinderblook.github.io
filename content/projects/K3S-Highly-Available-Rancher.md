@@ -199,6 +199,7 @@ Either from a Master Node, or the Controller machine (If you followed step 4):
         --set hostname=port.lan \
         --set replicas=3 \
         --set bootstrapPassword=password
+        ```
     - Check on deployment w/ `kubectl -n cattle-system rollout status deploy/rancher`
     - Once finished, obtain info on deployment w/ `kubectl -n cattle-system get deploy rancher`
 5. Once Rancher is deployed
