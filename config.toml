@@ -1,4 +1,4 @@
-baseURL = 'https://cinderblook.com/'
+baseURL = 'https://www.cinderblook.com/'
 languageCode = 'en-us'
 title = "Cinderblook's Website"
 theme = "hello-friend-ng"
