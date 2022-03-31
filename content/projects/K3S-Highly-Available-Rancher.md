@@ -1,6 +1,9 @@
 +++
 title = "K3S - Highly-Available-Rancher"
 description = "Highly Available K3s"
+featured = "portrait_Austin.jpg"
+featuredalt = "Pic 3"
+featuredpath = "date"
 type = ["posts","post"]
 tags = [
     "Rancher",
@@ -13,7 +16,7 @@ categories = [
     "Projects",
     "K3S",
     "Rancher",
-    "Containers"
+    "Containers",
     "Linux",
     "Homelab",
 ]
