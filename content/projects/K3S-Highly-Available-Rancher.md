@@ -1,8 +1,8 @@
 +++
 title = "K3S - Highly-Available-Rancher"
 description = "Highly Available K3s"
-featured = "portrait_Austin.jpg"
-featuredalt = "Pic 3"
+featured = "rancher.svg"
+featuredalt = "K3s & Rancher"
 featuredpath = "date"
 type = ["posts","post"]
 tags = [
