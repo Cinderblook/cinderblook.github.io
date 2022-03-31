@@ -25,10 +25,10 @@ series = ["K3S"]
 # Overview
 
 Getting started with K3S:
-{{ $image := .Resources.GetMatch "rancher.svg" }}
-{{ with $image }}
+{{< $image := .Resources.GetMatch "rancher.svg" />}}
+{{< with $image />}}
   <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}">
-{{ end }} <br>
+{{< end />}} <br>
 The primary goal here is to setup a functional highly available K3S cluster. This will include 4 necessary steps:
 1. Setup NGINX Loadbalancer Docker
 2. Setup MySQL Docker
