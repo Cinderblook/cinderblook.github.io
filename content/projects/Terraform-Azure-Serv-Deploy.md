@@ -62,7 +62,7 @@ Create a new directory, and place the following files in it, with your own varia
 ###  *provider.tf* File
 - Calls necessary providers and sets their versions to be used in the Terraform configuration/deployment. Informs Terraform which modules and providers to use.
 <details>
-  <summary>Click to expand provider.tf file</summary>
+  <summary>View provider.tf file</summary>
 
 ``` tf
 terraform {
@@ -78,10 +78,13 @@ provider "azurerm" {
 }
 ```
 </details>
+
 ###  *networking.tf* File
 - Defines resources, security groups, security rules, network interfaces, subnets, and public IPs to be created in Azure. 
     - These variables are pulled from the VM creation resources
     - Managed with variables contained in terraform.tfvars file
+<details>
+  <summary>View networking.tf file</summary>
 
 networking.tf
 ```hcl
@@ -263,6 +266,9 @@ resource "azurerm_network_interface_security_group_association" "winserv4" {
   network_security_group_id = azurerm_network_security_group.winserv.id
 }
 ```
+
+</details>
+
 ###  *variables.tf, terraform.tfvars* Files
 -  Alter variables within these files to ensure they meet your environment needs
     - *variables.tf*
@@ -270,9 +276,11 @@ resource "azurerm_network_interface_security_group_association" "winserv4" {
         - Specific local variables used for Windows .xml files
             - *firsT_logon_commands* local variable points to a .xml file to configure first time logon in Windows. This enables each server to recieve Winrm data on port 5985 for Ansible configuration
             - *auto_logon_ runs a .xml configuration to log in once right after intial creation of VM. This allows *first_logon_commands* to execute automatically
+<details>
+  <summary>View variables.tf file</summary>
 
 variables.tf
- ```tf
+ ```terraform
  variable "winserv_vm_os_publisher" {}
  variable "winserv_vm_os_offer" {}
  variable "winserv_vm_os_sku" {}
@@ -308,6 +316,9 @@ variables.tf
      auto_logon                  =           "<AutoLogon><Password><Value>${var.winadmin_password}</          Value></Password><Enabled>true</Enabled><LogonCount>1</          LogonCount><Username>${var.winadmin_username}</          Username></AutoLogon>"
  }
  ```
+ 
+ </details>
+
     - *terraform.tfvars*
         - Assign variables values here. These will be used with the Terraform configuration. If left blank, you can assign the variable at the terminal level when running the `terraform apply` 
             - Alter Network values to desired IP addressing scheme
