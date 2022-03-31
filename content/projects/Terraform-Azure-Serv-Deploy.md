@@ -63,6 +63,7 @@ Create a new directory, and place the following files in it, with your own varia
 - Calls necessary providers and sets their versions to be used in the Terraform configuration/deployment. Informs Terraform which modules and providers to use.
 <details>
   <summary>Click to expand provider.tf file</summary>
+
 ``` tf
 terraform {
   required_providers {
