@@ -1,17 +1,26 @@
----
-author:
-  name: "Austin Barnes"
-date: 20222-02-28
-linktitle: Terraform - Azure-Serv-Deploy
-type:
-- post
-- posts
-title: Terraform - Azure-Serv-Deploy
-weight: 10
-series:
-- Terraform
----
-
++++
+title = "Terraform - Azure-Serv-Deploy"
+description = "Terraofmr Automation"
+type = ["projects","project"]
+tags = [
+    "terraform",
+    "ansible",
+    "automation",
+    "azure",
+    "windows-server",
+]
+date = "20222-02-28"
+categories = [
+    "Development",
+    "Projects",
+    "Terraform",
+    "Ansible",
+    "Azure"
+]
+series = ["Terraform"]
+[ author ]
+  name = "Austin Barnes"
++++
 
 # Overview
 

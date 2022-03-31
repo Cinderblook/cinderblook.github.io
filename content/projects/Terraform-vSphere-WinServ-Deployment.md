@@ -1,17 +1,26 @@
----
-author:
-  name: "Austin Barnes"
-date: 20222-02-14
-linktitle: Terraform - vSphere-WinServ-Deployment
-type:
-- post
-- posts
-title: Terraform - vSphere-WinServ-Deployment
-weight: 9
-series:
-- Terraform
----
-
++++
+title = "Terraform - vSphere-WinServ-Deployment"
+description = "Terraofmr Automation"
+type = ["posts","post"]
+tags = [
+    "terraform",
+    "ansible",
+    "packer",
+    "vsphere",
+    "windows-server",
+]
+date = "2022-02-14"
+categories = [
+    "Development",
+    "Projects",
+    "Terraform",
+    "Ansible",
+    "vSphere",
+]
+series = ["Terraform"]
+[ author ]
+  name = "Austin Barnes"
++++
 
 # Overview
 

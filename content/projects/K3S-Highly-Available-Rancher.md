@@ -1,17 +1,26 @@
----
-author:
-  name: "Austin Barnes"
-date: 20222-03-06
-linktitle: K3S - Highly-Available-Rancher
-type:
-- post
-- posts
-title: K3S - Highly-Available-Rancher
-weight: 9
-series:
-- K3S
----
-
++++
+title = "K3S - Highly-Available-Rancher"
+description = "Highly Available K3s"
+type = ["posts","post"]
+tags = [
+    "Linux",
+    "Rancher",
+    "automation",
+    "Kubernetes",
+    "K3s",
+]
+date = "20222-03-06"
+categories = [
+    "Development",
+    "Projects",
+    "K3S",
+    "Rancher",
+    "Containers"
+]
+series = ["K3S"]
+[ author ]
+  name = "Austin Barnes"
++++
 
 # Overview
 
