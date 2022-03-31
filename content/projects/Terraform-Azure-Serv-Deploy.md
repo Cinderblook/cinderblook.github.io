@@ -276,11 +276,12 @@ resource "azurerm_network_interface_security_group_association" "winserv4" {
         - Specific local variables used for Windows .xml files
             - *firsT_logon_commands* local variable points to a .xml file to configure first time logon in Windows. This enables each server to recieve Winrm data on port 5985 for Ansible configuration
             - *auto_logon_ runs a .xml configuration to log in once right after intial creation of VM. This allows *first_logon_commands* to execute automatically
-<details>
-  <summary>View variables.tf file</summary>
+
+{{< collapse >}}
+{{< collapse/above >}}
 
 variables.tf
- ```terraform
+ ```tf
  variable "winserv_vm_os_publisher" {}
  variable "winserv_vm_os_offer" {}
  variable "winserv_vm_os_sku" {}
@@ -317,7 +318,7 @@ variables.tf
  }
  ```
  
- </details>
+{{< /collapse/above >}}
 
     - *terraform.tfvars*
         - Assign variables values here. These will be used with the Terraform configuration. If left blank, you can assign the variable at the terminal level when running the `terraform apply` 
