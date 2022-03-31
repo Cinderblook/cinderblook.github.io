@@ -1,6 +1,486 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="ie=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=author content="map[name:Austin Barnes]"><meta name=description content="Terraofmr Automation"><meta name=keywords content=",terraform,ansible,automation,azure,windows-server"><meta name=robots content="noodp"><meta name=theme-color content><link rel=canonical href=https://www.cinderblook.com/projects/terraform-azure-serv-deploy/><title>Terraform - Azure-Serv-Deploy :: Cinderblook's Website — Hello Friend NG Theme</title><link href=https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css rel=stylesheet type=text/css><link rel=stylesheet href=https://www.cinderblook.com/main.4e5c639214707eff609bb55fe49e183dee42258a73bc90e4cc7b0a84f900798a.css><link rel=apple-touch-icon sizes=180x180 href=https://www.cinderblook.com/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=https://www.cinderblook.com/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=https://www.cinderblook.com/favicon-16x16.png><link rel=manifest href=https://www.cinderblook.com/site.webmanifest><link rel=mask-icon href=https://www.cinderblook.com/safari-pinned-tab.svg color><link rel="shortcut icon" href=https://www.cinderblook.com/favicon.ico><meta name=msapplication-TileColor content><meta itemprop=name content="Terraform - Azure-Serv-Deploy"><meta itemprop=description content="Terraofmr Automation"><meta itemprop=datePublished content="2022-02-28T00:00:00+00:00"><meta itemprop=dateModified content="2022-02-28T00:00:00+00:00"><meta itemprop=wordCount content="929"><meta itemprop=image content="https://www.cinderblook.com/"><meta itemprop=keywords content="terraform,ansible,automation,azure,windows-server,"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://www.cinderblook.com/"><meta name=twitter:title content="Terraform - Azure-Serv-Deploy"><meta name=twitter:description content="Terraofmr Automation"><meta property="og:title" content="Terraform - Azure-Serv-Deploy"><meta property="og:description" content="Terraofmr Automation"><meta property="og:type" content="article"><meta property="og:url" content="https://www.cinderblook.com/projects/terraform-azure-serv-deploy/"><meta property="og:image" content="https://www.cinderblook.com/"><meta property="article:section" content="projects"><meta property="article:published_time" content="2022-02-28T00:00:00+00:00"><meta property="article:modified_time" content="2022-02-28T00:00:00+00:00"><meta property="og:see_also" content="https://www.cinderblook.com/projects/terraform-vsphere-winserv-deployment/"><meta property="article:section" content="Projects"><meta property="article:section" content="Terraform"><meta property="article:section" content="Ansible"><meta property="article:section" content="Azure"><meta property="article:section" content="Linux"><meta property="article:published_time" content="2022-02-28 00:00:00 +0000 UTC"></head><body><div class=container><header class=header><span class=header__inner><a href=https://www.cinderblook.com/ style=text-decoration:none><div class=logo><span class=logo__mark>></span>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="ie=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=author content="map[name:Austin Barnes]"><meta name=description content="Terraofmr Automation"><meta name=keywords content=",terraform,ansible,automation,azure,windows-server"><meta name=robots content="noodp"><meta name=theme-color content><link rel=canonical href=https://www.cinderblook.com/projects/terraform-azure-serv-deploy/><title>Terraform - Azure-Serv-Deploy :: Cinderblook's Website — Hello Friend NG Theme</title><link href=https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css rel=stylesheet type=text/css><link rel=stylesheet href=https://www.cinderblook.com/main.4e5c639214707eff609bb55fe49e183dee42258a73bc90e4cc7b0a84f900798a.css><link rel=apple-touch-icon sizes=180x180 href=https://www.cinderblook.com/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=https://www.cinderblook.com/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=https://www.cinderblook.com/favicon-16x16.png><link rel=manifest href=https://www.cinderblook.com/site.webmanifest><link rel=mask-icon href=https://www.cinderblook.com/safari-pinned-tab.svg color><link rel="shortcut icon" href=https://www.cinderblook.com/favicon.ico><meta name=msapplication-TileColor content><meta itemprop=name content="Terraform - Azure-Serv-Deploy"><meta itemprop=description content="Terraofmr Automation"><meta itemprop=datePublished content="2022-02-28T00:00:00+00:00"><meta itemprop=dateModified content="2022-02-28T00:00:00+00:00"><meta itemprop=wordCount content="2211"><meta itemprop=image content="https://www.cinderblook.com/"><meta itemprop=keywords content="terraform,ansible,automation,azure,windows-server,"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://www.cinderblook.com/"><meta name=twitter:title content="Terraform - Azure-Serv-Deploy"><meta name=twitter:description content="Terraofmr Automation"><meta property="og:title" content="Terraform - Azure-Serv-Deploy"><meta property="og:description" content="Terraofmr Automation"><meta property="og:type" content="article"><meta property="og:url" content="https://www.cinderblook.com/projects/terraform-azure-serv-deploy/"><meta property="og:image" content="https://www.cinderblook.com/"><meta property="article:section" content="projects"><meta property="article:published_time" content="2022-02-28T00:00:00+00:00"><meta property="article:modified_time" content="2022-02-28T00:00:00+00:00"><meta property="og:see_also" content="https://www.cinderblook.com/projects/terraform-vsphere-winserv-deployment/"><meta property="article:section" content="Projects"><meta property="article:section" content="Terraform"><meta property="article:section" content="Ansible"><meta property="article:section" content="Azure"><meta property="article:section" content="Linux"><meta property="article:published_time" content="2022-02-28 00:00:00 +0000 UTC"></head><body><div class=container><header class=header><span class=header__inner><a href=https://www.cinderblook.com/ style=text-decoration:none><div class=logo><span class=logo__mark>></span>
 <span class=logo__text>$ cd /home/</span>
-<span class=logo__cursor></span></div></a><span class=header__right><nav class=menu><ul class=menu__inner><li><a href=https://www.cinderblook.com/about>About</a></li><li><a href=https://www.cinderblook.com/projects>Projects</a></li><li><a href=https://www.cinderblook.com/sites>Sites</a></li></ul></nav><span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></span></span></span></header><div class=content><main class=post><div class=post-info></p></div><article><h2 class=post-title><a href=https://www.cinderblook.com/projects/terraform-azure-serv-deploy/>Terraform - Azure-Serv-Deploy</a></h2><div class=post-content><h1 id=overview>Overview</h1><p>Deploy and Configure 4 Windows 2022 Datacenter Servers in Azure.</p><ul><li>Using Terraform in conjunction with Ansible: Create 4 Windows Servers<ul><li>Configure them to be a Primary Domain Controller, Replica Domain Controller, DHCP server, and Fileshare server</li><li>Automate intial setup of the 4 servers to accept Ansible configuration from a Linux VM in Azure created VIA the Terraform deployment</li></ul></li></ul><h1 id=terraform>Terraform</h1><p>Main role: Deploy the Virtual Machines, setup Network environment, and provide intial parameters for both Windows and Linux environments running in the cloud</p><ul><li>Setup the four Windows Servers (Primary Domain Controller, Replica Domain Controller, DHCP, Fileshare) in Azure<ul><li>These will all be Windows 2022 Datacenter Servers running on Standard_DS1_V2 by default</li></ul></li><li>Setup the one Linux server to deploy a pre-defined Ansible configuration across the Windows Environment for setting up Active Directory, DHCP, File shares, users, and groups.<ul><li>This will all be an Ubuntu 18.04-LTS server running on Standard_B1s by default</li><li>It will use cloud-init to supply it the necessary setup at creation for Ansible and SSH connection VIA its public IP address.</li></ul></li><li>Supply necessary networking variables (Network interfaces, Security Groups, IP Addressing)</li><li>Supply necessary files for automation of Windows & Linux environments (Cloud-Init & Windows Unattend files)</li></ul><h2 id=prerequisites>Prerequisites</h2><ul><li>Setup necessary Terraform <a href=https://learn.hashicorp.com/tutorials/terraform/install-cli>environment</a></li><li>Install and setup <a href=https://docs.microsoft.com/en-us/cli/azure/install-azure-cli>Azure CLI</a> or preferred method of authentication to Azure</li><li>Configure variables for desired outcomes (Outlined further down)</li></ul><h2 id=terraform-process>Terraform process</h2><ul><li>Using the Azure provider:<ul><li>Login to Azure with <code>az connect</code></li></ul></li><li>Once prepared with appropriate values and the networking is in place:<ul><li>Navigate to the Terraform directory and run these commands</li><li><code>terraform init</code> Pull proper Terraform providers and modules used</li><li><code>terraform validate</code> This will return whether the configuration is valid or not</li><li><code>terraform apply</code> &mldr; <code>yes</code> Actually apply the configuration</li></ul></li></ul><h2 id=terraform-file-structure>Terraform File Structure</h2><h3 id=providertf-file><em>provider.tf</em> File</h3><ul><li>Calls necessary providers and sets their versions to be used in the Terraform configuration/deployment</li></ul><h3 id=networkingtf-file><em>networking.tf</em> File</h3><ul><li>Defines resources, security groups, security rules, network interfaces, subnets, and public IPs to be created in Azure.<ul><li>These variables are pulled from the VM creation resources</li><li>Managed with variables contained in terraform.tfvars file</li></ul></li></ul><h3 id=variablestf-terraformtfvars-files><em>variables.tf, terraform.tfvars</em> Files</h3><ul><li>Alter variables within these files to ensure they meet your environment needs<ul><li><em>variables.tf</em><ul><li>Declare variables that will be used with the Terraform configuration (Delcared intially or explicitely here as <code>locals</code> variables)<ul><li><em>firsT_logon_commands</em> local variable points to a .xml file to configure first time logon in Windows. This enables each server to recieve Winrm data on port 5985 for Ansible configuration</li><li>*auto_logon_ runs a .xml configuration to log in once right after intial creation of VM. This allows <em>first_logon_commands</em> to execute automatically</li></ul></li></ul></li><li><em>terraform.tfvars</em><ul><li>Assign variables values here. These will be used with the Terraform configuration. If left blank, you can assign the variable at the terminal level when running the <code>terraform apply</code><ul><li>Alter Network values to desired IP addressing scheme<ul><li><strong>Ensure IP addressing matches that in the Ansible configuration inventory.yml</strong></li></ul></li><li>Here you can alter azure values for <em>publisher</em>, <em>offer</em>, <em>sku</em>, <em>size</em>, <em>sa</em>, and <em>license</em> information for the Windows/Linux VMs</li><li>Additionally, ensure <code>linux_ssh_key</code> point to your public Key <code>id_rsa.pubc</code> file</li><li>I recommend to change <em>winadmin_username</em> & <em>winadmin_password</em> variables to sensetive and blank so you can delcare them in preferrably Vaulty or via the CLI<ul><li><strong><em>winadmin_username</em> & <em>winadmin_password</em> MUST MATCH WHAT IS IN ANSIBLE /group_vars/all.yml</strong></li></ul></li></ul></li></ul></li></ul></li></ul><h3 id=01-linuxclienttf--02-winserverstf-files><em>01-LinuxClient.tf</em> & <em>02-WinServers.tf</em> Files</h3><ul><li>Here the creation of the VMs occur. Resources pull data from <em>networking.tf</em>, <em>variables.tf</em>, <em>terraform.tfvars</em> files.<ul><li>Windows VMs are assigned unattend configurations for first time setup (/winfiles/FirstLogonCommands.xml && <em>auto_logon</em> variable data)</li><li>Linux Machine is assigned a cloud-init file configuraiton for first time setup (/cloudinit/custom.yml)</li></ul></li></ul><h3 id=outputstf-file><em>outputs.tf</em> File</h3><ul><li>Provides necessary ip information that is allocated to the VMs created.</li><li>This information by default includes:<ul><li>Private IPs for all 5 deployed VMs (Which we know will by based on variables.tf file data)</li><li>Public IP for Linux machine (Not known by default, will be used for SSH connection if needed).</li></ul></li></ul><h2 id=useful-azure-related-functions>Useful Azure related functions</h2><p>Finding variable information for VM Images variables:</p><ul><li>You can use this command in Azure CLI to find UbuntuServer data. Change the values in offer, publisher, location, and sku for various other images.</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-Powershell data-lang=Powershell><span style=display:flex><span>   az vm image list \
+<span class=logo__cursor></span></div></a><span class=header__right><nav class=menu><ul class=menu__inner><li><a href=https://www.cinderblook.com/about>About</a></li><li><a href=https://www.cinderblook.com/projects>Projects</a></li><li><a href=https://www.cinderblook.com/sites>Sites</a></li></ul></nav><span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></span></span></span></header><div class=content><main class=post><div class=post-info></p></div><article><h2 class=post-title><a href=https://www.cinderblook.com/projects/terraform-azure-serv-deploy/>Terraform - Azure-Serv-Deploy</a></h2><div class=post-content><h1 id=overview>Overview</h1><p>Deploy and Configure 4 Windows 2022 Datacenter Servers in Azure.</p><ul><li>Using Terraform in conjunction with Ansible: Create 4 Windows Servers<ul><li>Configure them to be a Primary Domain Controller, Replica Domain Controller, DHCP server, and Fileshare server</li><li>Automate intial setup of the 4 servers to accept Ansible configuration from a Linux VM in Azure created VIA the Terraform deployment</li></ul></li></ul><h1 id=terraform>Terraform</h1><p>Main role: Deploy the Virtual Machines, setup Network environment, and provide intial parameters for both Windows and Linux environments running in the cloud</p><ul><li>Setup the four Windows Servers (Primary Domain Controller, Replica Domain Controller, DHCP, Fileshare) in Azure<ul><li>These will all be Windows 2022 Datacenter Servers running on Standard_DS1_V2 by default</li></ul></li><li>Setup the one Linux server to deploy a pre-defined Ansible configuration across the Windows Environment for setting up Active Directory, DHCP, File shares, users, and groups.<ul><li>This will all be an Ubuntu 18.04-LTS server running on Standard_B1s by default</li><li>It will use cloud-init to supply it the necessary setup at creation for Ansible and SSH connection VIA its public IP address.</li></ul></li><li>Supply necessary networking variables (Network interfaces, Security Groups, IP Addressing)</li><li>Supply necessary files for automation of Windows & Linux environments (Cloud-Init & Windows Unattend files)</li></ul><h2 id=prerequisites>Prerequisites</h2><ul><li>Setup necessary Terraform <a href=https://learn.hashicorp.com/tutorials/terraform/install-cli>environment</a></li><li>Install and setup <a href=https://docs.microsoft.com/en-us/cli/azure/install-azure-cli>Azure CLI</a> or preferred method of authentication to Azure</li><li>Configure variables for desired outcomes (Outlined further down)</li></ul><h2 id=terraform-process>Terraform process</h2><ul><li>Using the Azure provider:<ul><li>Login to Azure with <code>az connect</code></li></ul></li><li>Once prepared with appropriate values and the networking is in place:<ul><li>Navigate to the Terraform directory and run these commands</li><li><code>terraform init</code> Pull proper Terraform providers and modules used</li><li><code>terraform validate</code> This will return whether the configuration is valid or not</li><li><code>terraform apply</code> &mldr; <code>yes</code> Actually apply the configuration</li></ul></li></ul><h2 id=terraform-file-structure>Terraform File Structure</h2><p>Create a new directory, and place the following files in it, with your own variables</p><h3 id=providertf-file><em>provider.tf</em> File</h3><ul><li>Calls necessary providers and sets their versions to be used in the Terraform configuration/deployment. Informs Terraform which modules and providers to use.</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tf data-lang=tf><span style=display:flex><span><span style=color:#a6e22e>terraform</span> {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>required_providers</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>azurerm</span> = {
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>source</span>  = <span style=color:#e6db74>&#34;hashicorp/azurerm&#34;</span>
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>version</span> = <span style=color:#e6db74>&#34;&gt;=2.91.0&#34;</span>
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>provider</span> <span style=color:#e6db74>&#34;azurerm&#34;</span> {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>features</span> {}
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h3 id=networkingtf-file><em>networking.tf</em> File</h3><ul><li>Defines resources, security groups, security rules, network interfaces, subnets, and public IPs to be created in Azure.<ul><li>These variables are pulled from the VM creation resources</li><li>Managed with variables contained in terraform.tfvars file</li></ul></li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tf data-lang=tf><span style=display:flex><span><span style=color:#75715e># Create a resource group to maintain security settings along with network interfaces for VMs
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>resource</span> <span style=color:#e6db74>&#34;azurerm_resource_group&#34;</span> <span style=color:#e6db74>&#34;east&#34;</span> {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>name</span>     = <span style=color:#e6db74>&#34;terra-resources&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>location</span> = <span style=color:#e6db74>&#34;East US&#34;</span>
+</span></span><span style=display:flex><span>}<span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e># ASSIGN ADDRESS SPACE TO RESOURCE GROUP
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>resource</span> <span style=color:#e6db74>&#34;azurerm_virtual_network&#34;</span> <span style=color:#e6db74>&#34;east&#34;</span> {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>name</span>                = <span style=color:#e6db74>&#34;east-network&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>address_space</span>       = [<span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span>var.<span style=color:#a6e22e>east_address_spaces</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>]
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>location</span>            = <span style=color:#a6e22e>azurerm_resource_group</span>.<span style=color:#a6e22e>east</span>.<span style=color:#a6e22e>location</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>resource_group_name</span> = <span style=color:#a6e22e>azurerm_resource_group</span>.<span style=color:#a6e22e>east</span>.<span style=color:#a6e22e>name</span>
+</span></span><span style=display:flex><span>}<span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e># ASSIGN SUBNET TO NETWORK ADDRESS SPACE
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>resource</span> <span style=color:#e6db74>&#34;azurerm_subnet&#34;</span> <span style=color:#e6db74>&#34;subnet1&#34;</span> {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>name</span>                 = <span style=color:#e6db74>&#34;internal&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>resource_group_name</span>  = <span style=color:#a6e22e>azurerm_resource_group</span>.<span style=color:#a6e22e>east</span>.<span style=color:#a6e22e>name</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>virtual_network_name</span> = <span style=color:#a6e22e>azurerm_virtual_network</span>.<span style=color:#a6e22e>east</span>.<span style=color:#a6e22e>name</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>address_prefixes</span>     = [var.<span style=color:#a6e22e>east_subnets</span>]
+</span></span><span style=display:flex><span>}<span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e># Create public IP variable for Linux machine
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>resource</span> <span style=color:#e6db74>&#34;azurerm_public_ip&#34;</span> <span style=color:#e6db74>&#34;linux_public&#34;</span> {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>name</span>                = <span style=color:#e6db74>&#34;PublicIp1&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>resource_group_name</span> = <span style=color:#a6e22e>azurerm_resource_group</span>.<span style=color:#a6e22e>east</span>.<span style=color:#a6e22e>name</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>location</span>            = <span style=color:#a6e22e>azurerm_resource_group</span>.<span style=color:#a6e22e>east</span>.<span style=color:#a6e22e>location</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>allocation_method</span>   = <span style=color:#e6db74>&#34;Static&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>}<span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e># Create public IP variable for Windows machine
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>resource</span> <span style=color:#e6db74>&#34;azurerm_public_ip&#34;</span> <span style=color:#e6db74>&#34;win_public&#34;</span> {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>name</span>                = <span style=color:#e6db74>&#34;PublicIp2&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>resource_group_name</span> = <span style=color:#a6e22e>azurerm_resource_group</span>.<span style=color:#a6e22e>east</span>.<span style=color:#a6e22e>name</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>location</span>            = <span style=color:#a6e22e>azurerm_resource_group</span>.<span style=color:#a6e22e>east</span>.<span style=color:#a6e22e>location</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>allocation_method</span>   = <span style=color:#e6db74>&#34;Static&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>}<span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e># ASSIGN NETWORK INTERFACE PER VM WE WILL BE USING
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>resource</span> <span style=color:#e6db74>&#34;azurerm_network_interface&#34;</span> <span style=color:#e6db74>&#34;linux1&#34;</span> {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>name</span>                = <span style=color:#e6db74>&#34;linux1-nic&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>location</span>            = <span style=color:#a6e22e>azurerm_resource_group</span>.<span style=color:#a6e22e>east</span>.<span style=color:#a6e22e>location</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>resource_group_name</span> = <span style=color:#a6e22e>azurerm_resource_group</span>.<span style=color:#a6e22e>east</span>.<span style=color:#a6e22e>name</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>ip_configuration</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>name</span>                          = <span style=color:#e6db74>&#34;internal&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>subnet_id</span>                     = <span style=color:#a6e22e>azurerm_subnet</span>.<span style=color:#a6e22e>subnet1</span>.<span style=color:#a6e22e>id</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>private_ip_address_allocation</span> = <span style=color:#e6db74>&#34;Static&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>private_ip_address</span>            = var.<span style=color:#a6e22e>linux1_priavte_ip</span>    
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>public_ip_address_id</span>          = <span style=color:#a6e22e>azurerm_public_ip</span>.<span style=color:#a6e22e>linux_public</span>.<span style=color:#a6e22e>id</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>resource</span> <span style=color:#e6db74>&#34;azurerm_network_interface&#34;</span> <span style=color:#e6db74>&#34;winserv1&#34;</span> {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>name</span>                = <span style=color:#e6db74>&#34;winserv1-nic&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>location</span>            = <span style=color:#a6e22e>azurerm_resource_group</span>.<span style=color:#a6e22e>east</span>.<span style=color:#a6e22e>location</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>resource_group_name</span> = <span style=color:#a6e22e>azurerm_resource_group</span>.<span style=color:#a6e22e>east</span>.<span style=color:#a6e22e>name</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>ip_configuration</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>name</span>                          = <span style=color:#e6db74>&#34;internal&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>subnet_id</span>                     = <span style=color:#a6e22e>azurerm_subnet</span>.<span style=color:#a6e22e>subnet1</span>.<span style=color:#a6e22e>id</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>private_ip_address_allocation</span> = <span style=color:#e6db74>&#34;Static&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>private_ip_address</span>            = var.<span style=color:#a6e22e>winserv1_private_ip</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>public_ip_address_id</span>          = <span style=color:#a6e22e>azurerm_public_ip</span>.<span style=color:#a6e22e>win_public</span>.<span style=color:#a6e22e>id</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>resource</span> <span style=color:#e6db74>&#34;azurerm_network_interface&#34;</span> <span style=color:#e6db74>&#34;winserv2&#34;</span> {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>name</span>                = <span style=color:#e6db74>&#34;winserv2-nic&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>location</span>            = <span style=color:#a6e22e>azurerm_resource_group</span>.<span style=color:#a6e22e>east</span>.<span style=color:#a6e22e>location</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>resource_group_name</span> = <span style=color:#a6e22e>azurerm_resource_group</span>.<span style=color:#a6e22e>east</span>.<span style=color:#a6e22e>name</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>ip_configuration</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>name</span>                          = <span style=color:#e6db74>&#34;internal&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>subnet_id</span>                     = <span style=color:#a6e22e>azurerm_subnet</span>.<span style=color:#a6e22e>subnet1</span>.<span style=color:#a6e22e>id</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>private_ip_address_allocation</span> = <span style=color:#e6db74>&#34;Static&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>private_ip_address</span>            = var.<span style=color:#a6e22e>winserv2_private_ip</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>resource</span> <span style=color:#e6db74>&#34;azurerm_network_interface&#34;</span> <span style=color:#e6db74>&#34;winserv3&#34;</span> {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>name</span>                = <span style=color:#e6db74>&#34;winserv3-nic&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>location</span>            = <span style=color:#a6e22e>azurerm_resource_group</span>.<span style=color:#a6e22e>east</span>.<span style=color:#a6e22e>location</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>resource_group_name</span> = <span style=color:#a6e22e>azurerm_resource_group</span>.<span style=color:#a6e22e>east</span>.<span style=color:#a6e22e>name</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>ip_configuration</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>name</span>                          = <span style=color:#e6db74>&#34;internal&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>subnet_id</span>                     = <span style=color:#a6e22e>azurerm_subnet</span>.<span style=color:#a6e22e>subnet1</span>.<span style=color:#a6e22e>id</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>private_ip_address_allocation</span> = <span style=color:#e6db74>&#34;Static&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>private_ip_address</span>            = var.<span style=color:#a6e22e>winserv3_private_ip</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>resource</span> <span style=color:#e6db74>&#34;azurerm_network_interface&#34;</span> <span style=color:#e6db74>&#34;winserv4&#34;</span> {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>name</span>                = <span style=color:#e6db74>&#34;winserv4-nic&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>location</span>            = <span style=color:#a6e22e>azurerm_resource_group</span>.<span style=color:#a6e22e>east</span>.<span style=color:#a6e22e>location</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>resource_group_name</span> = <span style=color:#a6e22e>azurerm_resource_group</span>.<span style=color:#a6e22e>east</span>.<span style=color:#a6e22e>name</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>ip_configuration</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>name</span>                          = <span style=color:#e6db74>&#34;internal&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>subnet_id</span>                     = <span style=color:#a6e22e>azurerm_subnet</span>.<span style=color:#a6e22e>subnet1</span>.<span style=color:#a6e22e>id</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>private_ip_address_allocation</span> = <span style=color:#e6db74>&#34;Static&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>private_ip_address</span>            = var.<span style=color:#a6e22e>winserv4_private_ip</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}<span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e># CREATE SECURITY GROUPs TO ALLOW SSH/RDP/ANSIBLE FOR VMs
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>resource</span> <span style=color:#e6db74>&#34;azurerm_network_security_group&#34;</span> <span style=color:#e6db74>&#34;linux1&#34;</span> {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>name</span>                = <span style=color:#e6db74>&#34;Allow-SSH&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>location</span>            = <span style=color:#a6e22e>azurerm_resource_group</span>.<span style=color:#a6e22e>east</span>.<span style=color:#a6e22e>location</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>resource_group_name</span> = <span style=color:#a6e22e>azurerm_resource_group</span>.<span style=color:#a6e22e>east</span>.<span style=color:#a6e22e>name</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>security_rule</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>name</span>                       = <span style=color:#e6db74>&#34;SSH&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>priority</span>                   = <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>direction</span>                  = <span style=color:#e6db74>&#34;Inbound&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>access</span>                     = <span style=color:#e6db74>&#34;Allow&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>protocol</span>                   = <span style=color:#e6db74>&#34;Tcp&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>source_port_range</span>          = <span style=color:#e6db74>&#34;*&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>destination_port_range</span>     = <span style=color:#e6db74>&#34;22&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>source_address_prefix</span>      = <span style=color:#e6db74>&#34;*&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>destination_address_prefix</span> = <span style=color:#e6db74>&#34;*&#34;</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>resource</span> <span style=color:#e6db74>&#34;azurerm_network_security_group&#34;</span> <span style=color:#e6db74>&#34;winserv&#34;</span> {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>name</span>                = <span style=color:#e6db74>&#34;Allow-RDP-SSH-ANS&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>location</span>            = <span style=color:#a6e22e>azurerm_resource_group</span>.<span style=color:#a6e22e>east</span>.<span style=color:#a6e22e>location</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>resource_group_name</span> = <span style=color:#a6e22e>azurerm_resource_group</span>.<span style=color:#a6e22e>east</span>.<span style=color:#a6e22e>name</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>security_rule</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>name</span>                       = <span style=color:#e6db74>&#34;RDP&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>priority</span>                   = <span style=color:#ae81ff>101</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>direction</span>                  = <span style=color:#e6db74>&#34;Inbound&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>access</span>                     = <span style=color:#e6db74>&#34;Allow&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>protocol</span>                   = <span style=color:#e6db74>&#34;Tcp&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>source_port_range</span>          = <span style=color:#e6db74>&#34;*&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>destination_port_range</span>     = <span style=color:#e6db74>&#34;3389&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>source_address_prefix</span>      = <span style=color:#e6db74>&#34;*&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>destination_address_prefix</span> = <span style=color:#e6db74>&#34;*&#34;</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>security_rule</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>name</span>                       = <span style=color:#e6db74>&#34;SSH&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>priority</span>                   = <span style=color:#ae81ff>102</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>direction</span>                  = <span style=color:#e6db74>&#34;Inbound&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>access</span>                     = <span style=color:#e6db74>&#34;Allow&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>protocol</span>                   = <span style=color:#e6db74>&#34;Tcp&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>source_port_range</span>          = <span style=color:#e6db74>&#34;*&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>destination_port_range</span>     = <span style=color:#e6db74>&#34;22&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>source_address_prefix</span>      = <span style=color:#e6db74>&#34;*&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>destination_address_prefix</span> = <span style=color:#e6db74>&#34;*&#34;</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>   <span style=color:#a6e22e>security_rule</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>name</span>                       = <span style=color:#e6db74>&#34;ANSIBLE&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>priority</span>                   = <span style=color:#ae81ff>103</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>direction</span>                  = <span style=color:#e6db74>&#34;Inbound&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>access</span>                     = <span style=color:#e6db74>&#34;Allow&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>protocol</span>                   = <span style=color:#e6db74>&#34;Tcp&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>source_port_range</span>          = <span style=color:#e6db74>&#34;*&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>destination_port_range</span>     = <span style=color:#e6db74>&#34;5985&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>source_address_prefix</span>      = <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span>var.<span style=color:#a6e22e>east_subnets</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>destination_address_prefix</span> = <span style=color:#e6db74>&#34;*&#34;</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}<span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e># ASSIGN SECURITY GROUPS TO INTERFACES
+</span></span></span><span style=display:flex><span><span style=color:#75715e># LINUX SSH
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>resource</span> <span style=color:#e6db74>&#34;azurerm_network_interface_security_group_association&#34;</span> <span style=color:#e6db74>&#34;linux1&#34;</span> {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>network_interface_id</span>      = <span style=color:#a6e22e>azurerm_network_interface</span>.<span style=color:#a6e22e>linux1</span>.<span style=color:#a6e22e>id</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>network_security_group_id</span> = <span style=color:#a6e22e>azurerm_network_security_group</span>.<span style=color:#a6e22e>linux1</span>.<span style=color:#a6e22e>id</span>
+</span></span><span style=display:flex><span>}<span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e># WINSERV RDP
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>resource</span> <span style=color:#e6db74>&#34;azurerm_network_interface_security_group_association&#34;</span> <span style=color:#e6db74>&#34;winserv1&#34;</span> {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>network_interface_id</span>      = <span style=color:#a6e22e>azurerm_network_interface</span>.<span style=color:#a6e22e>winserv1</span>.<span style=color:#a6e22e>id</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>network_security_group_id</span> = <span style=color:#a6e22e>azurerm_network_security_group</span>.<span style=color:#a6e22e>winserv</span>.<span style=color:#a6e22e>id</span>
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>resource</span> <span style=color:#e6db74>&#34;azurerm_network_interface_security_group_association&#34;</span> <span style=color:#e6db74>&#34;winserv2&#34;</span> {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>network_interface_id</span>      = <span style=color:#a6e22e>azurerm_network_interface</span>.<span style=color:#a6e22e>winserv2</span>.<span style=color:#a6e22e>id</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>network_security_group_id</span> = <span style=color:#a6e22e>azurerm_network_security_group</span>.<span style=color:#a6e22e>winserv</span>.<span style=color:#a6e22e>id</span>
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>resource</span> <span style=color:#e6db74>&#34;azurerm_network_interface_security_group_association&#34;</span> <span style=color:#e6db74>&#34;winserv3&#34;</span> {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>network_interface_id</span>      = <span style=color:#a6e22e>azurerm_network_interface</span>.<span style=color:#a6e22e>winserv3</span>.<span style=color:#a6e22e>id</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>network_security_group_id</span> = <span style=color:#a6e22e>azurerm_network_security_group</span>.<span style=color:#a6e22e>winserv</span>.<span style=color:#a6e22e>id</span>
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>resource</span> <span style=color:#e6db74>&#34;azurerm_network_interface_security_group_association&#34;</span> <span style=color:#e6db74>&#34;winserv4&#34;</span> {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>network_interface_id</span>      = <span style=color:#a6e22e>azurerm_network_interface</span>.<span style=color:#a6e22e>winserv4</span>.<span style=color:#a6e22e>id</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>network_security_group_id</span> = <span style=color:#a6e22e>azurerm_network_security_group</span>.<span style=color:#a6e22e>winserv</span>.<span style=color:#a6e22e>id</span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h3 id=variablestf-terraformtfvars-files><em>variables.tf, terraform.tfvars</em> Files</h3><ul><li>Alter variables within these files to ensure they meet your environment needs<ul><li><em>variables.tf</em><ul><li>Declare variables that will be used with the Terraform configuration (Delcared intially or explicitely here as <code>locals</code> variables)</li><li>Specific local variables used for Windows .xml files<ul><li><em>firsT_logon_commands</em> local variable points to a .xml file to configure first time logon in Windows. This enables each server to recieve Winrm data on port 5985 for Ansible configuration</li><li>*auto_logon_ runs a .xml configuration to log in once right after intial creation of VM. This allows <em>first_logon_commands</em> to execute automatically</li></ul></li></ul></li></ul></li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tf data-lang=tf><span style=display:flex><span><span style=color:#66d9ef>variable</span> <span style=color:#e6db74>&#34;winserv_vm_os_publisher&#34;</span> {}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>variable</span> <span style=color:#e6db74>&#34;winserv_vm_os_offer&#34;</span> {}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>variable</span> <span style=color:#e6db74>&#34;winserv_vm_os_sku&#34;</span> {}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>variable</span> <span style=color:#e6db74>&#34;winserv_vm_size&#34;</span> {}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>variable</span> <span style=color:#e6db74>&#34;winadmin_username&#34;</span> {}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>variable</span> <span style=color:#e6db74>&#34;winadmin_password&#34;</span> {}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>variable</span> <span style=color:#e6db74>&#34;winserv_license&#34;</span> {}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>variable</span> <span style=color:#e6db74>&#34;winserv_sa_type&#34;</span> {}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>variable</span> <span style=color:#e6db74>&#34;winserv_pdc&#34;</span> {}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>variable</span> <span style=color:#e6db74>&#34;winserv_rdc&#34;</span> {} 
+</span></span><span style=display:flex><span><span style=color:#66d9ef>variable</span> <span style=color:#e6db74>&#34;winserv_dhcp&#34;</span> {} 
+</span></span><span style=display:flex><span><span style=color:#66d9ef>variable</span> <span style=color:#e6db74>&#34;winserv_file&#34;</span> {}    
+</span></span><span style=display:flex><span><span style=color:#66d9ef>variable</span> <span style=color:#e6db74>&#34;linux_server&#34;</span> {}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>variable</span> <span style=color:#e6db74>&#34;linux_vm_os_publisher&#34;</span> {}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>variable</span> <span style=color:#e6db74>&#34;linux_vm_os_offer&#34;</span> {}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>variable</span> <span style=color:#e6db74>&#34;linux_vm_os_sku&#34;</span> {}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>variable</span> <span style=color:#e6db74>&#34;linux_vm_size&#34;</span> {}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>variable</span> <span style=color:#e6db74>&#34;linux_ssh_key&#34;</span> {}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>variable</span> <span style=color:#e6db74>&#34;linux_sa_type&#34;</span> {}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>variable</span> <span style=color:#e6db74>&#34;linux_ssh_key_pv&#34;</span> {}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>variable</span> <span style=color:#e6db74>&#34;winserv_allocation_method&#34;</span> {}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>variable</span> <span style=color:#e6db74>&#34;east_address_spaces&#34;</span> {}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>variable</span> <span style=color:#e6db74>&#34;east_subnets&#34;</span> {}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>variable</span> <span style=color:#e6db74>&#34;winserv_public_ip_sku&#34;</span> {}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>variable</span> <span style=color:#e6db74>&#34;winserv1_private_ip&#34;</span> {}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>variable</span> <span style=color:#e6db74>&#34;winserv2_private_ip&#34;</span> {}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>variable</span> <span style=color:#e6db74>&#34;winserv3_private_ip&#34;</span> {}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>variable</span> <span style=color:#e6db74>&#34;winserv4_private_ip&#34;</span> {}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>variable</span> <span style=color:#e6db74>&#34;linux1_priavte_ip&#34;</span> {}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>locals</span>{
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>first_logon_commands</span>        = file(<span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>path</span>.module<span style=color:#e6db74>}</span><span style=color:#e6db74>/          winfiles/FirstLogonCommands.xml&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>auto_logon</span>                  =           <span style=color:#e6db74>&#34;&lt;AutoLogon&gt;&lt;Password&gt;&lt;Value&gt;</span><span style=color:#e6db74>${</span>var.<span style=color:#a6e22e>winadmin_password</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&lt;/          Value&gt;&lt;/Password&gt;&lt;Enabled&gt;true&lt;/Enabled&gt;&lt;LogonCount&gt;1&lt;/          LogonCount&gt;&lt;Username&gt;</span><span style=color:#e6db74>${</span>var.<span style=color:#a6e22e>winadmin_username</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&lt;/          Username&gt;&lt;/AutoLogon&gt;&#34;</span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><pre><code>- *terraform.tfvars*
+    - Assign variables values here. These will be used with the Terraform configuration. If left blank, you can assign the variable at the terminal level when running the `terraform apply` 
+        - Alter Network values to desired IP addressing scheme
+            -  **Ensure IP addressing matches that in the Ansible configuration inventory.yml**
+        - Here you can alter azure values for _publisher_, _offer_, _sku_, _size_, _sa_, and _license_ information for the Windows/Linux VMs
+        - Additionally, ensure `linux_ssh_key` point to your public Key `id_rsa.pubc` file
+        - I recommend to change _winadmin_username_ &amp; _winadmin_password_ variables to sensetive and blank so you can delcare them in preferrably Vaulty or via the CLI 
+            - **_winadmin_username_ &amp; _winadmin_password_ MUST MATCH WHAT IS IN ANSIBLE /group_vars/all.yml**
+    - ```tf
+      # Azure Windows Server related params
+      winserv_vm_os_publisher     = &quot;MicrosoftWindowsServer&quot;
+      winserv_vm_os_offer         = &quot;WindowsServer&quot;
+      winserv_vm_os_sku           = &quot;2022-Datacenter&quot;
+      winserv_vm_size             = &quot;Standard_DS1_V2&quot;
+      winserv_license             = &quot;Windows_Server&quot;
+      winserv_allocation_method   = &quot;Static&quot;
+      winserv_public_ip_sku       = &quot;Standard&quot;
+      winserv_sa_type             = &quot;Standard_LRS&quot;
+      
+      # Azure Linux Server related params
+      linux_vm_os_publisher = &quot;Canonical&quot;
+      linux_vm_os_offer     = &quot;UbuntuServer&quot;
+      linux_vm_os_sku       = &quot;18.04-LTS&quot;
+      linux_vm_size         = &quot;Standard_B1s&quot;
+      linux_ssh_key         = &quot;Local-PUBLIC-SSH-KEY-Here&quot;
+      linux_sa_type         = &quot;Premium_LRS&quot;
+      linux_ssh_key_pv      = &quot;Local-PRIV-SSH-KEY-Here&quot;
+      
+      # Which Windows administrator password to set during vm           customization
+      winadmin_username = &quot;SuperAdministrator&quot;
+      winadmin_password = &quot;Password1234&quot;
+      
+      # Naming Schemes 
+      winserv_pdc    = &quot;ajb-pdc&quot;
+      winserv_rdc    = &quot;ajb-rdc&quot;
+      winserv_dhcp   = &quot;ajb-dhcp&quot;
+      winserv_file   = &quot;ajb-file&quot;
+      linux_server   = &quot;ajb-operator&quot;
+      
+      # Networking Variables
+      winserv1_private_ip   = &quot;10.0.1.10&quot;
+      winserv2_private_ip   = &quot;10.0.1.11&quot;
+      winserv3_private_ip   = &quot;10.0.1.12&quot;
+      winserv4_private_ip   = &quot;10.0.1.13&quot;
+      linux1_priavte_ip     = &quot;10.0.1.9&quot;
+      east_address_spaces  = &quot;10.0.0.0/16&quot;
+      east_subnets         = &quot;10.0.1.0/24&quot;
+      ```
+</code></pre><h3 id=01-linuxclienttf--02-winserverstf-files><em>01-LinuxClient.tf</em> & <em>02-WinServers.tf</em> Files</h3><ul><li>Here the creation of the VMs occur. Resources pull data from <em>networking.tf</em>, <em>variables.tf</em>, <em>terraform.tfvars</em> files.<ul><li>Windows VMs are assigned unattend configurations for first time setup (/winfiles/FirstLogonCommands.xml && <em>auto_logon</em> variable data)</li><li>Linux Machine is assigned a cloud-init file configuraiton for first time setup (/cloudinit/custom.yml) We will create this in the next step.
+01-LinuxClient.tf</li></ul></li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tf data-lang=tf><span style=display:flex><span><span style=color:#75715e># This pulls a Ubuntu Datacenter from Microsoft&#39;s VM platform directly
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>resource</span> <span style=color:#e6db74>&#34;azurerm_linux_virtual_machine&#34;</span> <span style=color:#e6db74>&#34;operator&#34;</span> {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>name</span>                = var.<span style=color:#a6e22e>linux_server</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>resource_group_name</span> = <span style=color:#a6e22e>azurerm_resource_group</span>.<span style=color:#a6e22e>east</span>.<span style=color:#a6e22e>name</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>location</span>            = <span style=color:#a6e22e>azurerm_resource_group</span>.<span style=color:#a6e22e>east</span>.<span style=color:#a6e22e>location</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>size</span>                = var.<span style=color:#a6e22e>linux_vm_size</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>admin_username</span>      = var.<span style=color:#a6e22e>winadmin_username</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>network_interface_ids</span> = [
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>azurerm_network_interface</span>.<span style=color:#a6e22e>linux1</span>.<span style=color:#a6e22e>id</span>
+</span></span><span style=display:flex><span>  ]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>admin_ssh_key</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>username</span>   = var.<span style=color:#a6e22e>winadmin_username</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>public_key</span> = file(<span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span>var.<span style=color:#a6e22e>linux_ssh_key</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span><span style=display:flex><span>  }<span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>  # Cloud-Init passed here
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#a6e22e>custom_data</span> = data.<span style=color:#a6e22e>template_cloudinit_config</span>.<span style=color:#a6e22e>config</span>.<span style=color:#a6e22e>rendered</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>os_disk</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>caching</span>              = <span style=color:#e6db74>&#34;ReadWrite&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>storage_account_type</span> = var.<span style=color:#a6e22e>linux_sa_type</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>source_image_reference</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>publisher</span> = var.<span style=color:#a6e22e>linux_vm_os_publisher</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>offer</span>     = var.<span style=color:#a6e22e>linux_vm_os_offer</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>sku</span>       = var.<span style=color:#a6e22e>linux_vm_os_sku</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>version</span>   = <span style=color:#e6db74>&#34;latest&#34;</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>depends_on</span> = [<span style=color:#a6e22e>azurerm_resource_group</span>.<span style=color:#a6e22e>east</span>, <span style=color:#a6e22e>azurerm_network_interface</span>.<span style=color:#a6e22e>linux1</span>]
+</span></span><span style=display:flex><span>}<span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e># Create cloud-init file to be passed into linux vm
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>data</span> <span style=color:#e6db74>&#34;template_file&#34;</span> <span style=color:#e6db74>&#34;user_data&#34;</span> {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>template</span> = file(<span style=color:#e6db74>&#34;./cloudinit/custom.yml&#34;</span>)
+</span></span><span style=display:flex><span>}<span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e> 
+</span></span></span><span style=display:flex><span><span style=color:#75715e># Render a multi-part cloud-init config making use of the part
+</span></span></span><span style=display:flex><span><span style=color:#75715e># above, and other source files
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>data</span> <span style=color:#e6db74>&#34;template_cloudinit_config&#34;</span> <span style=color:#e6db74>&#34;config&#34;</span> {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>gzip</span>          = <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>base64_encode</span> = <span style=color:#66d9ef>true</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>  # Main cloud-config configuration file.
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#a6e22e>part</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>filename</span>     = <span style=color:#e6db74>&#34;init.cfg&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>content_type</span> = <span style=color:#e6db74>&#34;text/cloud-config&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>content</span>      = <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span>data.<span style=color:#a6e22e>template_file</span>.<span style=color:#a6e22e>user_data</span>.<span style=color:#a6e22e>rendered</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}<span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>  # Pass Ansible File into created Linux VM using SCP (SSH Port 22)
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>resource</span> <span style=color:#e6db74>&#34;null_resource&#34;</span> <span style=color:#e6db74>&#34;copyansible&#34;</span>{ 
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>connection</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>type</span>        = <span style=color:#e6db74>&#34;ssh&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>host</span>        = <span style=color:#a6e22e>azurerm_public_ip</span>.<span style=color:#a6e22e>linux_public</span>.<span style=color:#a6e22e>ip_address</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>user</span>        = var.<span style=color:#a6e22e>winadmin_username</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>private_key</span> = file(<span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span>var.<span style=color:#a6e22e>linux_ssh_key_pv</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span><span style=color:#66d9ef>  
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>  provisioner</span> <span style=color:#e6db74>&#34;file&#34;</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>source</span> = <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>path</span>.module<span style=color:#e6db74>}</span><span style=color:#e6db74>/Ansible&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>destination</span> = <span style=color:#e6db74>&#34;/tmp/&#34;</span> 
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>depends_on</span> = [<span style=color:#a6e22e>azurerm_linux_virtual_machine</span>.<span style=color:#a6e22e>operator</span>]
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>02-WinServers.tf</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tf data-lang=tf><span style=display:flex><span><span style=color:#75715e># This pulls the latest Windows Server Datacenter from Microsoft&#39;s VM platform directly
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>resource</span> <span style=color:#e6db74>&#34;azurerm_windows_virtual_machine&#34;</span> <span style=color:#e6db74>&#34;pdc&#34;</span> {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>name</span>                = var.<span style=color:#a6e22e>winserv_pdc</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>resource_group_name</span> = <span style=color:#a6e22e>azurerm_resource_group</span>.<span style=color:#a6e22e>east</span>.<span style=color:#a6e22e>name</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>location</span>            = <span style=color:#a6e22e>azurerm_resource_group</span>.<span style=color:#a6e22e>east</span>.<span style=color:#a6e22e>location</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>size</span>                = var.<span style=color:#a6e22e>winserv_vm_size</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>admin_username</span>      = var.<span style=color:#a6e22e>winadmin_username</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>admin_password</span>      = var.<span style=color:#a6e22e>winadmin_password</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>network_interface_ids</span> = [
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>azurerm_network_interface</span>.<span style=color:#a6e22e>winserv1</span>.<span style=color:#a6e22e>id</span>
+</span></span><span style=display:flex><span>  ]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>os_disk</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>caching</span>              = <span style=color:#e6db74>&#34;ReadWrite&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>storage_account_type</span> = var.<span style=color:#a6e22e>winserv_sa_type</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>source_image_reference</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>publisher</span> = var.<span style=color:#a6e22e>winserv_vm_os_publisher</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>offer</span>     = var.<span style=color:#a6e22e>winserv_vm_os_offer</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>sku</span>       = var.<span style=color:#a6e22e>winserv_vm_os_sku</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>version</span>   = <span style=color:#e6db74>&#34;latest&#34;</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>additional_unattend_content</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>content</span> = <span style=color:#a6e22e>local</span>.<span style=color:#a6e22e>auto_logon</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>setting</span> = <span style=color:#e6db74>&#34;AutoLogon&#34;</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>additional_unattend_content</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>content</span> = <span style=color:#a6e22e>local</span>.<span style=color:#a6e22e>first_logon_commands</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>setting</span> = <span style=color:#e6db74>&#34;FirstLogonCommands&#34;</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>depends_on</span> = [<span style=color:#a6e22e>azurerm_resource_group</span>.<span style=color:#a6e22e>east</span>, <span style=color:#a6e22e>azurerm_network_interface</span>.<span style=color:#a6e22e>winserv1</span>]
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>resource</span> <span style=color:#e6db74>&#34;azurerm_windows_virtual_machine&#34;</span> <span style=color:#e6db74>&#34;rdc&#34;</span> {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>name</span>                = var.<span style=color:#a6e22e>winserv_rdc</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>resource_group_name</span> = <span style=color:#a6e22e>azurerm_resource_group</span>.<span style=color:#a6e22e>east</span>.<span style=color:#a6e22e>name</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>location</span>            = <span style=color:#a6e22e>azurerm_resource_group</span>.<span style=color:#a6e22e>east</span>.<span style=color:#a6e22e>location</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>size</span>                = var.<span style=color:#a6e22e>winserv_vm_size</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>admin_username</span>      = var.<span style=color:#a6e22e>winadmin_username</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>admin_password</span>      = var.<span style=color:#a6e22e>winadmin_password</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>network_interface_ids</span> = [
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>azurerm_network_interface</span>.<span style=color:#a6e22e>winserv2</span>.<span style=color:#a6e22e>id</span>
+</span></span><span style=display:flex><span>  ]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>os_disk</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>caching</span>              = <span style=color:#e6db74>&#34;ReadWrite&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>storage_account_type</span> = var.<span style=color:#a6e22e>winserv_sa_type</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>source_image_reference</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>publisher</span> = var.<span style=color:#a6e22e>winserv_vm_os_publisher</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>offer</span>     = var.<span style=color:#a6e22e>winserv_vm_os_offer</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>sku</span>       = var.<span style=color:#a6e22e>winserv_vm_os_sku</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>version</span>   = <span style=color:#e6db74>&#34;latest&#34;</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>additional_unattend_content</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>content</span> = <span style=color:#a6e22e>local</span>.<span style=color:#a6e22e>auto_logon</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>setting</span> = <span style=color:#e6db74>&#34;AutoLogon&#34;</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>additional_unattend_content</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>content</span> = <span style=color:#a6e22e>local</span>.<span style=color:#a6e22e>first_logon_commands</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>setting</span> = <span style=color:#e6db74>&#34;FirstLogonCommands&#34;</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>depends_on</span> = [<span style=color:#a6e22e>azurerm_resource_group</span>.<span style=color:#a6e22e>east</span>, <span style=color:#a6e22e>azurerm_network_interface</span>.<span style=color:#a6e22e>winserv2</span>]
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>resource</span> <span style=color:#e6db74>&#34;azurerm_windows_virtual_machine&#34;</span> <span style=color:#e6db74>&#34;dhcp&#34;</span> {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>name</span>                = var.<span style=color:#a6e22e>winserv_dhcp</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>resource_group_name</span> = <span style=color:#a6e22e>azurerm_resource_group</span>.<span style=color:#a6e22e>east</span>.<span style=color:#a6e22e>name</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>location</span>            = <span style=color:#a6e22e>azurerm_resource_group</span>.<span style=color:#a6e22e>east</span>.<span style=color:#a6e22e>location</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>size</span>                = var.<span style=color:#a6e22e>winserv_vm_size</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>admin_username</span>      = var.<span style=color:#a6e22e>winadmin_username</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>admin_password</span>      = var.<span style=color:#a6e22e>winadmin_password</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>network_interface_ids</span> = [
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>azurerm_network_interface</span>.<span style=color:#a6e22e>winserv3</span>.<span style=color:#a6e22e>id</span>
+</span></span><span style=display:flex><span>  ]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>os_disk</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>caching</span>              = <span style=color:#e6db74>&#34;ReadWrite&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>storage_account_type</span> = var.<span style=color:#a6e22e>winserv_sa_type</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>source_image_reference</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>publisher</span> = var.<span style=color:#a6e22e>winserv_vm_os_publisher</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>offer</span>     = var.<span style=color:#a6e22e>winserv_vm_os_offer</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>sku</span>       = var.<span style=color:#a6e22e>winserv_vm_os_sku</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>version</span>   = <span style=color:#e6db74>&#34;latest&#34;</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>additional_unattend_content</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>content</span> = <span style=color:#a6e22e>local</span>.<span style=color:#a6e22e>auto_logon</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>setting</span> = <span style=color:#e6db74>&#34;AutoLogon&#34;</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>additional_unattend_content</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>content</span> = <span style=color:#a6e22e>local</span>.<span style=color:#a6e22e>first_logon_commands</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>setting</span> = <span style=color:#e6db74>&#34;FirstLogonCommands&#34;</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>depends_on</span> = [<span style=color:#a6e22e>azurerm_resource_group</span>.<span style=color:#a6e22e>east</span>, <span style=color:#a6e22e>azurerm_network_interface</span>.<span style=color:#a6e22e>winserv3</span>]
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>resource</span> <span style=color:#e6db74>&#34;azurerm_windows_virtual_machine&#34;</span> <span style=color:#e6db74>&#34;file&#34;</span> {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>name</span>                = var.<span style=color:#a6e22e>winserv_file</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>resource_group_name</span> = <span style=color:#a6e22e>azurerm_resource_group</span>.<span style=color:#a6e22e>east</span>.<span style=color:#a6e22e>name</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>location</span>            = <span style=color:#a6e22e>azurerm_resource_group</span>.<span style=color:#a6e22e>east</span>.<span style=color:#a6e22e>location</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>size</span>                = var.<span style=color:#a6e22e>winserv_vm_size</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>admin_username</span>      = var.<span style=color:#a6e22e>winadmin_username</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>admin_password</span>      = var.<span style=color:#a6e22e>winadmin_password</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>network_interface_ids</span> = [
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>azurerm_network_interface</span>.<span style=color:#a6e22e>winserv4</span>.<span style=color:#a6e22e>id</span>
+</span></span><span style=display:flex><span>  ]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>os_disk</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>caching</span>              = <span style=color:#e6db74>&#34;ReadWrite&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>storage_account_type</span> = var.<span style=color:#a6e22e>winserv_sa_type</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>source_image_reference</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>publisher</span> = var.<span style=color:#a6e22e>winserv_vm_os_publisher</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>offer</span>     = var.<span style=color:#a6e22e>winserv_vm_os_offer</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>sku</span>       = var.<span style=color:#a6e22e>winserv_vm_os_sku</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>version</span>   = <span style=color:#e6db74>&#34;latest&#34;</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>additional_unattend_content</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>content</span> = <span style=color:#a6e22e>local</span>.<span style=color:#a6e22e>auto_logon</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>setting</span> = <span style=color:#e6db74>&#34;AutoLogon&#34;</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>additional_unattend_content</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>content</span> = <span style=color:#a6e22e>local</span>.<span style=color:#a6e22e>first_logon_commands</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>setting</span> = <span style=color:#e6db74>&#34;FirstLogonCommands&#34;</span>
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>depends_on</span> = [<span style=color:#a6e22e>azurerm_resource_group</span>.<span style=color:#a6e22e>east</span>, <span style=color:#a6e22e>azurerm_network_interface</span>.<span style=color:#a6e22e>winserv4</span>]
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h3 id=outputstf-file><em>outputs.tf</em> File</h3><ul><li>Provides necessary ip information that is allocated to the VMs created.</li><li>This information by default includes:<ul><li>Private IPs for all 5 deployed VMs (Which we know will by based on variables.tf file data)</li><li>Public IP for Linux machine (Not known by default, will be used for SSH connection if needed).</li></ul></li></ul><h2 id=useful-azure-related-functions>Useful Azure related functions</h2><p>Finding variable information for VM Images variables:</p><ul><li>You can use this command in Azure CLI to find UbuntuServer data. Change the values in offer, publisher, location, and sku for various other images.</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-Powershell data-lang=Powershell><span style=display:flex><span>   az vm image list \
 </span></span><span style=display:flex><span>   --location westus \
 </span></span><span style=display:flex><span>   --publisher Canonical \  
 </span></span><span style=display:flex><span>   --offer UbuntuServer \    
