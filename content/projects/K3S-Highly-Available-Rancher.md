@@ -1,9 +1,6 @@
 +++
 title = "K3S - Highly-Available-Rancher"
 description = "Highly Available K3s"
-featured = "rancher.svg"
-featuredalt = "K3s & Rancher"
-featuredpath = "date"
 type = ["posts","post"]
 tags = [
     "Rancher",
@@ -27,7 +24,7 @@ series = ["K3S"]
 
 # Overview
 
-Getting started with K3S: <br>
+Getting started with K3S: ![rancher](/rancher.svg 'rancher') <br>
 The primary goal here is to setup a functional highly available K3S cluster. This will include 4 necessary steps:
 1. Setup NGINX Loadbalancer Docker
 2. Setup MySQL Docker
