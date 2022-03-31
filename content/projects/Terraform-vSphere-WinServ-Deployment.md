@@ -6,16 +6,19 @@ tags = [
     "terraform",
     "ansible",
     "packer",
+    "automation",
     "vsphere",
     "windows-server",
 ]
 date = "2022-02-14"
 categories = [
-    "Development",
     "Projects",
     "Terraform",
     "Ansible",
+    "Packer",
     "vSphere",
+    "Linux",
+    "Homelab",
 ]
 series = ["Terraform"]
 [ author ]

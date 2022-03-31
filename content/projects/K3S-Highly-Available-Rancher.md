@@ -3,7 +3,6 @@ title = "K3S - Highly-Available-Rancher"
 description = "Highly Available K3s"
 type = ["posts","post"]
 tags = [
-    "Linux",
     "Rancher",
     "automation",
     "Kubernetes",
@@ -11,11 +10,12 @@ tags = [
 ]
 date = "2022-03-06"
 categories = [
-    "Development",
     "Projects",
     "K3S",
     "Rancher",
     "Containers"
+    "Linux",
+    "Homelab",
 ]
 series = ["K3S"]
 [ author ]

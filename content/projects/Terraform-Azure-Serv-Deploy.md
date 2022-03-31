@@ -11,11 +11,11 @@ tags = [
 ]
 date = "2022-02-28"
 categories = [
-    "Development",
     "Projects",
     "Terraform",
     "Ansible",
-    "Azure"
+    "Azure",
+    "Linux",
 ]
 series = ["Terraform"]
 [ author ]
