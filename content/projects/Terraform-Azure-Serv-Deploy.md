@@ -83,7 +83,7 @@ provider "azurerm" {
     - Managed with variables contained in terraform.tfvars file
 
 networking.tf
-```tf
+```hcl
 # Create a resource group to maintain security settings along with network interfaces for VMs
 resource "azurerm_resource_group" "east" {
   name     = "terra-resources"
