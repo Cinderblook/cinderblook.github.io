@@ -1,4 +1,4 @@
-baseURL = 'https://cinderblook.github.io/'
+baseURL = 'https://cinderblook.com/'
 languageCode = 'en-us'
 title = "Cinderblook's Website"
 theme = "hello-friend-ng"
@@ -153,7 +153,7 @@ disableHugoGeneratorInject = false
   # Uncomment this if you want a portrait on your start page
   #
   [params.portrait]
-    path     = "/img/Portrait_Austin.jpg"
+    path     = "/Portrait_Austin.jpg"
     alt      = "Portrait"
     maxWidth = "100px"
 
