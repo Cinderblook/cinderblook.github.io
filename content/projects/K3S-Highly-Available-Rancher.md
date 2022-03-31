@@ -9,7 +9,7 @@ tags = [
     "Kubernetes",
     "K3s",
 ]
-date = "20222-03-06"
+date = "2022-03-06"
 categories = [
     "Development",
     "Projects",

@@ -1,7 +1,7 @@
 +++
 title = "Terraform - Azure-Serv-Deploy"
 description = "Terraofmr Automation"
-type = ["projects","project"]
+type = ["posts","post"]
 tags = [
     "terraform",
     "ansible",
@@ -9,7 +9,7 @@ tags = [
     "azure",
     "windows-server",
 ]
-date = "20222-02-28"
+date = "2022-02-28"
 categories = [
     "Development",
     "Projects",
