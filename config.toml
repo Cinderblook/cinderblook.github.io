@@ -194,7 +194,7 @@ disableHugoGeneratorInject = false
     identifier = "sites"
     name       = "Sites"
     url        = "/sites"
-  [[menu.main]]
-    identifier = "tags"
-    name       = "Tags"
-    url        = "/tags"
+  #[[menu.main]]
+  #  identifier = "tags"
+  #  name       = "Tags"
+  #  url        = "/tags"
