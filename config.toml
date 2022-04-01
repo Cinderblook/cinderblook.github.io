@@ -1,6 +1,6 @@
 baseURL = 'https://www.cinderblook.com/'
 languageCode = 'en-us'
-title = "Cinderblook's Website"
+title = "Austin Barnes"
 theme = "hello-friend-ng"
 
 PygmentsCodeFences = true
