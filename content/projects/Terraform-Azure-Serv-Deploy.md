@@ -61,8 +61,6 @@ Create a new directory, and place the following files in it, with your own varia
 
 ###  *provider.tf* File
 - Calls necessary providers and sets their versions to be used in the Terraform configuration/deployment. Informs Terraform which modules and providers to use.
-<details>
-  <summary>View provider.tf file</summary>
 
 ``` tf
 terraform {
@@ -77,17 +75,14 @@ provider "azurerm" {
   features {}
 }
 ```
-</details>
 
 ###  *networking.tf* File
 - Defines resources, security groups, security rules, network interfaces, subnets, and public IPs to be created in Azure. 
     - These variables are pulled from the VM creation resources
     - Managed with variables contained in terraform.tfvars file
-<details>
-  <summary>View networking.tf file</summary>
 
 networking.tf
-```hcl
+```tf
 # Create a resource group to maintain security settings along with network interfaces for VMs
 resource "azurerm_resource_group" "east" {
   name     = "terra-resources"
@@ -267,8 +262,6 @@ resource "azurerm_network_interface_security_group_association" "winserv4" {
 }
 ```
 
-</details>
-
 ###  *variables.tf, terraform.tfvars* Files
 -  Alter variables within these files to ensure they meet your environment needs
     - *variables.tf*
@@ -314,17 +307,6 @@ variables.tf
      auto_logon                  =           "<AutoLogon><Password><Value>${var.winadmin_password}</          Value></Password><Enabled>true</Enabled><LogonCount>1</          LogonCount><Username>${var.winadmin_username}</          Username></AutoLogon>"
  }
  ```
- 
-{{< code css >}}
-
-... lots of css code ...
-lots mroe
-plenty
-lots
-lots
-lots
-
-{{< /code >}}
 
     - *terraform.tfvars*
         - Assign variables values here. These will be used with the Terraform configuration. If left blank, you can assign the variable at the terminal level when running the `terraform apply` 
@@ -602,6 +584,27 @@ resource "azurerm_windows_virtual_machine" "file" {
     - Private IPs for all 5 deployed VMs (Which we know will by based on variables.tf file data)
     - Public IP for Linux machine (Not known by default, will be used for SSH connection if needed).
 
+outputs.tf
+```tf
+output "Public_IP_Linux" {
+    value = azurerm_public_ip.linux_public.ip_address
+}
+output "Public_IP_Windows" {
+    value = azurerm_public_ip.win_public.ip_address
+}
+output "Private_IP_Linux" {
+    value = azurerm_network_interface.linux1.private_ip_address
+}
+
+output "Private_IP_WinServ" {
+    value = [
+        "PDC: ${azurerm_windows_virtual_machine.pdc.private_ip_address}",
+        "RDC: ${azurerm_windows_virtual_machine.rdc.private_ip_address}",
+        "DHCP: ${azurerm_windows_virtual_machine.dhcp.private_ip_address}",
+        "FILE: ${azurerm_windows_virtual_machine.file.private_ip_address}"
+        ]
+}
+```
 ## Useful Azure related functions
 Finding variable information for VM Images variables:
 - You can use this command in Azure CLI to find UbuntuServer data. Change the values in offer, publisher, location, and sku for various other images.
@@ -618,6 +621,8 @@ Finding variable information for VM Images variables:
 
 # Ansible
 Main role: Configure the deployed Virtual Machines.
+<br>
+Check out the repository on [GitHub](https://github.com/Cinderblook/Azure-Serv-Deploy) for the configuration files!
 -   Setup Windows Server Feature: Domain
     - Primary Domain Controller 
     - Replica Domain Controller
