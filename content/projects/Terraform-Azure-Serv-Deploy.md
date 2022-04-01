@@ -315,24 +315,17 @@ variables.tf
  }
  ```
  
-{{< collapse >}}
-{{< collapse/above >}}
-The following section is too long...
-{{< /collapse/above >}}
-{{< collapse/below >}}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+{{< code css >}}
 
-  {{< collapse >}}
-  {{< collapse/above >}}
-  I'm nested!
-  {{< /collapse/above >}}
-  {{< collapse/below >}}
-  Aenean lacinia condimentum magna ac tincidunt.
-  {{< /collapse/below >}}
-  {{< /collapse >}}
+... lots of css code ...
+lots mroe
+plenty
+lots
+lots
+lots
 
-{{< /collapse/below >}}
-{{< /collapse >}}
+
+{{< /code >}}
 
     - *terraform.tfvars*
         - Assign variables values here. These will be used with the Terraform configuration. If left blank, you can assign the variable at the terminal level when running the `terraform apply` 
