@@ -144,8 +144,8 @@ disableHugoGeneratorInject = false
   # A better internet.
   # Uncomment this to enable Commento.
   #
-  # [params.commento]
-  #   url = ""
+  [params.commento]
+    url = ""
 
   # Uncomment this if you want a portrait on your start page
   #
