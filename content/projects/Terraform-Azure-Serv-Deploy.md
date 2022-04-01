@@ -271,6 +271,7 @@ resource "azurerm_network_interface_security_group_association" "winserv4" {
             - *auto_logon_ runs a .xml configuration to log in once right after intial creation of VM. This allows *first_logon_commands* to execute automatically
 
 variables.tf
+
  ```tf
  variable "winserv_vm_os_publisher" {}
  variable "winserv_vm_os_offer" {}
@@ -308,54 +309,57 @@ variables.tf
  }
  ```
 
-    - *terraform.tfvars*
-        - Assign variables values here. These will be used with the Terraform configuration. If left blank, you can assign the variable at the terminal level when running the `terraform apply` 
-            - Alter Network values to desired IP addressing scheme
-                -  **Ensure IP addressing matches that in the Ansible configuration inventory.yml**
-            - Here you can alter azure values for _publisher_, _offer_, _sku_, _size_, _sa_, and _license_ information for the Windows/Linux VMs
-            - Additionally, ensure `linux_ssh_key` point to your public Key `id_rsa.pubc` file
-            - I recommend to change _winadmin_username_ & _winadmin_password_ variables to sensetive and blank so you can delcare them in preferrably Vaulty or via the CLI 
-                - **_winadmin_username_ & _winadmin_password_ MUST MATCH WHAT IS IN ANSIBLE /group_vars/all.yml**
-        - ```tf
-          # Azure Windows Server related params
-          winserv_vm_os_publisher     = "MicrosoftWindowsServer"
-          winserv_vm_os_offer         = "WindowsServer"
-          winserv_vm_os_sku           = "2022-Datacenter"
-          winserv_vm_size             = "Standard_DS1_V2"
-          winserv_license             = "Windows_Server"
-          winserv_allocation_method   = "Static"
-          winserv_public_ip_sku       = "Standard"
-          winserv_sa_type             = "Standard_LRS"
-          
-          # Azure Linux Server related params
-          linux_vm_os_publisher = "Canonical"
-          linux_vm_os_offer     = "UbuntuServer"
-          linux_vm_os_sku       = "18.04-LTS"
-          linux_vm_size         = "Standard_B1s"
-          linux_ssh_key         = "Local-PUBLIC-SSH-KEY-Here"
-          linux_sa_type         = "Premium_LRS"
-          linux_ssh_key_pv      = "Local-PRIV-SSH-KEY-Here"
-          
-          # Which Windows administrator password to set during vm           customization
-          winadmin_username = "SuperAdministrator"
-          winadmin_password = "Password1234"
-          
-          # Naming Schemes 
-          winserv_pdc    = "ajb-pdc"
-          winserv_rdc    = "ajb-rdc"
-          winserv_dhcp   = "ajb-dhcp"
-          winserv_file   = "ajb-file"
-          linux_server   = "ajb-operator"
-          
-          # Networking Variables
-          winserv1_private_ip   = "10.0.1.10"
-          winserv2_private_ip   = "10.0.1.11"
-          winserv3_private_ip   = "10.0.1.12"
-          winserv4_private_ip   = "10.0.1.13"
-          linux1_priavte_ip     = "10.0.1.9"
-          east_address_spaces  = "10.0.0.0/16"
-          east_subnets         = "10.0.1.0/24"
-          ```
+  - *terraform.tfvars*
+      - Assign variables values here. These will be used with the Terraform configuration. If left blank, you can assign the variable at the terminal level when running the `terraform apply` 
+          - Alter Network values to desired IP addressing scheme
+              -  **Ensure IP addressing matches that in the Ansible configuration inventory.yml**
+          - Here you can alter azure values for _publisher_, _offer_, _sku_, _size_, _sa_, and _license_ information for the Windows/Linux VMs
+          - Additionally, ensure `linux_ssh_key` point to your public Key `id_rsa.pubc` file
+          - I recommend to change _winadmin_username_ & _winadmin_password_ variables to sensetive and blank so you can delcare them in preferrably Vaulty or via the CLI 
+              - **_winadmin_username_ & _winadmin_password_ MUST MATCH WHAT IS IN ANSIBLE /group_vars/all.yml**
+
+terraform.tfvars
+```tf
+# Azure Windows Server related params
+winserv_vm_os_publisher     ="MicrosoftWindowsServer"
+winserv_vm_os_offer         = "WindowsServer"
+winserv_vm_os_sku           = "2022-Datacenter"
+winserv_vm_size             = "Standard_DS1_V2"
+winserv_license             = "Windows_Server"
+winserv_allocation_method   = "Static"
+winserv_public_ip_sku       = "Standard"
+winserv_sa_type             = "Standard_LRS"
+
+# Azure Linux Server related params
+linux_vm_os_publisher = "Canonical"
+linux_vm_os_offer     = "UbuntuServer"
+linux_vm_os_sku       = "18.04-LTS"
+linux_vm_size         = "Standard_B1s"
+linux_ssh_key         ="Local-PUBLIC-SSH-KEY-Here"
+linux_sa_type         = "Premium_LRS"
+linux_ssh_key_pv      = "Local-PRIV-SSH-KEY-Here"
+
+# Which Windows administrator password to setduring vm           customization
+winadmin_username = "SuperAdministrator"
+winadmin_password = "Password1234"
+
+# Naming Schemes 
+winserv_pdc    = "ajb-pdc"
+winserv_rdc    = "ajb-rdc"
+winserv_dhcp   = "ajb-dhcp"
+winserv_file   = "ajb-file"
+linux_server   = "ajb-operator"
+
+# Networking Variables
+winserv1_private_ip   = "10.0.1.10"
+winserv2_private_ip   = "10.0.1.11"
+winserv3_private_ip   = "10.0.1.12"
+winserv4_private_ip   = "10.0.1.13"
+linux1_priavte_ip     = "10.0.1.9"
+east_address_spaces  = "10.0.0.0/16"
+east_subnets         = "10.0.1.0/24"
+```
+
 ### *01-LinuxClient.tf* & *02-WinServers.tf* Files
 - Here the creation of the VMs occur. Resources pull data from _networking.tf_, _variables.tf_, _terraform.tfvars_ files.
     - Windows VMs are assigned unattend configurations for first time setup (/winfiles/FirstLogonCommands.xml && _auto_logon_ variable data)
@@ -578,7 +582,7 @@ resource "azurerm_windows_virtual_machine" "file" {
 
 
 ```
-### *outputs.tf* File
+### outputs.tf File
 - Provides necessary ip information that is allocated to the VMs created.
 - This information by default includes:
     - Private IPs for all 5 deployed VMs (Which we know will by based on variables.tf file data)
