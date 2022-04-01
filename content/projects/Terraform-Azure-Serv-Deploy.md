@@ -25,7 +25,7 @@ series = ["Terraform"]
 # Overview
 
 Deploy and Configure 4 Windows 2022 Datacenter Servers in Azure.
-- Using Terraform in conjunction with Ansible: Create 4 Windows Servers
+- Using Terraform in conjunction with Ansible and cloudinit: Create 4 Windows Servers
   - Configure them to be a Primary Domain Controller, Replica Domain Controller, DHCP server, and Fileshare server    
   - Automate intial setup of the 4 servers to accept Ansible configuration from a Linux VM in Azure created VIA the Terraform deployment
 
@@ -62,6 +62,7 @@ Create a new directory, and place the following files in it, with your own varia
 ###  *provider.tf* File
 - Calls necessary providers and sets their versions to be used in the Terraform configuration/deployment. Informs Terraform which modules and providers to use.
 
+provider.tf
 ``` tf
 terraform {
   required_providers {
@@ -319,6 +320,7 @@ variables.tf
               - **_winadmin_username_ & _winadmin_password_ MUST MATCH WHAT IS IN ANSIBLE /group_vars/all.yml**
 
 terraform.tfvars
+
 ```tf
 # Azure Windows Server related params
 winserv_vm_os_publisher     ="MicrosoftWindowsServer"
@@ -366,6 +368,7 @@ east_subnets         = "10.0.1.0/24"
     - Linux Machine is assigned a cloud-init file configuraiton for first time setup (/cloudinit/custom.yml) We will create this in the next step.
 
 01-LinuxClient.tf
+
 ```tf
 # This pulls a Ubuntu Datacenter from Microsoft's VM platform directly
 resource "azurerm_linux_virtual_machine" "operator" {
@@ -436,7 +439,9 @@ resource "null_resource" "copyansible"{
   depends_on = [azurerm_linux_virtual_machine.operator]
 }
 ```
+
 02-WinServers.tf
+
 ```tf
 # This pulls the latest Windows Server Datacenter from Microsoft's VM platform directly
 resource "azurerm_windows_virtual_machine" "pdc" {
@@ -609,6 +614,24 @@ output "Private_IP_WinServ" {
         ]
 }
 ```
+
+## Cloud-init
+Notice that in the  01-linux file, there is a cloud-init section, where the spun up machine will pull a cloud-init file. We must create that. Make a a folder inside your root terraform directory. Name it cloudinit. Inside that folder, create a file called `custom.yml` containing the following.
+
+```yml
+#cloud-config
+apt_update: true
+packages:
+  - python-pip
+runcmd:
+  - sudo pip install ansible
+  - sudo ansible-galaxy install azure.azure_preview_modules
+  - sudo pip install -r ~/.ansible/roles/azure.azure_preview_modules/files/requirements-azure.txt
+  - pip install "pywinrm>=0.2.2"
+  - cd /tmp/Ansible
+  - sudo ansible-playbook winlab.yml
+```
+
 ## Useful Azure related functions
 Finding variable information for VM Images variables:
 - You can use this command in Azure CLI to find UbuntuServer data. Change the values in offer, publisher, location, and sku for various other images.
@@ -624,9 +647,9 @@ Finding variable information for VM Images variables:
 
 
 # Ansible
-Main role: Configure the deployed Virtual Machines.
-<br>
-Check out the repository on [GitHub](https://github.com/Cinderblook/Azure-Serv-Deploy) for the configuration files!
+Main role: Configure the deployed Virtual Machines.<br>
+ 
+Check out the repository on [GitHub](https://github.com/Cinderblook/Azure-Serv-Deploy) for the configuration files! 
 -   Setup Windows Server Feature: Domain
     - Primary Domain Controller 
     - Replica Domain Controller
