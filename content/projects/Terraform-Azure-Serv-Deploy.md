@@ -320,6 +320,7 @@ variables.tf
  
 {{< /collapse/above >}}
 {{< /collapse > }}
+
     - *terraform.tfvars*
         - Assign variables values here. These will be used with the Terraform configuration. If left blank, you can assign the variable at the terminal level when running the `terraform apply` 
             - Alter Network values to desired IP addressing scheme
