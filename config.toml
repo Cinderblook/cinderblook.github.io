@@ -110,13 +110,13 @@ disableHugoGeneratorInject = false
   [params.footer]
     trademark = true
     rss = true
-    copyright = true
+    copyright = false
     author = true
 
     topText = []
-    bottomText = [
-      "Powered by <a href=\"http://gohugo.io\">Hugo</a>",
-    ]
+    bottomText = []
+    #  "Powered by <a href=\"http://gohugo.io\">Hugo</a>",
+    #]
 
   # Colors for favicons
   #
@@ -177,7 +177,7 @@ disableHugoGeneratorInject = false
 
 [languages]
   [languages.en]
-    subtitle  = "Hello Friend NG Theme"
+    subtitle  = "Personal Site"
     weight    = 1
     copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
 
