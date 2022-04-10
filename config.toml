@@ -173,7 +173,7 @@ disableHugoGeneratorInject = false
  
   [[params.social]]
     name = "CoffeeScript"
-    url  = "https://www.buymeacoffee/Cinderblook"
+    url  = "https://www.buymeacoffee.com/cinderblook"
 
 [languages]
   [languages.en]

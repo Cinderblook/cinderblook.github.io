@@ -32,6 +32,7 @@ The primary goal here is to setup a functional highly available K3S cluster. Thi
 4. (Optional) Setup management from dev machine (Controller)
 5. Setup Rancher as a container within the cluster
 
+**Check out all of the configuration files on [GitHub](https://github.com/Cinderblook/k3s-HACluster-Rancher) at the repository!**
 
 # Prerequisites
 - Have a dedicated Docker host virtual machine, preferrably linux
