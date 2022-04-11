@@ -1,6 +1,6 @@
 +++
 title = "Terraform - vSphere-WinServ-Deployment"
-description = "Terraofmr Automation"
+description = "Terraform Automation in vSphere with Windows Servers"
 type = ["posts","post"]
 tags = [
     "terraform",

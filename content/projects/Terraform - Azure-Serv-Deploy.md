@@ -1,6 +1,6 @@
 +++
 title = "Terraform - Azure-Serv-Deploy"
-description = "Terraofmr Automation"
+description = "Terraform Automation in Azure with Windows Server"
 type = ["posts","post"]
 tags = [
     "terraform",
