@@ -13,6 +13,7 @@ categories = [
     "Terraform",
     "Proxmox",
     "Linux",
+    "Homelab",
 ]
 series = ["Terraform"]
 [ author ]

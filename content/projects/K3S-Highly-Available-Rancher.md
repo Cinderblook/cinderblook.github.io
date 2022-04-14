@@ -11,8 +11,8 @@ tags = [
 date = "2022-03-06"
 categories = [
     "Projects",
-    "K3S",
     "Rancher",
+    "Kubernetes",
     "Containers",
     "Linux",
     "Homelab",
