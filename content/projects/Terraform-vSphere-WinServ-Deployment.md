@@ -34,7 +34,7 @@ To complete this project, 3 steps are taken.
 2. Use Terraform to deploy 4 virtual machines into a vSphere environment
 3. Use Ansible to configure these 4 virtual machines as desired
 
-**Check out all of the configuration files on [GitHub](https://github.com/Cinderblook/vSphere-WinServ-Deployment) at the repository!**
+**Check out all of the configuration files on [GitHub](https://github.com/Cinderblook/tacklebox/tree/main/Terraform/vSphere/vSphere-WinServ-Deployment) at the repository!**
 
 ## 1. Packer's Role: 
 

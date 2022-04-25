@@ -29,7 +29,7 @@ Deploy and Configure 4 Windows 2022 Datacenter Servers in Azure.
   - Configure them to be a Primary Domain Controller, Replica Domain Controller, DHCP server, and Fileshare server    
   - Automate intial setup of the 4 servers to accept Ansible configuration from a Linux VM in Azure created VIA the Terraform deployment
 
-**Check out all of the configuration files on [GitHub](https://github.com/Cinderblook/Azure-Serv-Deploy) at the repository!**
+**Check out all of the configuration files on [GitHub](https://github.com/Cinderblook/tacklebox/tree/main/Terraform/Azure/Azure-Serv-Deploy) at the repository!**
 
 # Terraform
 Main role: Deploy the Virtual Machines, setup Network environment, and provide intial parameters for both Windows and Linux environments running in the cloud
