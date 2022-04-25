@@ -23,7 +23,7 @@ series = ["Terraform"]
 # Overview
 Using Terraform to deploy virtual machines in Proxmox. This is designed with Proxmox Virtual Environment version 7.1 in mind. 
 
-**Check out all of the configuration files on [GitHub](https://github.com/Cinderblook/Proxmox-VM-Deploy) at the repository!**
+**Check out all of the configuration files on [GitHub](https://github.com/Cinderblook/tacklebox/tree/main/Terraform/Proxmox/deploy-vm) at the repository!**
 
 # Purpose
 I have a Proxmox server in my homelab, and wanted to have an easier way to spin up virtual machines on an as needed basis.
