@@ -1,0 +1,45 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Austin Barnes</title><link>https://www.cinderblook.com/posts/</link><description>Recent content in Posts on Austin Barnes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Wed, 27 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.cinderblook.com/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Terraform - Converting Azure Resources</title><link>https://www.cinderblook.com/posts/2022/04/terraform-converting-azure-resources/</link><pubDate>Wed, 27 Apr 2022 00:00:00 +0000</pubDate><guid>https://www.cinderblook.com/posts/2022/04/terraform-converting-azure-resources/</guid><description>Overview Convert existing resources in Azure to Terraform files (Terrafy/aztfy)
+Microsoft Recently released a sweet tool called aztfy. This enables you to &amp;rsquo;terrafy&amp;rsquo; existing Azure resources. This effectively allows for total conversions of existing data in Azure to be modified and updated/managed using Terraform. Whether it be for backup reasons, future management of resource changes, or cloud implmentation purposes, this could prove extremely useful. Prerequisites Have Go installed in your dev environment For Windows, go to this site and install Go Go to Microsoft&amp;rsquo;s Azure Aztfy Github Page Pull the repository to your local machine and install the go module they provide for aztfy git clone https://github.</description><content type="html"><![CDATA[<h1 id="overview">Overview</h1>
+<p>Convert existing resources in Azure to Terraform files (Terrafy/aztfy)</p>
+<ul>
+<li>Microsoft Recently released a sweet tool called aztfy. This enables you to &rsquo;terrafy&rsquo; existing Azure resources. This effectively allows for total conversions of existing data in Azure to be modified and updated/managed using Terraform. Whether it be for backup reasons, future management of resource changes, or cloud implmentation purposes, this could prove extremely useful.</li>
+</ul>
+<h1 id="prerequisites">Prerequisites</h1>
+<ul>
+<li>Have Go installed in your dev environment
+<ul>
+<li>For Windows, go to <a href="https://go.dev/doc/install">this site</a> and install Go</li>
+</ul>
+</li>
+<li>Go to Microsoft&rsquo;s Azure Aztfy <a href="https://github.com/Azure/aztfy">Github Page</a>
+<ul>
+<li>Pull the repository to your local machine and install the go module they provide for aztfy
+<ul>
+<li>
+<pre tabindex="0"><code>git clone https://github.com/Azure/aztfy
+cd &#34;Directory-You-Cloned-To&#34;
+go install 
+</code></pre></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="using-aztfy">Using Aztfy</h1>
+<p>Once you have a resource group in Azure, you can run the following command to pull specific resources from that group</p>
+<ul>
+<li><code>aztfy Azure-Resource-Group-Here</code></li>
+</ul>
+<p>From here, you can navigate each individual resource within that group and import them individually from Azure to your local machine. It generates the .tf files, terraform state files, and all necessary JSON components.</p>
+<ul>
+<li>Example of Aztfy Result:
+<img src="/aztfy-example1.png" alt="JRCustomHomes" title="aztfy-example1"></li>
+</ul>
+<p>Navigate into directory you cloned aztfy to, and double check the clone worked by attempting a <code>terraform apply</code> and if it says no changes needed, you are solid!</p>
+<h1 id="useful-resources">Useful Resources</h1>
+<h2 id="terraform-resources">Terraform Resources</h2>
+<ul>
+<li>Microsoft <a href="https://techcommunity.microsoft.com/t5/azure-tools-blog/announcing-azure-terrafy-and-azapi-terraform-provider-previews/ba-p/3270937">Blog Post</a></li>
+<li>Azure <a href="https://docs.microsoft.com/en-us/azure/developer/terraform/overview-azapi-provider">Documentation for AzAPI</a></li>
+</ul>
+]]></content></item></channel></rss>
