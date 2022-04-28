@@ -187,6 +187,10 @@ disableHugoGeneratorInject = false
     name       = "Projects"
     url        = "/projects"
   [[menu.main]]
+    identifier = "post"
+    name       = "Posts"
+    url        = "/posts"
+  [[menu.main]]
     identifier = "about"
     name       = "About"
     url        = "/about"
@@ -194,7 +198,7 @@ disableHugoGeneratorInject = false
     identifier = "sites"
     name       = "Sites"
     url        = "/sites"
-  #[[menu.main]]
-  #  identifier = "tags"
-  #  name       = "Tags"
-  #  url        = "/tags"
+  [[menu.main]]
+    identifier = "tags"
+    name       = "Tags"
+    url        = "/tags"
