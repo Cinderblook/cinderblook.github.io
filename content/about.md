@@ -1,5 +1,6 @@
 +++
 title = "About"
+description = "Cinderblook, a site by Austin Barnes"
 date = "2022-03-30"
 aliases = ["about-us","about-austin","about-cinderblook","contact"]
 [ author ]
@@ -7,11 +8,24 @@ aliases = ["about-us","about-austin","about-cinderblook","contact"]
 +++
 
 # Hello, and Welcome!
+Welcome to my site, Cinderblook.com. This is a side project of mine, where I may put anything and everything on here. 
+<br><br>
 I am a tech enthusiast. Professionaly I'm a Network Speciliast working at Jersey Shore Area School District, and I am enrolled at Pennsylvania College of Technology in the Network Admnistration and Engineering Bachelor's undergraduate program.
-
+<br> <br>
 In my free time I like to tackle mini projects of all sort. This site being one of them. 
 
-# Interests of mine:
+## Items on this page:
+  - [Interests of mine:](#interests-of-mine)
+    - [Information Technology related](#information-technology-related)
+    - [Outside of Tech](#outside-of-tech)
+  - [Education Background](#education-background)
+    - [Certifications](#certifications)
+  - [Professional Experience](#professional-experience)
+  - [Professional Projects](#professional-projects)
+
+--------
+
+## Interests of mine:
 ### Information Technology related 
 * IaaS with the Terraform platform
 * All things Networking
@@ -19,8 +33,11 @@ In my free time I like to tackle mini projects of all sort. This site being one 
   * Homelab Networking
   * Cloud Networking
 * Dabbling in mostly AWS and Azure cloud
-* Homelab stuff powered by Proxmox and Kubernetes
-* Websites mostly built with Wordpress & Hugo
+* Homelab
+  *  Powered by Proxmox
+  *  Kubernetes
+  *  Much more
+* Websites - built with Wordpress & Hugo
 * Kubernetes! K3s and Rancher
 
 ### Outside of Tech
@@ -29,7 +46,9 @@ In my free time I like to tackle mini projects of all sort. This site being one 
 * Hiking
 * Hunting/Fishing
 
-# Education Background
+--------
+
+## Education Background
 * **Pennyslvania College of Technology**
   * Bachelors of Sciense - Network Administration and Engineering
   * Associates of Applied Science -  Network and User Support
@@ -39,7 +58,21 @@ In my free time I like to tackle mini projects of all sort. This site being one 
 * CompTIA **Security +**
 * Actively working on **CCNA**
 
-# Professional Projects/Experience
+--------
+
+## Professional Experience
+* **Jersey Shore Area School District**
+  * Part-Time Network Technician | June 2020 - Present 
+
+  * Information Technology Intern | August 2018 - May 2020
+
+* **Nuweld Inc**
+  * Contract Technician | March 2020 - April 2020    
+  
+
+--------
+
+## Professional Projects
 * Imaging System using Microsoft Deployment Toolkit with Windows Deployment Services
   * Automation of Driver injection, Software deployment, Updates, and Windows Environment setup
   * Custom crafted .wim Images 

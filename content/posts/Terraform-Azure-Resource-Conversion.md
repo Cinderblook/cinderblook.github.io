@@ -1,5 +1,5 @@
 +++
-title = "Terraform - Converting Azure Resources"
+title = "'Terrifying' or Converting Azure Resources into Terraform Code"
 description = "Converting Azure resources to Terraform resources"
 type = ["posts","post"]
 tags = [
