@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" href="/favicon.svg">
+
+  <title>
+    K3S - Highly-Available-Rancher - Austin Barnes
+  </title>
+  <meta name="description" content="Highly Available K3s" />
+  <meta name="author" content="Austin Barnes" />
+  <meta name="generator" content="Hugo 0.98.0" /><link
+    rel="stylesheet"
+    href="https://www.cinderblook.com/css/styles.min.4c4284cce4f1e6121443c34e1affc66a4652d581177c59a97bd6ea162a1b07fa.css"
+    integrity="sha256-TEKEzOTx5hIUQ8NOGv/GakZS1YEXfFmpe9bqFiobB/o="
+  />
+  
+  
+
+  <meta property="og:title" content="K3S - Highly-Available-Rancher" />
+<meta property="og:description" content="Highly Available K3s" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.cinderblook.com/blog/k3s-highly-available-rancher/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2022-03-06T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-03-06T00:00:00+00:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="K3S - Highly-Available-Rancher"/>
+<meta name="twitter:description" content="Highly Available K3s"/>
+
+  <meta itemprop="name" content="K3S - Highly-Available-Rancher">
+<meta itemprop="description" content="Highly Available K3s"><meta itemprop="datePublished" content="2022-03-06T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-03-06T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1342">
+<meta itemprop="keywords" content="Rancher,automation,Kubernetes,K3s," />
+</head>
+<body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
+  <a href="https://www.cinderblook.com/" class="capitalize font-extrabold text-2xl">
+    
+    Austin Barnes
+    
+  </a>
+  <button class="mobile-menu-button md:hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <line x1="4" y1="8" x2="20" y2="8" />
+      <line x1="4" y1="16" x2="20" y2="16" />
+    </svg>
+  </button>
+  <ul class="mobile-menu absolute z-10 px-6 pb-6 md:p-0 top-full left-0 w-full md:w-auto md:relative hidden md:flex flex-col md:flex-row items-end md:items-center gap-4 lg:gap-6 bg-white dark:bg-gray-800">
+
+    
+    <li><a href="/blog">Blog</a></li>
+    
+    <li><a href="/page/about/">About</a></li>
+    
+    <li><a href="/tags">Tags</a></li>
+    
+    <li><a href="/page/sites/">Sites</a></li>
+    
+
+    
+
+    
+    <li class="grid place-items-center">
+      <span class="open-search inline-block cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <circle cx="10" cy="10" r="7" />
+          <line x1="21" y1="21" x2="15" y2="15" />
+        </svg>
+      </span>
+    </li>
+    
+
+    
+    <li class="grid place-items-center">
+      <span class="toggle-dark-mode inline-block cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <circle cx="12" cy="12" r="3" />
+          <line x1="12" y1="5" x2="12" y2="5.01" />
+          <line x1="17" y1="7" x2="17" y2="7.01" />
+          <line x1="19" y1="12" x2="19" y2="12.01" />
+          <line x1="17" y1="17" x2="17" y2="17.01" />
+          <line x1="12" y1="19" x2="12" y2="19.01" />
+          <line x1="7" y1="17" x2="7" y2="17.01" />
+          <line x1="5" y1="12" x2="5" y2="12.01" />
+          <line x1="7" y1="7" x2="7" y2="7.01" />
+        </svg>
+      </span>
+    </li>
+    
+  </ul>
+</header>
+<main class="flex-1">
+  
+  
+
+  
+  <div class="relative max-w-5xl mx-auto px-4">
+    <img src="/covers/k3sRancher.png" class="rounded-lg shadow-sm w-full object-contain" />
+    <div class="absolute top-4 right-8 rounded shadow bg-white text-gray-900 dark:bg-gray-900 dark:text-white px-2 py-0.5">
+      
+  
+    March 6, 2022
+  
+
+
+    </div>
+  </div>
+  
+
+  <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
+
+    <h1 class="text-2xl font-bold mb-2">K3S - Highly-Available-Rancher</h1>
+    <h5 class="text-sm flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <rect x="4" y="5" width="16" height="16" rx="2" />
+        <line x1="16" y1="3" x2="16" y2="7" />
+        <line x1="8" y1="3" x2="8" y2="7" />
+        <line x1="4" y1="11" x2="20" y2="11" />
+        <rect x="8" y="15" width="2" height="2" />
+      </svg>
+      Posted on 
+  
+    March 6, 2022
+  
+
+
+      
+        &nbsp;&bull;&nbsp;
+      
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <circle cx="12" cy="12" r="9" />
+        <polyline points="12 7 12 12 15 15" />
+      </svg>
+      7&nbsp;minutes
+      &nbsp;&bull;
+      <svg xmlns="http://www.w3.org/2000/svg" class="mx-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <line x1="3" y1="6" x2="3" y2="19" />
+        <line x1="12" y1="6" x2="12" y2="19" />
+        <line x1="21" y1="6" x2="21" y2="19" />
+      </svg>
+      1342&nbsp;words
+      
+    </h5>
+
+    <h1 id="overview">Overview</h1>
+<p>Getting started with K3S: <br>
+The primary goal here is to setup a functional highly available K3S cluster. This will include 4 necessary steps:</p>
+<ol>
+<li>Setup NGINX Loadbalancer Docker</li>
+<li>Setup MySQL Docker</li>
+<li>Setup Highly Available K3s Cluster</li>
+<li>(Optional) Setup management from dev machine (Controller)</li>
+<li>Setup Rancher as a container within the cluster</li>
+</ol>
+<p><strong>Check out all of the configuration files on <a href="https://github.com/Cinderblook/tacklebox/tree/main/Kubernetes/k3s-HACluster-Rancher">GitHub</a> at the repository!</strong></p>
+<h1 id="prerequisites">Prerequisites</h1>
+<ul>
+<li>Have a dedicated Docker host virtual machine, preferrably linux</li>
+<li>Have 5 Linux virtual machines ready
+<ul>
+<li>Two will be Master Nodes, and Three will be worker nodes. Each will have a dedicated IP address.</li>
+</ul>
+</li>
+</ul>
+<p>I personally ran all of my linux Virtual Machines as Ubuntu Server 20.04</p>
+<h1 id="1-setup-nginx-loadbalancer-docker">1. Setup NGINX Loadbalancer Docker</h1>
+<p>Log into your dedicated docker linux host and create a NGINX Loadbalancer using docker <br>
+Ensure docker-compose is installed</p>
+<ul>
+<li><code>sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose</code></li>
+<li><code>sudo chmod +x /usr/local/bin/docker-compose</code></li>
+</ul>
+<p>After setup, create a directory for nginx, and create a file called docker-compose.yml with the following contents</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#ff79c6">version</span>: <span style="color:#f1fa8c">&#39;3&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">services</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">nginx</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">image</span>: nginx:latest
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">container_name</span>: nginx
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">volumes</span>:
+</span></span><span style="display:flex;"><span>      - ./nginx.conf:/etc/nginx/nginx.conf
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">ports</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#bd93f9">80</span>:<span style="color:#bd93f9">80</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#bd93f9">443</span>:<span style="color:#bd93f9">443</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#bd93f9">6443</span>:<span style="color:#bd93f9">6443</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">restart</span>: <span style="color:#ff79c6">on</span>-failure
+</span></span></code></pre></div><ul>
+<li>In the same directorty, create a nginx.conf file with the following contet:
+<ul>
+<li><em>change &lt;IP_MASTER_NODE1 &amp; 2&gt; to your two node IP addresses. Change &lt;IP_NODE_1,2,3&gt; to Worker Node IPs</em></li>
+</ul>
+</li>
+</ul>
+<pre tabindex="0"><code class="language-conf" data-lang="conf">events{}
+ 
+ stream {
+     upstream k3s_servers {
+         server &lt;IP_MASTER_NODE_1&gt;:6443;
+         server &lt;IP_MASTER_NODE_2&gt;:6443;
+     }
+ 
+     server {
+         listen 6443;
+         proxy_pass k3s_servers;
+     }
+     upstream rancher_servers_http {
+ 	    least_conn;
+ 	    server &lt;IP_NODE_1&gt;:80 max_fails=3 fail_timeout=5s;
+ 	    server &lt;IP_NODE_2&gt;:80 max_fails=3 fail_timeout=5s;
+ 	    server &lt;IP_NODE_3&gt;:80 max_fails=3 fail_timeout=5s;
+ 	}
+ 	server {
+ 	    listen 80;
+ 	    proxy_pass rancher_servers_http;
+ 	}
+ 	
+ 	upstream rancher_servers_https {
+ 	    least_conn;
+ 	    server &lt;IP_NODE_1&gt;:443 max_fails=3 fail_timeout=5s;
+ 	    server &lt;IP_NODE_2&gt;:443 max_fails=3 fail_timeout=5s;
+ 	    server &lt;IP_NODE_3&gt;:443 max_fails=3 fail_timeout=5s;
+ 	}
+ 	server {
+ 	    listen     443;
+ 	    proxy_pass rancher_servers_https;
+ 	}
+}
+</code></pre><ul>
+<li>Commands to setup:
+<ul>
+<li>Change nginx.conf file to match your configuration</li>
+<li>Enter file directory of nginx and apply <code>sudo docker-compose up -d</code></li>
+</ul>
+</li>
+</ul>
+<h1 id="2-setup-mysql-docker">2. Setup MySQL Docker</h1>
+<p>On the same dedicated docker host that the nginx loadbalancer is running on:
+Create new directory for mysql and put a docker-compose.yml file in it with the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">version</span>: <span style="color:#f1fa8c">&#39;3.1&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">services</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">mysql</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">image</span>: mysql:latest
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">restart</span>: always
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">container_name</span>: mysql
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">ports</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#bd93f9">3306</span>:<span style="color:#bd93f9">3306</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">expose</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f1fa8c">&#34;3306&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">volumes</span>:
+</span></span><span style="display:flex;"><span>      - ./mysql-data:/var/lib/mysql/
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">environment</span>:
+</span></span><span style="display:flex;"><span>      - MYSQL_ROOT_PASSWORD=enter-your-password
+</span></span></code></pre></div><p>Commands to setup:</p>
+<ul>
+<li>Enter file directory of mysql and apply <code>sudo docker-compose up -d</code></li>
+<li>Enter the docker to execute commands
+<ul>
+<li><code>sudo docker exec -it mysql bash</code></li>
+</ul>
+</li>
+<li><code>mysql -p</code>  <em>(Enter password)</em></li>
+<li>Next, create the database and assign a user to it to be used with the K3s cluster within the mysql bash shell using the following SQL commands.
+<ul>
+<li><em>Change &lsquo;password&rsquo; and &lsquo;user&rsquo; to your desired variables</em></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#ff79c6">CREATE</span> <span style="color:#ff79c6">DATABASE</span> k3s <span style="color:#ff79c6">COLLATE</span> latin1_swedish_ci;
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">CREATE</span> <span style="color:#ff79c6">USER</span> ‘<span style="color:#ff79c6">user</span>’<span style="color:#ff79c6">@</span>’<span style="color:#ff79c6">%</span>’ IDENTIFIED <span style="color:#ff79c6">BY</span> ‘password’;
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">GRANT</span> <span style="color:#ff79c6">ALL</span> <span style="color:#ff79c6">ON</span> k3s.<span style="color:#ff79c6">*</span> <span style="color:#ff79c6">TO</span> <span style="color:#f1fa8c">&#39;user&#39;</span><span style="color:#ff79c6">@</span><span style="color:#f1fa8c">&#39;%&#39;</span>;
+</span></span><span style="display:flex;"><span>FLUSH <span style="color:#ff79c6">PRIVILEGES</span>;
+</span></span></code></pre></div></li>
+</ul>
+<p>To Note: the Database <em>MUST</em> be <em>latin1_swedish_ci</em></p>
+<h1 id="3-setup-highly-available-k3s-cluster">3. Setup Highly Available K3s Cluster</h1>
+<p>These will be setup in three steps. The first, setting up the first master node in the K3s cluster. Then, joining an additional master node. Finally, adding the worker nodes.</p>
+<h2 id="1-primary-master-node-setup">1. Primary Master Node setup</h2>
+<p>On the first Server node run these commands:</p>
+<ul>
+<li><code>export K3S_DATASTORE_ENDPOINT='mysql://user:password@tcp(sqlhost:3306)/database-name</code>
+<ul>
+<li><em>Change values to your database values. &lsquo;user&rsquo;, &lsquo;password&rsquo;, &lsquo;sqlhost&rsquo;, &lsquo;database-name&rsquo;</em></li>
+</ul>
+</li>
+<li><code>curl -sfL https://get.k3s.io | sh -s - server --node-taint CriticalAddonsOnly=true:NoExecute --tls-san 'Load-Balancer-Address'</code></li>
+</ul>
+<p>After it has connected and you can successfully, check and ensure you can see the node with <code>sudo kubectl get nodes</code></p>
+<ul>
+<li>Obtain node-token from <code>sudo cat /var/lib/rancher/k3s/server/node-token</code>
+<ul>
+<li><em>This will be used in the next steps to join the second master node and the workers</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="2-secondary-master-node-setup">2. Secondary Master Node setup</h2>
+<p>On additional server nodes:</p>
+<ul>
+<li><code>export K3S_DATASTORE_ENDPOINT='mysql://user:password@tcp(sqlhost:3306)/database-name</code>
+<ul>
+<li><em>Change values to your database values. &lsquo;user&rsquo;, &lsquo;password&rsquo;, &lsquo;sqlhost&rsquo;, &lsquo;database-name&rsquo;</em></li>
+</ul>
+</li>
+<li><code>Curl -sfL https://get.k3s.io | sh -s - server --node-taint CriticalAddonsOnly=true:NoExecute --tls-san 'Load-Balancer-Address' --token server-token-here sh -</code>
+<ul>
+<li><em>Change values to your database values. &lsquo;Load-Balancer-Address&rsquo;, &lsquo;server-token-here&rsquo;</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="3-worker-node-setup">3. Worker Node Setup</h2>
+<p>On all client agents to be added to cluster</p>
+<ul>
+<li><code>export K3S_DATASTORE_ENDPOINT='mysql://user:password@tcp(sqlhost:3306)/database-name'</code>
+<ul>
+<li><em>Change values to your database values. &lsquo;user&rsquo;, &lsquo;password&rsquo;, &lsquo;sqlhost&rsquo;, &lsquo;database-name&rsquo;</em></li>
+</ul>
+</li>
+<li><code>curl -sfL https://get.k3s.io | K3S_URL=https://'Load-Balance-Address':6443 K3S_TOKEN=server-token-here sh -</code>
+<ul>
+<li><em>Change values to your database values. &lsquo;Load-Balancer-Address&rsquo;, &lsquo;K3S_TOKEN=server-token-here&rsquo;</em></li>
+</ul>
+</li>
+</ul>
+<h1 id="4-optional-setup-management-from-dev-machine-controller">4. (Optional) Setup management from dev machine (Controller)</h1>
+<p>Once Cluster has been setup</p>
+<ul>
+<li>install k3s on controller machine w/ <code>curl -LO &quot;https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl&quot;</code></li>
+<li>On a server node run:
+<ul>
+<li><code>sudo nano /etc/rancher/k3s/k3s.yaml</code></li>
+</ul>
+</li>
+<li>Copy contents of that file to a file on your dev machine at location /home/user/.kube/config
+<ul>
+<li><em>Change IP address in config to match your Load Balancer</em></li>
+</ul>
+</li>
+<li>verify it is working w/ <code>kubectl cluster-info</code></li>
+</ul>
+<p>You can now control your K3s cluster from another machine, outside of the cluster!</p>
+<h1 id="5-setup-rancher-as-a-container-within-the-cluster">5. Setup Rancher as a container within the cluster</h1>
+<p>Deploying Rancher on Workers using Helm <br>
+This deployment will be using the self-generated Rancher Certificate. <br>
+Either from a Master Node, or the Controller machine (If you followed step 4):</p>
+<ol>
+<li>
+<p>Add the Helm Chart Repository</p>
+<ul>
+<li>Install helm
+<ul>
+<li><code>curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3</code></li>
+<li><code>chmod 700 get_helm.sh</code></li>
+<li><code>./get_helm.sh</code></li>
+</ul>
+</li>
+<li>Use Stable release: <code>helm repo add rancher-stable https://releases.rancher.com/server-charts/stable</code></li>
+</ul>
+</li>
+<li>
+<p>Create Namespace within K3s for Rancher</p>
+<ul>
+<li><code>kubectl create namespace cattle-system</code></li>
+</ul>
+</li>
+<li>
+<p>Install Cert Manager (Required for self-hosted cert)</p>
+<ul>
+<li><code>kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v1.5.1/cert-manager.crds.yaml</code></li>
+<li><code>helm repo add jetstack https://charts.jetstack.io</code></li>
+<li><code>helm repo update</code></li>
+<li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> helm install cert-manager jetstack/cert-manager <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>  --namespace cert-manager <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>  --create-namespace <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>  --version v1.5.1
+</span></span></code></pre></div><em>If you experience an issue running this, such as localhost:8080 error, add KUBECONFIG as an environment variable to fix it:</em> <code>export KUBECONFIG=/etc/rancher/k3s/k3s.yaml</code>
+<em>If that does not fix it, ensure the .kube config file exists in the proper locaiton</em> <code>kubectl config view --raw &gt; ~/.kube/config</code></li>
+<li>Verify it is working w/ <code>kubectl get pods --namespace cert-manager</code></li>
+</ul>
+</li>
+<li>
+<p>Install Rancher using Helm</p>
+<ul>
+<li>
+<pre tabindex="0"><code>  helm install rancher rancher-stable/rancher \
+  --namespace cattle-system \
+  --set hostname=port.lan \
+  --set replicas=3 \
+  --set bootstrapPassword=password
+</code></pre></li>
+<li>Check on deployment w/ <code>kubectl -n cattle-system rollout status deploy/rancher</code></li>
+<li>Once finished, obtain info on deployment w/ <code>kubectl -n cattle-system get deploy rancher</code></li>
+</ul>
+</li>
+<li>
+<p>Once Rancher is deployed</p>
+<ul>
+<li>Navigate to {LoadBalancer-DNS} site
+<ul>
+<li><em>It must be the DNS entry of the Load Balancer due to the certification. An IP adddress will NOT work</em></li>
+</ul>
+</li>
+<li>Find your secret using command given at site login, and log into the site</li>
+</ul>
+</li>
+</ol>
+<p>Bam, Rancher installed, and it is now highly available.</p>
+<h2 id="troubeshooting-rancher">Troubeshooting Rancher</h2>
+<ul>
+<li>If you must uninstall and reinstall Rancher for any reason, I recommend these steps (They are painful)
+<ul>
+<li>For the name spaces affecting Rancher Directly,</li>
+<li><code>sudo kubectl delete namespace namespace-name</code></li>
+<li>Check it w/ <code>kubectl get ns</code></li>
+<li>If stuck in terminating, <code>kubectl edit ns namespace-name</code>
+<ul>
+<li>Delete everything under the finalizer: fields (Sometimes there are two.)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="useful-resources--commands">Useful Resources &amp; Commands</h1>
+<h2 id="useful-docker-commands">Useful Docker Commands</h2>
+<ul>
+<li>The load balancer and database are setup using Docker-compose
+<ul>
+<li>Useful Docker compose commands:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>	<span style="color:#6272a4"># Sping up a docker based on docker-compose.yml file</span>
+</span></span><span style="display:flex;"><span>	docker-compose up -f <span style="color:#f1fa8c">&#39;filenamehere&#39;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#6272a4"># Sping up a docker and keep it running</span>
+</span></span><span style="display:flex;"><span>	docker-compose up -d
+</span></span><span style="display:flex;"><span>	<span style="color:#6272a4"># Find list of running docker processes</span>
+</span></span><span style="display:flex;"><span>	docker ps
+</span></span><span style="display:flex;"><span>	<span style="color:#6272a4"># Get into shell of a running docker</span>
+</span></span><span style="display:flex;"><span>	docker <span style="color:#8be9fd;font-style:italic">exec</span> -it <span style="color:#ff79c6">[</span>option<span style="color:#ff79c6">]</span> bash
+</span></span><span style="display:flex;"><span>	<span style="color:#6272a4"># Update running docker with new configuration changes</span>
+</span></span><span style="display:flex;"><span>	docker-compose up -d --force-recreate
+</span></span></code></pre></div><pre tabindex="0"><code></code></pre></li>
+</ul>
+<h2 id="useful-kubectl-commands">Useful Kubectl Commands</h2>
+<ul>
+<li>Kubernetes commands (Mostly pulled from <a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/">kubectl cheat sheet</a>)
+<ul>
+<li>Finding ressources</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Get commands with basic output
+</span></span><span style="display:flex;"><span>bectl config view 						  <span style="color:#6272a4"># Show Merged kubeconfig settings.</span>
+</span></span><span style="display:flex;"><span>beclt get nodes							  <span style="color:#6272a4"># Show all nodes in the cluster</span>
+</span></span><span style="display:flex;"><span>bectl get services                          <span style="color:#6272a4"># List all services in the namespace</span>
+</span></span><span style="display:flex;"><span>bectl get pods --all-namespaces             <span style="color:#6272a4"># List all pods in all namespaces</span>
+</span></span><span style="display:flex;"><span>bectl get pods -o wide                      <span style="color:#6272a4"># List all pods in the current namespace, with more details</span>
+</span></span><span style="display:flex;"><span>bectl get deployment my-dep                 <span style="color:#6272a4"># List a particular deployment</span>
+</span></span><span style="display:flex;"><span>bectl get pods                              <span style="color:#6272a4"># List all pods in the namespace</span>
+</span></span><span style="display:flex;"><span>bectl get pod my-pod -o yaml                <span style="color:#6272a4"># Get a pod&#39;s YAML```</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Describe commands with verbose output
+</span></span><span style="display:flex;"><span>bectl describe nodes my-node
+</span></span><span style="display:flex;"><span>bectl describe pods my-pod
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>List Services Sorted by Name
+</span></span><span style="display:flex;"><span>bectl get services --sort-by<span style="color:#ff79c6">=</span>.metadata.name
+</span></span></code></pre></div><pre tabindex="0"><code>Updating resources
+`bash
+bectl set image deployment/frontend www=image:v2               # Rolling update &#34;www&#34; containers of &#34;frontend&#34; deployment, 	updating the image
+bectl rollout history deployment/frontend                      # Check the history of deployments including the revision 
+bectl rollout undo deployment/frontend                         # Rollback to the previous deployment
+bectl rollout undo deployment/frontend --to-revision=2         # Rollback to a specific revision
+bectl rollout status -w deployment/frontend                    # Watch rolling update status of &#34;frontend&#34; deployment until 	completion
+bectl rollout restart deployment/frontend                      # Rolling restart of the &#34;frontend&#34; deployment
+</code></pre><pre tabindex="0"><code>Allow kubectl without sudo priviledge `sudo chmod 644 /etc/rancher/k3s/k3s.yaml`
+</code></pre></li>
+</ul>
+<h2 id="resources">Resources</h2>
+<ul>
+<li>Shout out to <a href="https://github.com/TheQuib/k3s">TheQuib</a> I thank him for his collaboration on this</li>
+<li>Rancher <a href="https://rancher.com/docs/k3s/latest/en/">Documentation</a></li>
+<li>Docker Compose <a href="https://docs.docker.com/compose/">Documentation</a></li>
+</ul>
+
+  </article><div class="bg-blue-100 dark:bg-gray-900">
+  <div class="container px-6 py-12 mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <div>
+      <div class="text-2xl font-bold mb-2">Follow me</div>
+      <p class="opacity-60">I put a little bit of everything on here, so follow along in my journey if you wish</p>
+    </div>
+    <ul class="flex justify-center gap-4">
+      
+      
+      <li>
+        <a
+          href="https://www.linkedin.com/in/austin-barnes-03869218a/"
+          target="_blank"
+          rel="noopener"
+          aria-label="LinkedIn"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <rect x="4" y="4" width="16" height="16" rx="2" />
+            <line x1="8" y1="11" x2="8" y2="16" />
+            <line x1="8" y1="8" x2="8" y2="8.01" />
+            <line x1="12" y1="16" x2="12" y2="11" />
+            <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      <li>
+        <a
+          href="https://github.com/Cinderblook"
+          target="_blank"
+          rel="noopener"
+          aria-label="GitHub"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+            />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      <li>
+        <a
+          href="https://www.buymeacoffee.com/cinderblook"
+          target="_blank"
+          rel="noopener"
+          aria-label="coffeescript"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M4.645 7.472c2.1.53 4.779.8 8.008.8 3.299 0 5.918-.27 8.008-.8 2.23-.52 3.299-1.22 3.299-1.88 0-.47-.48-.93-1.35-1.28.2.13.35.35.35.59 0 .67-1.01 1.22-3.039 1.68-1.88.41-4.279.7-7.198.7-2.82 0-5.329-.29-7.138-.68-1.95-.48-2.97-1-2.97-1.68 0-.28.13-.52.52-.8-1.22.47-1.88.87-1.88 1.47.07.68 1.16 1.36 3.39 1.88zm4.689-2.16c2.27-.2 2.929-1.659 5.588-1.899 1.31-.1 2.14.16 2.23.62.08.43-.57.72-1.36.78-1.09.11-1.54-.28-1.63-.65-.81.09-.94.43-.9.67.09.46 1.07.92 2.75.76 1.9-.15 2.54-.9 2.38-1.65-.2-.98-1.66-1.8-4.28-1.55-3.359.3-3.339 1.86-5.628 2.05-.94.09-1.46-.13-1.55-.5-.06-.37.4-.55.94-.59.5-.05 1.11.04 1.4.2.21-.11.28-.22.26-.35-.1-.35-.79-.5-1.66-.44-1.7.15-1.7.91-1.64 1.25.17.87 1.48 1.45 3.1 1.3zm11.417 3.84c-2.1.49-4.779.809-8.008.809-3.3 0-5.989-.34-8.078-.8-1.88-.48-2.88-1.01-3.23-1.56.18 1.23.49 2.42.89 3.55-.48.3-.91.67-1.3 1.17a4.519 4.519 0 00-1.019 3.098 3.6 3.599 0 001.42 2.62c.87.68 1.81.88 2.879.68.41-.07.87-.28 1.29-.42-.88 0-1.62-.28-2.36-.87a3.55 3.549 0 01-1.49-2.42c-.2-.94 0-1.81.53-2.579.12-.15.25-.28.39-.4.3.73.62 1.45.98 2.12.81 1.23 1.62 2.299 2.43 3.459.35.68.58 1.35.74 2.019a3.899 3.899 0 002.229 1.5c1.15.4 2.35.58 3.579.51h.13a10.197 10.197 0 003.689-.52 4.179 4.179 0 002.16-1.49h.07c.13-.67.35-1.34.67-2.02.799-1.17 1.619-2.229 2.419-3.458A20.995 20.993 0 0024 7.612c-.43.6-1.44 1.13-3.25 1.54z"/></svg>
+            <rect x="4" y="4" width="16" height="16" rx="2" />
+            <path d="M8 9h1l3 3l3 -3h1" />
+            <line x1="8" y1="15" x2="10" y2="15" />
+            <line x1="14" y1="15" x2="16" y2="15" />
+            <line x1="9" y1="9" x2="9" y2="15" />
+            <line x1="15" y1="9" x2="15" y2="15" />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a
+          href="https://www.instagram.com/austin_barnesz/"
+          target="_blank"
+          rel="noopener"
+          aria-label="Instagram"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-brand-instagram"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" />
+            <circle cx="12" cy="12" r="9" />
+            <path d="M10 9l5 3l-5 3z" />
+          </svg>
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+    </main><footer class="container p-6 mx-auto flex justify-between items-center">
+  <span class="text-sm font-light">
+    
+    Copyright © 2021 - Austin Barnes · All rights reserved
+    
+  </span>
+  <span onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="p-1 cursor-pointer">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5"
+      stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M18 15l-6 -6l-6 6h12" />
+    </svg>
+  </span>
+</footer>
+
+<div class="search-ui absolute top-0 left-0 w-full h-full bg-white dark:bg-gray-800 hidden">
+  <div class="container max-w-3xl mx-auto p-12">
+    <div class="relative">
+      <div class="my-4 text-center text-2xl font-bold">Search</div>
+
+      <span class="p-2 absolute right-0 top-0 cursor-pointer close-search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </span>
+    </div>
+
+    <input type="search" class="py-2 px-3 w-full dark:text-black border dark:border-transparent"
+      placeholder="Enter search query" />
+
+    <div class="search-results text-lg font-medium my-4 hidden">Results</div>
+    <ul class="search-list my-2">
+
+    </ul>
+
+    <div class="no-results text-center my-8 hidden">
+      <div class="text-xl font-semibold mb-2">No results found</div>
+      <p class="font-light text-sm">Try adjusting your search query</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<script src="https://www.cinderblook.com/js/scripts.min.js"></script>
+
+
+
+
+
+
+<script>
+  
+  const darkmode = document.querySelector('.toggle-dark-mode');
+  function toggleDarkMode() {
+    if (document.documentElement.classList.contains('dark')) {
+      document.documentElement.classList.remove('dark')
+      localStorage.setItem('darkmode', 'light')
+    } else {
+      document.documentElement.classList.add('dark')
+      localStorage.setItem('darkmode', 'dark')
+    }
+  }
+  if (darkmode) {
+    darkmode.addEventListener('click', toggleDarkMode);
+  }
+
+  const darkStorage = localStorage.getItem('darkmode');
+  const isBrowserDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  if (!darkStorage && isBrowserDark) {
+    document.documentElement.classList.add('dark');
+  }
+
+  if (darkStorage && darkStorage === 'dark') {
+    toggleDarkMode();
+  }
+</script>
+
+
+<script>
+  const mobileMenuButton = document.querySelector('.mobile-menu-button')
+  const mobileMenu = document.querySelector('.mobile-menu')
+  function toggleMenu() {
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('flex');
+  }
+  if(mobileMenu && mobileMenuButton){
+    mobileMenuButton.addEventListener('click', toggleMenu)
+  }
+</script>
+</body>
+</html>

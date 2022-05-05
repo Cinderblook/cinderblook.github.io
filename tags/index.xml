@@ -1,1 +1,128 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tags on Austin Barnes</title><link>https://www.cinderblook.com/tags/</link><description>Recent content in Tags on Austin Barnes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://www.cinderblook.com/tags/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Austin Barnes</title>
+    <link>https://www.cinderblook.com/tags/</link>
+    <description>Recent content in Tags on Austin Barnes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 27 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.cinderblook.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>automation</title>
+      <link>https://www.cinderblook.com/tags/automation/</link>
+      <pubDate>Wed, 27 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.cinderblook.com/tags/automation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>aztfy</title>
+      <link>https://www.cinderblook.com/tags/aztfy/</link>
+      <pubDate>Wed, 27 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.cinderblook.com/tags/aztfy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>azure</title>
+      <link>https://www.cinderblook.com/tags/azure/</link>
+      <pubDate>Wed, 27 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.cinderblook.com/tags/azure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>terraform</title>
+      <link>https://www.cinderblook.com/tags/terraform/</link>
+      <pubDate>Wed, 27 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.cinderblook.com/tags/terraform/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>windows-server</title>
+      <link>https://www.cinderblook.com/tags/windows-server/</link>
+      <pubDate>Wed, 27 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.cinderblook.com/tags/windows-server/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>proxmox</title>
+      <link>https://www.cinderblook.com/tags/proxmox/</link>
+      <pubDate>Thu, 14 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.cinderblook.com/tags/proxmox/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>aks</title>
+      <link>https://www.cinderblook.com/tags/aks/</link>
+      <pubDate>Mon, 04 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.cinderblook.com/tags/aks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kubernetes</title>
+      <link>https://www.cinderblook.com/tags/kubernetes/</link>
+      <pubDate>Mon, 04 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.cinderblook.com/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>K3s</title>
+      <link>https://www.cinderblook.com/tags/k3s/</link>
+      <pubDate>Sun, 06 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.cinderblook.com/tags/k3s/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rancher</title>
+      <link>https://www.cinderblook.com/tags/rancher/</link>
+      <pubDate>Sun, 06 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.cinderblook.com/tags/rancher/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ansible</title>
+      <link>https://www.cinderblook.com/tags/ansible/</link>
+      <pubDate>Mon, 28 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.cinderblook.com/tags/ansible/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>packer</title>
+      <link>https://www.cinderblook.com/tags/packer/</link>
+      <pubDate>Mon, 14 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.cinderblook.com/tags/packer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vsphere</title>
+      <link>https://www.cinderblook.com/tags/vsphere/</link>
+      <pubDate>Mon, 14 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.cinderblook.com/tags/vsphere/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

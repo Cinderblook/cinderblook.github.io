@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vsphere on Austin Barnes</title>
+    <link>https://www.cinderblook.com/tags/vsphere/</link>
+    <description>Recent content in vsphere on Austin Barnes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 14 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.cinderblook.com/tags/vsphere/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Terraform - vSphere-WinServ-Deployment</title>
+      <link>https://www.cinderblook.com/blog/terraform-vsphere-winserv-deployment/</link>
+      <pubDate>Mon, 14 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.cinderblook.com/blog/terraform-vsphere-winserv-deployment/</guid>
+      <description>Overview The goal of this project is to deploy a ready-to-go windows server environment. This includes a domain controller, a replica domain controller, a DHCP server, and a fileserver. Additionally setting up users, groups, and OUs for the respective users within the domain. To complete this project, 3 steps are taken.
+ Use Packer to spin up a sys prepped and fully updated windows server 2022 iso for the environemnt Use Terraform to deploy 4 virtual machines into a vSphere environment Use Ansible to configure these 4 virtual machines as desired  Check out all of the configuration files on GitHub at the repository!</description>
+    </item>
+    
+  </channel>
+</rss>
