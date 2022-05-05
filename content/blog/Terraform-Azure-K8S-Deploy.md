@@ -1,7 +1,7 @@
 ---
 author: "Austin Barnes"
-title: "Terraform - Azure-K8S-Deploy"
-description: "Terraform Automation in Azure with Kubernetes"
+title: "Terraform - Azure Kubernetes Deployment"
+description: "Terraform Automation in Azure with Kubernetes (AKS)"
 tags: [
     "terraform",
     "kubernetes",
@@ -10,7 +10,7 @@ tags: [
     "aks",
 ]
 date: 2022-04-04
-thumbnail: /covers/AzureK8S.png
+thumbnail: /covers/Terraform-DeployingKubernetesAKS.png
 ---
 
 # Overview
@@ -20,7 +20,7 @@ thumbnail: /covers/AzureK8S.png
  - Have Kubeconfig file available so it can be managed, changed, altered, destroyed, etc.
  - Ensure Kubeconfig file is secure, and is being encrypted with traffic involved in this
 
-**Check out all of the configuration files on [GitHub](https://github.com/Cinderblook/tacklebox/tree/main/Terraform/Azure/Azure-K8S-Deploy) at the repository!**
+**Check out all of the configuration files on [GitHub (Azure-K8S-Deploy)](https://github.com/Cinderblook/tacklebox/tree/main/Terraform/Azure/Azure-K8S-Deploy) at the repository!**
 
 # Steps to do this
 1. Have an Azure account; *if you are a student, sign up for a student account and get some free credits along side it.*

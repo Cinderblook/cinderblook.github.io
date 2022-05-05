@@ -1,7 +1,7 @@
 ---
 author: "Austin Barnes"
-title: "Terraform - vSphere-WinServ-Deployment"
-description: "Terraform Automation in vSphere with Windows Servers"
+title: "Terraform - vSphere Windows Server Deployment"
+description: "Terraform Automation in vSphere with Windows Servers. Creating an entire domain with DHCP, Filesharing, Active Dircetory, and more."
 tags: [
     "terraform",
     "ansible",
@@ -24,7 +24,7 @@ To complete this project, 3 steps are taken.
 2. Use Terraform to deploy 4 virtual machines into a vSphere environment
 3. Use Ansible to configure these 4 virtual machines as desired
 
-**Check out all of the configuration files on [GitHub](https://github.com/Cinderblook/tacklebox/tree/main/Terraform/vSphere/vSphere-WinServ-Deployment) at the repository!**
+**Check out all of the configuration files on [GitHub (vSphere-WinServ-Deployment)](https://github.com/Cinderblook/tacklebox/tree/main/Terraform/vSphere/vSphere-WinServ-Deployment) at the repository!**
 
 ## 1. Packer's Role: 
 

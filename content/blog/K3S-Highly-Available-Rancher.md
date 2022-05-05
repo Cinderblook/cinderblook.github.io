@@ -3,10 +3,10 @@ author: "Austin Barnes"
 title: "K3S - Highly-Available-Rancher"
 description: "Highly Available K3s"
 tags: [
-    "Rancher",
+    "rancher",
     "automation",
-    "Kubernetes",
-    "K3s",
+    "kubernetes",
+    "k3s",
 ]
 date: 2022-03-06
 thumbnail: /covers/k3sRancher.png
@@ -23,7 +23,7 @@ The primary goal here is to setup a functional highly available K3S cluster. Thi
 4. (Optional) Setup management from dev machine (Controller)
 5. Setup Rancher as a container within the cluster
 
-**Check out all of the configuration files on [GitHub](https://github.com/Cinderblook/tacklebox/tree/main/Kubernetes/k3s-HACluster-Rancher) at the repository!**
+**Check out all of the configuration files on [GitHub (k3s-HACluster-Rancher)](https://github.com/Cinderblook/tacklebox/tree/main/Kubernetes/k3s-HACluster-Rancher) at the repository!**
 
 # Prerequisites
 - Have a dedicated Docker host virtual machine, preferrably linux

@@ -1,7 +1,7 @@
 ---
 author: "Austin Barnes"
-title: "Terraform - Proxmox-VM-Deploy"
-description: "Terraform Automation in Proxmox"
+title: "Terraform - Proxmox Virtual Machine Deploy"
+description: "Terraform Automation in Proxmox to genereate a Virtual Machine from a template"
 tags: [
     "terraform",
     "automation",
@@ -14,7 +14,7 @@ thumbnail: /covers/ProxmoxHot.png
 # Overview
 Using Terraform to deploy virtual machines in Proxmox. This is designed with Proxmox Virtual Environment version 7.1 in mind. 
 
-**Check out all of the configuration files on [GitHub](https://github.com/Cinderblook/tacklebox/tree/main/Terraform/Proxmox/deploy-vm) at the repository!**
+**Check out all of the configuration files on [GitHub (proxmox-deploy-vm)](https://github.com/Cinderblook/tacklebox/tree/main/Terraform/Proxmox/deploy-vm) at the repository!**
 
 # Purpose
 I have a Proxmox server in my homelab, and wanted to have an easier way to spin up virtual machines on an as needed basis.

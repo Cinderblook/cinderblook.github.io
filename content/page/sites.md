@@ -11,6 +11,6 @@ type: about
 
 * A Custome Home Improvements website, [JR Custom Home Improvements](https://jrcustomhomeimprovements.com/)
 
-![JRCustomHomes](/jrrcustomhomes.png 'JR') 
+![JRCustomHomes](/sites/jrrcustomhomes.png 'JR') 
 
 

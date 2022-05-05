@@ -1,7 +1,7 @@
 ---
 author: "Austin Barnes"
 title: "'Terrifying' or Converting Azure Resources into Terraform Code"
-description: "Converting Azure resources to Terraform resources"
+description: "Converting Azure resources to Terraform resources. Converting static cloud infrastructure to state manageable configuration files."
 tags: [
     "terraform",
     "aztfy",
@@ -37,7 +37,7 @@ Once you have a resource group in Azure, you can run the following command to pu
 From here, you can navigate each individual resource within that group and import them individually from Azure to your local machine. It generates the .tf files, terraform state files, and all necessary JSON components. 
 
 * Example of Aztfy Result:
-![JRCustomHomes](/aztfy-example1.png 'aztfy-example1') 
+![JRCustomHomes](/examples/aztfy-example1.png 'aztfy-example1') 
 
 Navigate into directory you cloned aztfy to, and double check the clone worked by attempting a `terraform apply` and if it says no changes needed, you are solid!
 # Useful Resources 
