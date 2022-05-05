@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>K3s on Austin Barnes</title>
+    <title>k3s on Austin Barnes</title>
     <link>https://www.cinderblook.com/tags/k3s/</link>
-    <description>Recent content in K3s on Austin Barnes</description>
+    <description>Recent content in k3s on Austin Barnes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 06 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.cinderblook.com/tags/k3s/index.xml" rel="self" type="application/rss+xml" />
@@ -14,7 +14,7 @@
       
       <guid>https://www.cinderblook.com/blog/k3s-highly-available-rancher/</guid>
       <description>Overview Getting started with K3S: The primary goal here is to setup a functional highly available K3S cluster. This will include 4 necessary steps:
- Setup NGINX Loadbalancer Docker Setup MySQL Docker Setup Highly Available K3s Cluster (Optional) Setup management from dev machine (Controller) Setup Rancher as a container within the cluster  Check out all of the configuration files on GitHub at the repository!
+ Setup NGINX Loadbalancer Docker Setup MySQL Docker Setup Highly Available K3s Cluster (Optional) Setup management from dev machine (Controller) Setup Rancher as a container within the cluster  Check out all of the configuration files on GitHub (k3s-HACluster-Rancher) at the repository!
 Prerequisites  Have a dedicated Docker host virtual machine, preferrably linux Have 5 Linux virtual machines ready  Two will be Master Nodes, and Three will be worker nodes.</description>
     </item>
     

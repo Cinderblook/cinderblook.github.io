@@ -6,13 +6,31 @@
     <description>Recent content in Tags on Austin Barnes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.cinderblook.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.cinderblook.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>automation</title>
       <link>https://www.cinderblook.com/tags/automation/</link>
-      <pubDate>Wed, 27 Apr 2022 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 02 May 2022 00:00:00 +0000</pubDate>
       
       <guid>https://www.cinderblook.com/tags/automation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>spotfy</title>
+      <link>https://www.cinderblook.com/tags/spotfy/</link>
+      <pubDate>Mon, 02 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.cinderblook.com/tags/spotfy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>terraform</title>
+      <link>https://www.cinderblook.com/tags/terraform/</link>
+      <pubDate>Mon, 02 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.cinderblook.com/tags/terraform/</guid>
       <description></description>
     </item>
     
@@ -31,15 +49,6 @@
       <pubDate>Wed, 27 Apr 2022 00:00:00 +0000</pubDate>
       
       <guid>https://www.cinderblook.com/tags/azure/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>terraform</title>
-      <link>https://www.cinderblook.com/tags/terraform/</link>
-      <pubDate>Wed, 27 Apr 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.cinderblook.com/tags/terraform/</guid>
       <description></description>
     </item>
     
@@ -71,7 +80,7 @@
     </item>
     
     <item>
-      <title>Kubernetes</title>
+      <title>kubernetes</title>
       <link>https://www.cinderblook.com/tags/kubernetes/</link>
       <pubDate>Mon, 04 Apr 2022 00:00:00 +0000</pubDate>
       
@@ -80,7 +89,7 @@
     </item>
     
     <item>
-      <title>K3s</title>
+      <title>k3s</title>
       <link>https://www.cinderblook.com/tags/k3s/</link>
       <pubDate>Sun, 06 Mar 2022 00:00:00 +0000</pubDate>
       
@@ -89,7 +98,7 @@
     </item>
     
     <item>
-      <title>Rancher</title>
+      <title>rancher</title>
       <link>https://www.cinderblook.com/tags/rancher/</link>
       <pubDate>Sun, 06 Mar 2022 00:00:00 +0000</pubDate>
       

@@ -8,13 +8,13 @@
     <language>en-us</language>
     <lastBuildDate>Thu, 14 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.cinderblook.com/tags/proxmox/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Terraform - Proxmox-VM-Deploy</title>
+      <title>Terraform - Proxmox Virtual Machine Deploy</title>
       <link>https://www.cinderblook.com/blog/terraform-proxmox-vm-deploy/</link>
       <pubDate>Thu, 14 Apr 2022 00:00:00 +0000</pubDate>
       
       <guid>https://www.cinderblook.com/blog/terraform-proxmox-vm-deploy/</guid>
       <description>Overview Using Terraform to deploy virtual machines in Proxmox. This is designed with Proxmox Virtual Environment version 7.1 in mind.
-Check out all of the configuration files on GitHub at the repository!
+Check out all of the configuration files on GitHub (proxmox-deploy-vm) at the repository!
 Purpose I have a Proxmox server in my homelab, and wanted to have an easier way to spin up virtual machines on an as needed basis.
 Prequisites  Have a Proxmox server Have a template made on Proxmox, in my case, I used Ubuntu Server 20.</description>
     </item>

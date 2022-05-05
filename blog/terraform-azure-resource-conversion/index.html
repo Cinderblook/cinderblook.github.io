@@ -8,7 +8,7 @@
   <title>
     &#39;Terrifying&#39; or Converting Azure Resources into Terraform Code - Austin Barnes
   </title>
-  <meta name="description" content="Converting Azure resources to Terraform resources" />
+  <meta name="description" content="Converting Azure resources to Terraform resources. Converting static cloud infrastructure to state manageable configuration files." />
   <meta name="author" content="Austin Barnes" />
   <meta name="generator" content="Hugo 0.98.0" /><link
     rel="stylesheet"
@@ -19,7 +19,7 @@
   
 
   <meta property="og:title" content="&#39;Terrifying&#39; or Converting Azure Resources into Terraform Code" />
-<meta property="og:description" content="Converting Azure resources to Terraform resources" />
+<meta property="og:description" content="Converting Azure resources to Terraform resources. Converting static cloud infrastructure to state manageable configuration files." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.cinderblook.com/blog/terraform-azure-resource-conversion/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2022-04-27T00:00:00+00:00" />
@@ -28,10 +28,10 @@
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="&#39;Terrifying&#39; or Converting Azure Resources into Terraform Code"/>
-<meta name="twitter:description" content="Converting Azure resources to Terraform resources"/>
+<meta name="twitter:description" content="Converting Azure resources to Terraform resources. Converting static cloud infrastructure to state manageable configuration files."/>
 
   <meta itemprop="name" content="&#39;Terrifying&#39; or Converting Azure Resources into Terraform Code">
-<meta itemprop="description" content="Converting Azure resources to Terraform resources"><meta itemprop="datePublished" content="2022-04-27T00:00:00+00:00" />
+<meta itemprop="description" content="Converting Azure resources to Terraform resources. Converting static cloud infrastructure to state manageable configuration files."><meta itemprop="datePublished" content="2022-04-27T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-04-27T00:00:00+00:00" />
 <meta itemprop="wordCount" content="213">
 <meta itemprop="keywords" content="terraform,aztfy,automation,azure,windows-server," />
@@ -189,7 +189,7 @@ go install
 <p>From here, you can navigate each individual resource within that group and import them individually from Azure to your local machine. It generates the .tf files, terraform state files, and all necessary JSON components.</p>
 <ul>
 <li>Example of Aztfy Result:
-<img src="/aztfy-example1.png" alt="JRCustomHomes" title="aztfy-example1"></li>
+<img src="/examples/aztfy-example1.png" alt="JRCustomHomes" title="aztfy-example1"></li>
 </ul>
 <p>Navigate into directory you cloned aztfy to, and double check the clone worked by attempting a <code>terraform apply</code> and if it says no changes needed, you are solid!</p>
 <h1 id="useful-resources">Useful Resources</h1>

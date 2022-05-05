@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>spotfy on Austin Barnes</title>
+    <link>https://www.cinderblook.com/tags/spotfy/</link>
+    <description>Recent content in spotfy on Austin Barnes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 02 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.cinderblook.com/tags/spotfy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Terraform - Spotify Automation</title>
+      <link>https://www.cinderblook.com/blog/terraform-spotify-multiartist/</link>
+      <pubDate>Mon, 02 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.cinderblook.com/blog/terraform-spotify-multiartist/</guid>
+      <description>Overview Manipulating spotify playlist using Terraform, because why not?
+Check out all of the configuration files on GitHub at the repository. I have various examples of Terraform using the Spotify Provider within as well!
+Understanding the provider For all Spotify API usage with Terraform, You must either run a oauth server locally and just provide the API key, or use something online and provide all 4 necessary features (api, token_id, user, and oauth_url).</description>
+    </item>
+    
+  </channel>
+</rss>

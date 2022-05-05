@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Kubernetes on Austin Barnes</title>
+    <title>kubernetes on Austin Barnes</title>
     <link>https://www.cinderblook.com/tags/kubernetes/</link>
-    <description>Recent content in Kubernetes on Austin Barnes</description>
+    <description>Recent content in kubernetes on Austin Barnes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 04 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.cinderblook.com/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Terraform - Azure-K8S-Deploy</title>
+      <title>Terraform - Azure Kubernetes Deployment</title>
       <link>https://www.cinderblook.com/blog/terraform-azure-k8s-deploy/</link>
       <pubDate>Mon, 04 Apr 2022 00:00:00 +0000</pubDate>
       
       <guid>https://www.cinderblook.com/blog/terraform-azure-k8s-deploy/</guid>
       <description>Overview Deplying a Kubernetes Cluster in Azure with the AKS service.
- Build a Kubernetes cluster in Azure Have the cluster setup to automatically scale with load Have Kubeconfig file available so it can be managed, changed, altered, destroyed, etc. Ensure Kubeconfig file is secure, and is being encrypted with traffic involved in this  Check out all of the configuration files on GitHub at the repository!
+ Build a Kubernetes cluster in Azure Have the cluster setup to automatically scale with load Have Kubeconfig file available so it can be managed, changed, altered, destroyed, etc. Ensure Kubeconfig file is secure, and is being encrypted with traffic involved in this  Check out all of the configuration files on GitHub (Azure-K8S-Deploy) at the repository!
 Steps to do this  Have an Azure account; if you are a student, sign up for a student account and get some free credits along side it.</description>
     </item>
     
@@ -25,7 +25,7 @@ Steps to do this  Have an Azure account; if you are a student, sign up for a stu
       
       <guid>https://www.cinderblook.com/blog/k3s-highly-available-rancher/</guid>
       <description>Overview Getting started with K3S: The primary goal here is to setup a functional highly available K3S cluster. This will include 4 necessary steps:
- Setup NGINX Loadbalancer Docker Setup MySQL Docker Setup Highly Available K3s Cluster (Optional) Setup management from dev machine (Controller) Setup Rancher as a container within the cluster  Check out all of the configuration files on GitHub at the repository!
+ Setup NGINX Loadbalancer Docker Setup MySQL Docker Setup Highly Available K3s Cluster (Optional) Setup management from dev machine (Controller) Setup Rancher as a container within the cluster  Check out all of the configuration files on GitHub (k3s-HACluster-Rancher) at the repository!
 Prerequisites  Have a dedicated Docker host virtual machine, preferrably linux Have 5 Linux virtual machines ready  Two will be Master Nodes, and Three will be worker nodes.</description>
     </item>
     

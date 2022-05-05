@@ -8,13 +8,13 @@
     <language>en-us</language>
     <lastBuildDate>Mon, 04 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.cinderblook.com/tags/aks/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Terraform - Azure-K8S-Deploy</title>
+      <title>Terraform - Azure Kubernetes Deployment</title>
       <link>https://www.cinderblook.com/blog/terraform-azure-k8s-deploy/</link>
       <pubDate>Mon, 04 Apr 2022 00:00:00 +0000</pubDate>
       
       <guid>https://www.cinderblook.com/blog/terraform-azure-k8s-deploy/</guid>
       <description>Overview Deplying a Kubernetes Cluster in Azure with the AKS service.
- Build a Kubernetes cluster in Azure Have the cluster setup to automatically scale with load Have Kubeconfig file available so it can be managed, changed, altered, destroyed, etc. Ensure Kubeconfig file is secure, and is being encrypted with traffic involved in this  Check out all of the configuration files on GitHub at the repository!
+ Build a Kubernetes cluster in Azure Have the cluster setup to automatically scale with load Have Kubeconfig file available so it can be managed, changed, altered, destroyed, etc. Ensure Kubeconfig file is secure, and is being encrypted with traffic involved in this  Check out all of the configuration files on GitHub (Azure-K8S-Deploy) at the repository!
 Steps to do this  Have an Azure account; if you are a student, sign up for a student account and get some free credits along side it.</description>
     </item>
     
