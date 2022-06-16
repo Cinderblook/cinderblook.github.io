@@ -15,7 +15,7 @@ I am a tech enthusiast. Professionaly I'm a Network Speciliast working at Jersey
 In my free time I like to tackle mini projects of all sort. This site being one of them. 
 
 ## Items on this page:
-  - [Interests of mine:](#interests-of-mine)
+  - [Interests of mine](#interests-of-mine)
     - [Information Technology related](#information-technology-related)
     - [Outside of Tech](#outside-of-tech)
   - [Education Background](#education-background)
