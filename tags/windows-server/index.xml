@@ -14,7 +14,7 @@
       
       <guid>https://www.cinderblook.com/blog/terraform-azure-resource-conversion/</guid>
       <description>Overview Convert existing resources in Azure to Terraform files (Terrafy/aztfy)
- Microsoft Recently released a sweet tool called aztfy. This enables you to &amp;rsquo;terrafy&amp;rsquo; existing Azure resources. This effectively allows for total conversions of existing data in Azure to be modified and updated/managed using Terraform. Whether it be for backup reasons, future management of resource changes, or cloud implmentation purposes, this could prove extremely useful.  Prerequisites  Have Go installed in your dev environment  For Windows, go to this site and install Go   Go to Microsoft&amp;rsquo;s Azure Aztfy Github Page  Pull the repository to your local machine and install the go module they provide for aztfy   git clone https://github.</description>
+Microsoft Recently released a sweet tool called aztfy. This enables you to &amp;rsquo;terrafy&amp;rsquo; existing Azure resources. This effectively allows for total conversions of existing data in Azure to be modified and updated/managed using Terraform. Whether it be for backup reasons, future management of resource changes, or cloud implmentation purposes, this could prove extremely useful. Prerequisites Have Go installed in your dev environment For Windows, go to this site and install Go Go to Microsoft&amp;rsquo;s Azure Aztfy Github Page Pull the repository to your local machine and install the go module they provide for aztfy git clone https://github.</description>
     </item>
     
     <item>
@@ -24,7 +24,7 @@
       
       <guid>https://www.cinderblook.com/blog/terraform-azure-serv-deploy/</guid>
       <description>Overview Deploy and Configure 4 Windows 2022 Datacenter Servers in Azure.
- Using Terraform in conjunction with Ansible and cloudinit: Create 4 Windows Servers  Configure them to be a Primary Domain Controller, Replica Domain Controller, DHCP server, and Fileshare server Automate intial setup of the 4 servers to accept Ansible configuration from a Linux VM in Azure created VIA the Terraform deployment    Check out all of the configuration files on GitHub (Azure-Serv-Deploy) at the repository!</description>
+Using Terraform in conjunction with Ansible and cloudinit: Create 4 Windows Servers Configure them to be a Primary Domain Controller, Replica Domain Controller, DHCP server, and Fileshare server Automate intial setup of the 4 servers to accept Ansible configuration from a Linux VM in Azure created VIA the Terraform deployment Check out all of the configuration files on GitHub (Azure-Serv-Deploy) at the repository!</description>
     </item>
     
     <item>
@@ -34,7 +34,7 @@
       
       <guid>https://www.cinderblook.com/blog/terraform-vsphere-winserv-deployment/</guid>
       <description>Overview The goal of this project is to deploy a ready-to-go windows server environment. This includes a domain controller, a replica domain controller, a DHCP server, and a fileserver. Additionally setting up users, groups, and OUs for the respective users within the domain. To complete this project, 3 steps are taken.
- Use Packer to spin up a sys prepped and fully updated windows server 2022 iso for the environemnt Use Terraform to deploy 4 virtual machines into a vSphere environment Use Ansible to configure these 4 virtual machines as desired  Check out all of the configuration files on GitHub (vSphere-WinServ-Deployment) at the repository!</description>
+Use Packer to spin up a sys prepped and fully updated windows server 2022 iso for the environemnt Use Terraform to deploy 4 virtual machines into a vSphere environment Use Ansible to configure these 4 virtual machines as desired Check out all of the configuration files on GitHub (vSphere-WinServ-Deployment) at the repository!</description>
     </item>
     
   </channel>

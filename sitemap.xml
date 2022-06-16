@@ -3,18 +3,30 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.cinderblook.com/tags/automation/</loc>
-    <lastmod>2022-05-02T00:00:00+00:00</lastmod>
+    <lastmod>2022-06-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.cinderblook.com/tags/azure/</loc>
+    <lastmod>2022-06-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.cinderblook.com/blog/</loc>
-    <lastmod>2022-05-02T00:00:00+00:00</lastmod>
+    <lastmod>2022-06-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.cinderblook.com/tags/spotfy/</loc>
-    <lastmod>2022-05-02T00:00:00+00:00</lastmod>
+    <loc>https://www.cinderblook.com/tags/cloudflare/</loc>
+    <lastmod>2022-06-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.cinderblook.com/tags/k8s/</loc>
+    <lastmod>2022-06-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.cinderblook.com/tags/</loc>
-    <lastmod>2022-05-02T00:00:00+00:00</lastmod>
+    <lastmod>2022-06-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.cinderblook.com/tags/terraform/</loc>
+    <lastmod>2022-06-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.cinderblook.com/blog/terraform-azure-k8s-helm/</loc>
+    <lastmod>2022-06-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.cinderblook.com/tags/spotfy/</loc>
     <lastmod>2022-05-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.cinderblook.com/blog/terraform-spotify-multiartist/</loc>
@@ -24,9 +36,6 @@
     <lastmod>2022-04-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.cinderblook.com/tags/aztfy/</loc>
-    <lastmod>2022-04-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.cinderblook.com/tags/azure/</loc>
     <lastmod>2022-04-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.cinderblook.com/tags/windows-server/</loc>

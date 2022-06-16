@@ -14,7 +14,7 @@
       
       <guid>https://www.cinderblook.com/blog/terraform-azure-resource-conversion/</guid>
       <description>Overview Convert existing resources in Azure to Terraform files (Terrafy/aztfy)
- Microsoft Recently released a sweet tool called aztfy. This enables you to &amp;rsquo;terrafy&amp;rsquo; existing Azure resources. This effectively allows for total conversions of existing data in Azure to be modified and updated/managed using Terraform. Whether it be for backup reasons, future management of resource changes, or cloud implmentation purposes, this could prove extremely useful.  Prerequisites  Have Go installed in your dev environment  For Windows, go to this site and install Go   Go to Microsoft&amp;rsquo;s Azure Aztfy Github Page  Pull the repository to your local machine and install the go module they provide for aztfy   git clone https://github.</description>
+Microsoft Recently released a sweet tool called aztfy. This enables you to &amp;rsquo;terrafy&amp;rsquo; existing Azure resources. This effectively allows for total conversions of existing data in Azure to be modified and updated/managed using Terraform. Whether it be for backup reasons, future management of resource changes, or cloud implmentation purposes, this could prove extremely useful. Prerequisites Have Go installed in your dev environment For Windows, go to this site and install Go Go to Microsoft&amp;rsquo;s Azure Aztfy Github Page Pull the repository to your local machine and install the go module they provide for aztfy git clone https://github.</description>
     </item>
     
   </channel>

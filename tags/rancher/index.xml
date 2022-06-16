@@ -14,8 +14,8 @@
       
       <guid>https://www.cinderblook.com/blog/k3s-highly-available-rancher/</guid>
       <description>Overview Getting started with K3S: The primary goal here is to setup a functional highly available K3S cluster. This will include 4 necessary steps:
- Setup NGINX Loadbalancer Docker Setup MySQL Docker Setup Highly Available K3s Cluster (Optional) Setup management from dev machine (Controller) Setup Rancher as a container within the cluster  Check out all of the configuration files on GitHub (k3s-HACluster-Rancher) at the repository!
-Prerequisites  Have a dedicated Docker host virtual machine, preferrably linux Have 5 Linux virtual machines ready  Two will be Master Nodes, and Three will be worker nodes.</description>
+Setup NGINX Loadbalancer Docker Setup MySQL Docker Setup Highly Available K3s Cluster (Optional) Setup management from dev machine (Controller) Setup Rancher as a container within the cluster Check out all of the configuration files on GitHub (k3s-HACluster-Rancher) at the repository!
+Prerequisites Have a dedicated Docker host virtual machine, preferrably linux Have 5 Linux virtual machines ready Two will be Master Nodes, and Three will be worker nodes.</description>
     </item>
     
   </channel>
