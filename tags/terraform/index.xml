@@ -14,8 +14,7 @@
       
       <guid>https://www.cinderblook.com/blog/terraform-azure-k8s-helm/</guid>
       <description>Overview Deplying helm charts in Kubernetes within Azure using the AKS service.
-This guide is essneitally a part 2, with part 1 being my Azure Terraform deployment using just the Kubernetes provider. Check out part one on my Github Repo or on my Site
-Build a cluster that is running a few services Have cluster automatically scale with load Have Kubeconfig file available so it can be managed, changed, altered, destroyed, etc.</description>
+Build a cluster that is running a few services Have cluster automatically scale with load Have Kubeconfig file available so it can be managed, changed, altered, destroyed, etc. Ensure Kubeconfig file is secure, and is being encrypted with traffic involved in this Create a NGINX certificate service utilizing Cloudflare&amp;rsquo;s DNS Use Traefik as a loadbalancer, and utilize ingresses for reachable internal services Prerequisites Have an Azure account if you are a student, sign up for a student account and get some free credits along side it.</description>
     </item>
     
     <item>
