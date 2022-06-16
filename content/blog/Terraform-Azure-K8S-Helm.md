@@ -13,12 +13,9 @@ date: 2022-06-16
 thumbnail: /covers/AzureK8SHelm.png
 ---
 
-
 # Overview
 
  Deplying helm charts in Kubernetes within Azure using the AKS service.
-
- *This guide is essneitally a part 2, with part 1 being my Azure Terraform deployment using just the Kubernetes provider. Check out part one on my [Github Repo]() or on my [Site]()*
 
 - Build a cluster that is running a few services 
 - Have cluster automatically scale with load
@@ -28,6 +25,7 @@ thumbnail: /covers/AzureK8SHelm.png
 - Use Traefik as a loadbalancer, and utilize ingresses for reachable internal services
 
 ### Prerequisites
+
 1. Have an Azure account
     - *[if you are a student, sign up for a student account and get some free credits along side it.](https://azure.microsoft.com/en-us/free/students/)*
 2. Have a Cloudflare Account & a Domain 
