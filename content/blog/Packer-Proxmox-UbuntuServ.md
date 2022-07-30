@@ -50,7 +50,9 @@ vm_id = "1003"
 iso_file = "local:iso/ubuntu-22.04-live-server-amd64.iso" #Iso file location on your proxmox
 ```
 
-Second file to update to your preference is our user-data.example file. You only need to update the name field beneath user-data, users, and potentially your timezone.
+Second file to update to your preference is our user-data.example file. You only need to update the fields beneath user-data, users + passwd, and potentially your timezone.
+
+***The passwd fields in cloud-init files must be in a sha-512 hash. Generate a hash using `echo passwd | mkpasswd -m sha-512 -s `***
 
 An Example user-data file
 
