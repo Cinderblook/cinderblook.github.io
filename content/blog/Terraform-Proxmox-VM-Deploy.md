@@ -35,11 +35,13 @@ I have a Proxmox server in my homelab, and wanted to have an easier way to spin 
 ## Create user and assign it a role
 1. SSH into the Proxmox server
 2. Create the role in Proxmox with appropriate permissions
-   * `pveum role add TerraformProv -privs "VM.Allocate VM.Clone VM.Config.CDROM VM.Config.CPU VM.Config.Cloudinit VM.Config.Disk VM.Config.HWType VM.Config.Memory VM.Config.Network VM.Config.Options VM.Monitor VM.Audit VM.PowerMgmt Datastore.AllocateSpace Datastore.Audit"`
+   * `pveum role add TerraformProv -privs "VM.Allocate VM.Clone VM.Config.CDROM VM.Config.CPU VM.Config.Cloudinit VM.Config.Disk VM.Config.HWType VM.Config.Memory VM.Config.Network VM.Config.Options VM.Monitor VM.Audit VM.PowerMgmt Datastore.AllocateSpace Datastore.Audit VM.Console"`
 3. Create the user
     * `pveum user add terraform-prov@pve --password <password>`
 4. Assign user to the role
     * `pveum aclmod / -user terraform-prov@pve -role TerraformProv`
+5. OPTIONAL: Create a token tom use rather than username and password
+    *  `pveum user token add terraform-prov@pve terraform-token --privsep=0`
 
 
 # 2. Configure Terraform files
