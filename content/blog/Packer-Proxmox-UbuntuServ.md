@@ -1,7 +1,7 @@
 ---
 author: "Austin Barnes"
 title: "Packer - Proxmox Ubuntu Server Creation"
-description: "Packer Automation in Proxmox to genereate a Ubuntu Server Virtual Machine template from an iso"
+description: "Packer Automation in Proxmox to genereate a Ubuntu Server Virtual Machine template from an iso "
 tags: [
     "packer",
     "automation",
