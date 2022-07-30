@@ -3,21 +3,30 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.cinderblook.com/tags/automation/</loc>
-    <lastmod>2022-06-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.cinderblook.com/tags/azure/</loc>
-    <lastmod>2022-06-16T00:00:00+00:00</lastmod>
+    <lastmod>2022-07-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.cinderblook.com/blog/</loc>
+    <lastmod>2022-07-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.cinderblook.com/tags/packer/</loc>
+    <lastmod>2022-07-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.cinderblook.com/blog/packer-proxmox-ubuntuserv/</loc>
+    <lastmod>2022-07-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.cinderblook.com/tags/proxmox/</loc>
+    <lastmod>2022-07-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.cinderblook.com/tags/</loc>
+    <lastmod>2022-07-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.cinderblook.com/tags/azure/</loc>
     <lastmod>2022-06-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.cinderblook.com/tags/cloudflare/</loc>
     <lastmod>2022-06-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.cinderblook.com/tags/k8s/</loc>
-    <lastmod>2022-06-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.cinderblook.com/tags/</loc>
     <lastmod>2022-06-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.cinderblook.com/tags/terraform/</loc>
@@ -40,9 +49,6 @@
   </url><url>
     <loc>https://www.cinderblook.com/tags/windows-server/</loc>
     <lastmod>2022-04-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.cinderblook.com/tags/proxmox/</loc>
-    <lastmod>2022-04-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.cinderblook.com/blog/terraform-proxmox-vm-deploy/</loc>
     <lastmod>2022-04-14T00:00:00+00:00</lastmod>
@@ -85,9 +91,6 @@
   </url><url>
     <loc>https://www.cinderblook.com/blog/terraform-azure-serv-deploy/</loc>
     <lastmod>2022-02-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.cinderblook.com/tags/packer/</loc>
-    <lastmod>2022-02-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.cinderblook.com/blog/terraform-vsphere-winserv-deployment/</loc>
     <lastmod>2022-02-14T00:00:00+00:00</lastmod>

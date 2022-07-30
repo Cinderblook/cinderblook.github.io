@@ -6,9 +6,11 @@
   <link rel="icon" href="/favicon.svg">
 
   <title>
-    packer - Austin Barnes
+    Packer - Proxmox Ubuntu Server Creation - Austin Barnes
   </title>
-  <meta name="description" content="" /><meta name="generator" content="Hugo 0.101.0" /><link
+  <meta name="description" content="Packer Automation in Proxmox to genereate a Ubuntu Server Virtual Machine template from an iso" />
+  <meta name="author" content="Austin Barnes" />
+  <meta name="generator" content="Hugo 0.101.0" /><link
     rel="stylesheet"
     href="https://www.cinderblook.com/css/styles.min.4c4284cce4f1e6121443c34e1affc66a4652d581177c59a97bd6ea162a1b07fa.css"
     integrity="sha256-TEKEzOTx5hIUQ8NOGv/GakZS1YEXfFmpe9bqFiobB/o="
@@ -16,19 +18,23 @@
   
   
 
-  <link rel="alternate" type="application/rss+xml" href="https://www.cinderblook.com/tags/packer/index.xml" title="Austin Barnes" />
-  <meta property="og:title" content="packer" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.cinderblook.com/tags/packer/" />
+  <meta property="og:title" content="Packer - Proxmox Ubuntu Server Creation" />
+<meta property="og:description" content="Packer Automation in Proxmox to genereate a Ubuntu Server Virtual Machine template from an iso" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.cinderblook.com/blog/packer-proxmox-ubuntuserv/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2022-07-30T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-07-30T00:00:00+00:00" />
 
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="packer"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="Packer - Proxmox Ubuntu Server Creation"/>
+<meta name="twitter:description" content="Packer Automation in Proxmox to genereate a Ubuntu Server Virtual Machine template from an iso"/>
 
-  <meta itemprop="name" content="packer">
-<meta itemprop="description" content="">
+  <meta itemprop="name" content="Packer - Proxmox Ubuntu Server Creation">
+<meta itemprop="description" content="Packer Automation in Proxmox to genereate a Ubuntu Server Virtual Machine template from an iso"><meta itemprop="datePublished" content="2022-07-30T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-07-30T00:00:00+00:00" />
+<meta itemprop="wordCount" content="410">
+<meta itemprop="keywords" content="packer,automation,proxmox," />
 </head>
 <body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
   <a href="https://www.cinderblook.com/" class="capitalize font-extrabold text-2xl">
@@ -92,56 +98,149 @@
   </ul>
 </header>
 <main class="flex-1">
-
-  <h1 class="container px-6 pt-6 mx-auto text-3xl font-bold">packer</h1>
+  
+  
 
   
-  <div class="container p-6 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
-    <div class="p-2">
-<a href="https://www.cinderblook.com/blog/packer-proxmox-ubuntuserv/">
-  
-  <div class="relative">
-    <img src="/covers/ProxmoxPacker.png" alt="Packer - Proxmox Ubuntu Server Creation" class="rounded-lg shadow-sm w-full h-52 object-cover" />
-    <div class="absolute top-4 right-4 rounded shadow bg-white text-gray-900 dark:bg-gray-900 dark:text-white text-sm px-2 py-0.5">
+  <div class="relative max-w-5xl mx-auto px-4">
+    <img src="/covers/ProxmoxPacker.png" class="rounded-lg shadow-sm w-full object-contain" />
+    <div class="absolute top-4 right-8 rounded shadow bg-white text-gray-900 dark:bg-gray-900 dark:text-white px-2 py-0.5">
       
   
-    Jul 30, 22
+    July 30, 2022
   
 
 
     </div>
   </div>
   
-  <div class="my-2 text-xl font-semibold">Packer - Proxmox Ubuntu Server Creation</div>
-  <div class="">Packer Automation in Proxmox to genereate a Ubuntu Server Virtual Machine template from an iso</div>
-</a>
+
+  <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
+
+    <h1 class="text-2xl font-bold mb-2">Packer - Proxmox Ubuntu Server Creation</h1>
+    <h5 class="text-sm flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <rect x="4" y="5" width="16" height="16" rx="2" />
+        <line x1="16" y1="3" x2="16" y2="7" />
+        <line x1="8" y1="3" x2="8" y2="7" />
+        <line x1="4" y1="11" x2="20" y2="11" />
+        <rect x="8" y="15" width="2" height="2" />
+      </svg>
+      Posted on 
   
-</div>
-<div class="p-2">
-<a href="https://www.cinderblook.com/blog/terraform-vsphere-winserv-deployment/">
+    July 30, 2022
   
-  <div class="relative">
-    <img src="/covers/vSphereBanner.png" alt="Terraform - vSphere Windows Server Deployment" class="rounded-lg shadow-sm w-full h-52 object-cover" />
-    <div class="absolute top-4 right-4 rounded shadow bg-white text-gray-900 dark:bg-gray-900 dark:text-white text-sm px-2 py-0.5">
+
+
       
-  
-    Feb 14, 22
-  
+        &nbsp;&bull;&nbsp;
+      
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <circle cx="12" cy="12" r="9" />
+        <polyline points="12 7 12 12 15 15" />
+      </svg>
+      2&nbsp;minutes
+      &nbsp;&bull;
+      <svg xmlns="http://www.w3.org/2000/svg" class="mx-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <line x1="3" y1="6" x2="3" y2="19" />
+        <line x1="12" y1="6" x2="12" y2="19" />
+        <line x1="21" y1="6" x2="21" y2="19" />
+      </svg>
+      410&nbsp;words
+      
+    </h5>
 
+    <h1 id="overview">Overview</h1>
+<p>Using Packer to create a Ubunut 22.04 server image within Proxmox. This is designed with Proxmox Virtual Environment version 7.1 in mind.</p>
+<p><strong>Check out all of the configuration files on <a href="https://github.com/Cinderblook/tacklebox/tree/main/Packer/Proxmox/packer-iso-ubuntu">GitHub</a> at the repository.</strong></p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ol>
+<li>Must have <a href="https://learn.hashicorp.com/tutorials/packer/get-started-install-cli">Packer</a> configured on your machine, DHCP running on the network, and a Proxmox server available (Preferrable to be version 7.1)</li>
+<li>Have a Proxmox user created with proper privledges for Terraform (<a href="https://www.cinderblook.com/blog/terraform-proxmox-vm-deploy/">See how to create the user here</a>)</li>
+<li>Ubuntu Server 22.04 Iso uploaded to your Proxmox server</li>
+</ol>
+<h2 id="getting-proper-files-setup">Getting proper files setup</h2>
+<p>There are two primary files that will need configured.</p>
+<p>The first of the two is our credentials.pkr.hcl file. Update all variables within to your own. Any more in-depth configuration can be done within the ubuntu-server-focal.pkr.hcl file.</p>
+<p>You can generate your token-id and token secret using the following command into your Proxmox Shell <code>pveum user token add terraform-prov@pve terraform-token --privsep=0</code> Replace terraform-prov@pve with your created username <strong>Write this down because you won&rsquo;t be able to find this access token again later</strong></p>
+<p><img src="/examples/ProxmoxPacker-Example1.png" alt="Proxmox-Token-Generate" title="proxmoxpacker-example1"></p>
+<p>An Example credneitals/pkr.hcl file</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tf" data-lang="tf"><span style="display:flex;"><span><span style="color:#50fa7b">pm_api_url</span> = <span style="color:#f1fa8c">&#34;https://yourProxmox.server:8006/api2/json&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#50fa7b">pm_api_token_id</span> = <span style="color:#f1fa8c">&#34;full-tokenid&#34;</span> 
+</span></span><span style="display:flex;"><span><span style="color:#50fa7b">pm_api_token_secret</span> = <span style="color:#f1fa8c">&#34;tokenValue&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#50fa7b">pm_node</span> = <span style="color:#f1fa8c">&#34;nodeToBuildOn&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#50fa7b">pm_storage_pool</span> = <span style="color:#f1fa8c">&#34;storagePoolToBuildOn&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#50fa7b">pm_storage_pool_type</span> = <span style="color:#f1fa8c">&#34;typeOf-pm_storage_pool&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#50fa7b">ssh_username</span> = <span style="color:#f1fa8c">&#34;yourSshUser&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#50fa7b">ssh_password</span> = <span style="color:#f1fa8c">&#34;yourSshPassword&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#50fa7b">ssh_private_key_file</span> = <span style="color:#f1fa8c">&#34;~/.ssh/id_rsa&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#50fa7b">vm_name</span> = <span style="color:#f1fa8c">&#34;vm name&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#50fa7b">vm_id</span> = <span style="color:#f1fa8c">&#34;1003&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#50fa7b">iso_file</span> = <span style="color:#f1fa8c">&#34;local:iso/ubuntu-22.04-live-server-amd64.iso&#34;</span><span style="color:#6272a4"> #Iso file location on your proxmox
+</span></span></span></code></pre></div><p>Second file to update to your preference is our user-data.example file. You only need to update the name field beneath user-data, users, and potentially your timezone.</p>
+<p>An Example user-data file</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#6272a4">#cloud-config</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">autoinstall</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">version</span>: <span style="color:#bd93f9">1</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">locale</span>: en_US
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">keyboard</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">layout</span>: en
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">ssh</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">install-server</span>: <span style="color:#ff79c6">true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">allow-pw</span>: <span style="color:#ff79c6">true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">disable_root</span>: <span style="color:#ff79c6">true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">ssh_quiet_keygen</span>: <span style="color:#ff79c6">true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">allow_public_ssh_keys</span>: <span style="color:#ff79c6">true</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">packages</span>:
+</span></span><span style="display:flex;"><span>    - qemu-guest-agent
+</span></span><span style="display:flex;"><span>    - sudo
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">storage</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">layout</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">name</span>: direct
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">swap</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">size</span>: <span style="color:#bd93f9">0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">user-data</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">package_upgrade</span>: <span style="color:#ff79c6">false</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">timezone</span>: America/New_York
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">users</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ff79c6">name</span>: username-here
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">groups</span>: [adm, sudo]
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">lock-passwd</span>: <span style="color:#ff79c6">false</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">sudo</span>: ALL=(ALL) NOPASSWD:ALL
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">shell</span>: /bin/bash
+</span></span><span style="display:flex;"><span>        <span style="color:#6272a4"># passwd: your-password</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#6272a4"># - or -</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#6272a4"># ssh_authorized_keys:</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#6272a4">#   - your-ssh-key</span>
+</span></span></code></pre></div><h2 id="finally-the-packer-process">Finally, the Packer Process</h2>
+<p>First thing we should do prior to going further, is double check the valiation of our Packer files. Otherwise we could have some major headache.</p>
+<ol>
+<li>
+<p>cd into the project directory (./ubuntu-server-focal), and run <code>packer validate -var-file='..\credentials.pkr.hcl' .\ubuntu-server-focal.pkr.hcl</code></p>
+<ul>
+<li>If any errors show up, you&rsquo;ll have to fix them before moving on</li>
+</ul>
+</li>
+</ol>
+<p>Once we have confirmed everything appears correct, we can run the build, cross our fingers, and it should work.</p>
+<ol start="2">
+<li>Build the image (Within the same project directory where you ran the validate), <code>packer build -var-file='..\credentials.pkr.hcl' .\ubuntu-server-focal.pkr.hcl</code></li>
+</ol>
+<h2 id="useful-resources">Useful Resources</h2>
+<ul>
+<li><a href="https://registry.terraform.io/providers/Telmate/proxmox/latest/docs">Terraform Provider for Proxmox</a></li>
+<li><a href="https://registry.terraform.io/providers/Telmate/proxmox/latest/docs">Proxmmox User Creation Guide</a></li>
+<li><a href="https://learn.hashicorp.com/packer">Packer Tutoritals</a></li>
+</ul>
 
-    </div>
-  </div>
-  
-  <div class="my-2 text-xl font-semibold">Terraform - vSphere Windows Server Deployment</div>
-  <div class="">Terraform Automation in vSphere with Windows Servers. Creating an entire domain with DHCP, Filesharing, Active Dircetory, and more.</div>
-</a>
-  
-</div>
-
-  </div><div class="grid place-items-center mb-8">
-  
-</div>
-<div class="bg-blue-100 dark:bg-gray-900">
+  </article><div class="bg-blue-100 dark:bg-gray-900">
   <div class="container px-6 py-12 mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
     <div>
       <div class="text-2xl font-bold mb-2">Follow me</div>

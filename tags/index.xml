@@ -6,13 +6,31 @@
     <description>Recent content in Tags on Austin Barnes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 16 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.cinderblook.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 30 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.cinderblook.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>automation</title>
       <link>https://www.cinderblook.com/tags/automation/</link>
-      <pubDate>Thu, 16 Jun 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 30 Jul 2022 00:00:00 +0000</pubDate>
       
       <guid>https://www.cinderblook.com/tags/automation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>packer</title>
+      <link>https://www.cinderblook.com/tags/packer/</link>
+      <pubDate>Sat, 30 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.cinderblook.com/tags/packer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>proxmox</title>
+      <link>https://www.cinderblook.com/tags/proxmox/</link>
+      <pubDate>Sat, 30 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.cinderblook.com/tags/proxmox/</guid>
       <description></description>
     </item>
     
@@ -80,15 +98,6 @@
     </item>
     
     <item>
-      <title>proxmox</title>
-      <link>https://www.cinderblook.com/tags/proxmox/</link>
-      <pubDate>Thu, 14 Apr 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.cinderblook.com/tags/proxmox/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>aks</title>
       <link>https://www.cinderblook.com/tags/aks/</link>
       <pubDate>Mon, 04 Apr 2022 00:00:00 +0000</pubDate>
@@ -130,15 +139,6 @@
       <pubDate>Mon, 28 Feb 2022 00:00:00 +0000</pubDate>
       
       <guid>https://www.cinderblook.com/tags/ansible/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>packer</title>
-      <link>https://www.cinderblook.com/tags/packer/</link>
-      <pubDate>Mon, 14 Feb 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.cinderblook.com/tags/packer/</guid>
       <description></description>
     </item>
     

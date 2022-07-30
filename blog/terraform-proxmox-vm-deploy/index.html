@@ -33,7 +33,7 @@
   <meta itemprop="name" content="Terraform - Proxmox Virtual Machine Deploy">
 <meta itemprop="description" content="Terraform Automation in Proxmox to genereate a Virtual Machine from a template"><meta itemprop="datePublished" content="2022-04-14T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-04-14T00:00:00+00:00" />
-<meta itemprop="wordCount" content="536">
+<meta itemprop="wordCount" content="555">
 <meta itemprop="keywords" content="terraform,automation,proxmox," />
 </head>
 <body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
@@ -151,7 +151,7 @@
         <line x1="12" y1="6" x2="12" y2="19" />
         <line x1="21" y1="6" x2="21" y2="19" />
       </svg>
-      536&nbsp;words
+      555&nbsp;words
       
     </h5>
 
@@ -179,7 +179,7 @@
 <li>SSH into the Proxmox server</li>
 <li>Create the role in Proxmox with appropriate permissions
 <ul>
-<li><code>pveum role add TerraformProv -privs &quot;VM.Allocate VM.Clone VM.Config.CDROM VM.Config.CPU VM.Config.Cloudinit VM.Config.Disk VM.Config.HWType VM.Config.Memory VM.Config.Network VM.Config.Options VM.Monitor VM.Audit VM.PowerMgmt Datastore.AllocateSpace Datastore.Audit&quot;</code></li>
+<li><code>pveum role add TerraformProv -privs &quot;VM.Allocate VM.Clone VM.Config.CDROM VM.Config.CPU VM.Config.Cloudinit VM.Config.Disk VM.Config.HWType VM.Config.Memory VM.Config.Network VM.Config.Options VM.Monitor VM.Audit VM.PowerMgmt Datastore.AllocateSpace Datastore.Audit VM.Console&quot;</code></li>
 </ul>
 </li>
 <li>Create the user
@@ -190,6 +190,11 @@
 <li>Assign user to the role
 <ul>
 <li><code>pveum aclmod / -user terraform-prov@pve -role TerraformProv</code></li>
+</ul>
+</li>
+<li>OPTIONAL: Create a token tom use rather than username and password
+<ul>
+<li><code>pveum user token add terraform-prov@pve terraform-token --privsep=0</code></li>
 </ul>
 </li>
 </ol>
