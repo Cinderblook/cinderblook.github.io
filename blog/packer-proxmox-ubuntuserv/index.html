@@ -33,7 +33,7 @@
   <meta itemprop="name" content="Packer - Proxmox Ubuntu Server Creation">
 <meta itemprop="description" content="Packer Automation in Proxmox to genereate a Ubuntu Server Virtual Machine template from an iso "><meta itemprop="datePublished" content="2022-07-30T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-07-30T00:00:00+00:00" />
-<meta itemprop="wordCount" content="410">
+<meta itemprop="wordCount" content="434">
 <meta itemprop="keywords" content="packer,automation,proxmox," />
 </head>
 <body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
@@ -141,7 +141,7 @@
         <circle cx="12" cy="12" r="9" />
         <polyline points="12 7 12 12 15 15" />
       </svg>
-      2&nbsp;minutes
+      3&nbsp;minutes
       &nbsp;&bull;
       <svg xmlns="http://www.w3.org/2000/svg" class="mx-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -151,7 +151,7 @@
         <line x1="12" y1="6" x2="12" y2="19" />
         <line x1="21" y1="6" x2="21" y2="19" />
       </svg>
-      410&nbsp;words
+      434&nbsp;words
       
     </h5>
 
@@ -184,7 +184,8 @@
 </span></span><span style="display:flex;"><span><span style="color:#50fa7b">vm_name</span> = <span style="color:#f1fa8c">&#34;vm name&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#50fa7b">vm_id</span> = <span style="color:#f1fa8c">&#34;1003&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#50fa7b">iso_file</span> = <span style="color:#f1fa8c">&#34;local:iso/ubuntu-22.04-live-server-amd64.iso&#34;</span><span style="color:#6272a4"> #Iso file location on your proxmox
-</span></span></span></code></pre></div><p>Second file to update to your preference is our user-data.example file. You only need to update the name field beneath user-data, users, and potentially your timezone.</p>
+</span></span></span></code></pre></div><p>Second file to update to your preference is our user-data.example file. You only need to update the fields beneath user-data, users + passwd, and potentially your timezone.</p>
+<p><em><strong>The passwd fields in cloud-init files must be in a sha-512 hash. Generate a hash using <code>echo passwd | mkpasswd -m sha-512 -s </code></strong></em></p>
 <p>An Example user-data file</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#6272a4">#cloud-config</span>
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">autoinstall</span>:
