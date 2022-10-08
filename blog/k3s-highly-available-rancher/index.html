@@ -10,7 +10,7 @@
   </title>
   <meta name="description" content="Highly Available K3s" />
   <meta name="author" content="Austin Barnes" />
-  <meta name="generator" content="Hugo 0.101.0" /><link
+  <meta name="generator" content="Hugo 0.104.3" /><link
     rel="stylesheet"
     href="https://www.cinderblook.com/css/styles.min.4c4284cce4f1e6121443c34e1affc66a4652d581177c59a97bd6ea162a1b07fa.css"
     integrity="sha256-TEKEzOTx5hIUQ8NOGv/GakZS1YEXfFmpe9bqFiobB/o="
@@ -33,7 +33,7 @@
   <meta itemprop="name" content="K3S - Highly-Available-Rancher">
 <meta itemprop="description" content="Highly Available K3s"><meta itemprop="datePublished" content="2022-03-06T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-03-06T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1343">
+<meta itemprop="wordCount" content="1342">
 <meta itemprop="keywords" content="rancher,automation,kubernetes,k3s," />
 </head>
 <body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
@@ -151,7 +151,7 @@
         <line x1="12" y1="6" x2="12" y2="19" />
         <line x1="21" y1="6" x2="21" y2="19" />
       </svg>
-      1343&nbsp;words
+      1342&nbsp;words
       
     </h5>
 
@@ -449,7 +449,7 @@ Either from a Master Node, or the Controller machine (If you followed step 4):</
 </span></span><span style="display:flex;"><span>	docker <span style="color:#8be9fd;font-style:italic">exec</span> -it <span style="color:#ff79c6">[</span>option<span style="color:#ff79c6">]</span> bash
 </span></span><span style="display:flex;"><span>	<span style="color:#6272a4"># Update running docker with new configuration changes</span>
 </span></span><span style="display:flex;"><span>	docker-compose up -d --force-recreate
-</span></span></code></pre></div><pre tabindex="0"><code></code></pre></li>
+</span></span></code></pre></div></li>
 </ul>
 <h2 id="useful-kubectl-commands">Useful Kubectl Commands</h2>
 <ul>
@@ -473,16 +473,19 @@ Either from a Master Node, or the Controller machine (If you followed step 4):</
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>List Services Sorted by Name
 </span></span><span style="display:flex;"><span>bectl get services --sort-by<span style="color:#ff79c6">=</span>.metadata.name
-</span></span></code></pre></div><pre tabindex="0"><code>Updating resources
-`bash
-bectl set image deployment/frontend www=image:v2               # Rolling update &#34;www&#34; containers of &#34;frontend&#34; deployment, 	updating the image
-bectl rollout history deployment/frontend                      # Check the history of deployments including the revision 
-bectl rollout undo deployment/frontend                         # Rollback to the previous deployment
-bectl rollout undo deployment/frontend --to-revision=2         # Rollback to a specific revision
-bectl rollout status -w deployment/frontend                    # Watch rolling update status of &#34;frontend&#34; deployment until 	completion
-bectl rollout restart deployment/frontend                      # Rolling restart of the &#34;frontend&#34; deployment
-</code></pre><pre tabindex="0"><code>Allow kubectl without sudo priviledge `sudo chmod 644 /etc/rancher/k3s/k3s.yaml`
-</code></pre></li>
+</span></span></code></pre></div><ul>
+<li>Updating resources</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl <span style="color:#8be9fd;font-style:italic">set</span> image deployment/frontend <span style="color:#8be9fd;font-style:italic">www</span><span style="color:#ff79c6">=</span>image:v2               <span style="color:#6272a4"># Rolling update &#34;www&#34; containers of &#34;frontend&#34; deployment, 	updating the image</span>
+</span></span><span style="display:flex;"><span>kubectl rollout <span style="color:#8be9fd;font-style:italic">history</span> deployment/frontend                      <span style="color:#6272a4"># Check the history of deployments including the revision </span>
+</span></span><span style="display:flex;"><span>kubectl rollout undo deployment/frontend                         <span style="color:#6272a4"># Rollback to the previous deployment</span>
+</span></span><span style="display:flex;"><span>kubectl rollout undo deployment/frontend --to-revision<span style="color:#ff79c6">=</span><span style="color:#bd93f9">2</span>         <span style="color:#6272a4"># Rollback to a specific revision</span>
+</span></span><span style="display:flex;"><span>kubectl rollout status -w deployment/frontend                    <span style="color:#6272a4"># Watch rolling update status of &#34;frontend&#34; deployment until 	completion</span>
+</span></span><span style="display:flex;"><span>kubectl rollout restart deployment/frontend                      <span style="color:#6272a4"># Rolling restart of the &#34;frontend&#34; deployment</span>
+</span></span></code></pre></div><ul>
+<li>Allow kubectl without sudo priviledge <code>sudo chmod 644 /etc/rancher/k3s/k3s.yaml</code></li>
+</ul>
+</li>
 </ul>
 <h2 id="resources">Resources</h2>
 <ul>
