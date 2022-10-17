@@ -1,7 +1,7 @@
 ---
 author: "Austin Barnes"
-title: "Hugo - Creating a free website"
-description: "Using Hugo to create a static website for free in Github"
+title: "Hugo GitPage - Creating a free website"
+description: "Taking advantage of GitHub Pages to host a website"
 tags: [
     "hugo",
     "automation",
@@ -92,7 +92,7 @@ Go to the settings in the repository
 2. Under Pages tab
     - Under Build and Deployment -> Change source to Deploy from a branch and Branch to `gh-pages`
     - (Optional) Change custom domain name to your purchased domain name
-    - ![Pages Settings](examples/gh-pagesexample1.png "GH-Page Example")
+    - ![Pages Settings](/examples/gh-pagesexample1.png "GH-Page Example")
 
 ###  Custom Domain Name (Optional)
 1. Setting up DNS for Domain to allow GitHub Pages
@@ -105,7 +105,7 @@ Go to the settings in the repository
     185.199.110.153
     185.199.111.153
     ```
-    - ![Pages Settings](examples/gh-pagesexample2.png "GH-Page Example")
+    - ![Pages Settings](/examples/gh-pagesexample2.png "GH-Page Example")
 
     - Do the same but for IPv6 by Creating AAAA records for the following:
     ``` IPv6s
