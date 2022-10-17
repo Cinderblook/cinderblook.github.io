@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hugo on Austin Barnes</title>
+    <link>https://www.cinderblook.com/tags/hugo/</link>
+    <description>Recent content in hugo on Austin Barnes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 08 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.cinderblook.com/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo - Creating a free website</title>
+      <link>https://www.cinderblook.com/blog/hugo-github-page/</link>
+      <pubDate>Sat, 08 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.cinderblook.com/blog/hugo-github-page/</guid>
+      <description>Overview Using Github pages, Github actions, and Hugo to create a static website for free.
+Check out all of the configuration files on GitHub at the repository.
+Prerequisites Have a Domain name purchased (Will be demonstrating CloudFlare in this guide) Have a GitHub Account Steps Create a Public Repository Change Repository settings Custom Domain Name (Optional) Setup Hugo Picking a Theme Commit Create a Public Repository Go ahead and create a new repository.</description>
+    </item>
+    
+  </channel>
+</rss>

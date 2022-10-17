@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" href="/favicon.svg">
+
+  <title>
+    Hugo - Creating a free website - Austin Barnes
+  </title>
+  <meta name="description" content="Using Hugo to create a static website for free in Github" />
+  <meta name="author" content="Austin Barnes" />
+  <meta name="generator" content="Hugo 0.104.3" /><link
+    rel="stylesheet"
+    href="https://www.cinderblook.com/css/styles.min.4c4284cce4f1e6121443c34e1affc66a4652d581177c59a97bd6ea162a1b07fa.css"
+    integrity="sha256-TEKEzOTx5hIUQ8NOGv/GakZS1YEXfFmpe9bqFiobB/o="
+  />
+  
+  
+
+  <meta property="og:title" content="Hugo - Creating a free website" />
+<meta property="og:description" content="Using Hugo to create a static website for free in Github" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.cinderblook.com/blog/hugo-github-page/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2022-10-08T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-10-08T00:00:00+00:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Hugo - Creating a free website"/>
+<meta name="twitter:description" content="Using Hugo to create a static website for free in Github"/>
+
+  <meta itemprop="name" content="Hugo - Creating a free website">
+<meta itemprop="description" content="Using Hugo to create a static website for free in Github"><meta itemprop="datePublished" content="2022-10-08T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-10-08T00:00:00+00:00" />
+<meta itemprop="wordCount" content="686">
+<meta itemprop="keywords" content="hugo,automation,github,website," />
+</head>
+<body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
+  <a href="https://www.cinderblook.com/" class="capitalize font-extrabold text-2xl">
+    
+    Austin Barnes
+    
+  </a>
+  <button class="mobile-menu-button md:hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <line x1="4" y1="8" x2="20" y2="8" />
+      <line x1="4" y1="16" x2="20" y2="16" />
+    </svg>
+  </button>
+  <ul class="mobile-menu absolute z-10 px-6 pb-6 md:p-0 top-full left-0 w-full md:w-auto md:relative hidden md:flex flex-col md:flex-row items-end md:items-center gap-4 lg:gap-6 bg-white dark:bg-gray-800">
+
+    
+    <li><a href="/blog">Blog</a></li>
+    
+    <li><a href="/page/about/">About</a></li>
+    
+    <li><a href="/tags">Tags</a></li>
+    
+    <li><a href="/page/sites/">Sites</a></li>
+    
+
+    
+
+    
+    <li class="grid place-items-center">
+      <span class="open-search inline-block cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <circle cx="10" cy="10" r="7" />
+          <line x1="21" y1="21" x2="15" y2="15" />
+        </svg>
+      </span>
+    </li>
+    
+
+    
+    <li class="grid place-items-center">
+      <span class="toggle-dark-mode inline-block cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <circle cx="12" cy="12" r="3" />
+          <line x1="12" y1="5" x2="12" y2="5.01" />
+          <line x1="17" y1="7" x2="17" y2="7.01" />
+          <line x1="19" y1="12" x2="19" y2="12.01" />
+          <line x1="17" y1="17" x2="17" y2="17.01" />
+          <line x1="12" y1="19" x2="12" y2="19.01" />
+          <line x1="7" y1="17" x2="7" y2="17.01" />
+          <line x1="5" y1="12" x2="5" y2="12.01" />
+          <line x1="7" y1="7" x2="7" y2="7.01" />
+        </svg>
+      </span>
+    </li>
+    
+  </ul>
+</header>
+<main class="flex-1">
+  
+  
+
+  
+  <div class="relative max-w-5xl mx-auto px-4">
+    <img src="/covers/FreeHugoSiteGitPages.png" class="rounded-lg shadow-sm w-full object-contain" />
+    <div class="absolute top-4 right-8 rounded shadow bg-white text-gray-900 dark:bg-gray-900 dark:text-white px-2 py-0.5">
+      
+  
+    October 8, 2022
+  
+
+
+    </div>
+  </div>
+  
+
+  <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
+
+    <h1 class="text-2xl font-bold mb-2">Hugo - Creating a free website</h1>
+    <h5 class="text-sm flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <rect x="4" y="5" width="16" height="16" rx="2" />
+        <line x1="16" y1="3" x2="16" y2="7" />
+        <line x1="8" y1="3" x2="8" y2="7" />
+        <line x1="4" y1="11" x2="20" y2="11" />
+        <rect x="8" y="15" width="2" height="2" />
+      </svg>
+      Posted on 
+  
+    October 8, 2022
+  
+
+
+      
+        &nbsp;&bull;&nbsp;
+      
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <circle cx="12" cy="12" r="9" />
+        <polyline points="12 7 12 12 15 15" />
+      </svg>
+      4&nbsp;minutes
+      &nbsp;&bull;
+      <svg xmlns="http://www.w3.org/2000/svg" class="mx-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <line x1="3" y1="6" x2="3" y2="19" />
+        <line x1="12" y1="6" x2="12" y2="19" />
+        <line x1="21" y1="6" x2="21" y2="19" />
+      </svg>
+      686&nbsp;words
+      
+    </h5>
+
+    <h1 id="overview">Overview</h1>
+<p>Using Github pages, Github actions, and Hugo to create a static website for free.</p>
+<p><strong>Check out all of the configuration files on <a href="https://github.com/Cinderblook/cinderblook.github.io">GitHub</a> at the repository.</strong></p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>Have a Domain name purchased (Will be demonstrating CloudFlare in this guide)</li>
+<li>Have a GitHub Account</li>
+</ul>
+<h2 id="steps">Steps</h2>
+<ol>
+<li>Create a Public Repository</li>
+<li>Change Repository settings
+<ol>
+<li>Custom Domain Name (Optional)</li>
+</ol>
+</li>
+<li>Setup Hugo</li>
+<li>Picking a Theme</li>
+<li>Commit</li>
+</ol>
+<h2 id="create-a-public-repository">Create a Public Repository</h2>
+<p>Go ahead and create a new repository. It is important that it is named something like   <code>example.github.io</code></p>
+<p>Next, navigate into the .github/workflows/ folder created by default. Create a file named <code>example.yml</code> (<em>This should be the name as the  <code>example.github.io</code></em>)</p>
+<p>Add the following to the <code>example.yml</code> file</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#ff79c6">name</span>: github pages
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">on</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">push</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">branches</span>:
+</span></span><span style="display:flex;"><span>      - main  <span style="color:#6272a4"># Set a branch to deploy</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">pull_request</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">jobs</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">deploy</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">runs-on</span>: ubuntu-20.04
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">steps</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ff79c6">uses</span>: actions/checkout@v2
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">with</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#ff79c6">submodules</span>: <span style="color:#ff79c6">true</span>  <span style="color:#6272a4"># Fetch Hugo themes (true OR recursive)</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#ff79c6">fetch-depth</span>: <span style="color:#bd93f9">0</span>    <span style="color:#6272a4"># Fetch all history for .GitInfo and .Lastmod</span>
+</span></span><span style="display:flex;"><span>          
+</span></span><span style="display:flex;"><span>      - <span style="color:#ff79c6">name</span>: Setup Node
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">uses</span>: actions/setup-node@v2
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">with</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#ff79c6">node-version</span>: <span style="color:#f1fa8c">&#39;14&#39;</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>      - <span style="color:#ff79c6">name</span>: Install dependencies
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">run</span>: |<span style="color:#f1fa8c">
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">          npm install postcss -D
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">          npm install -g postcss-cli
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">          npm install -g autoprefixer
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">          </span>          
+</span></span><span style="display:flex;"><span>      - <span style="color:#ff79c6">name</span>: Setup Hugo
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">uses</span>: peaceiris/actions-hugo@v2
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">with</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#ff79c6">hugo-version</span>: <span style="color:#f1fa8c">&#39;latest&#39;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#6272a4"># extended: true</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ff79c6">name</span>: Build
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">run</span>: npm i &amp;&amp; hugo -D --gc <span style="color:#6272a4">#hugo --minify</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ff79c6">name</span>: Deploy
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">uses</span>: peaceiris/actions-gh-pages@v3
+</span></span><span style="display:flex;"><span>        <span style="color:#6272a4">#if: github.ref == &#39;refs/heads/master&#39;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">with</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#ff79c6">github_token</span>: ${{ secrets.SECRET_HUGO }}
+</span></span><span style="display:flex;"><span>          <span style="color:#ff79c6">publish_dir</span>: ./public
+</span></span></code></pre></div><p>This will setup the GitHub page to build an environment that will support Hugo rather than the default GitHub pages service used Jekyll. The lines that run npm commands are additional, although necessary for some themes in order to run specific cross site scripts.</p>
+<p>The github_token: ${{ secrets.SECRET_HUGO }} will be set under the Secrets -&gt; Actions tab</p>
+<h2 id="change-repository-settings">Change Repository Settings</h2>
+<p>Go to the settings in the repository</p>
+<ol>
+<li>Create a new branch - I use <code>gh-pages</code></li>
+<li>Under Pages tab
+<ul>
+<li>Under Build and Deployment -&gt; Change source to Deploy from a branch and Branch to <code>gh-pages</code></li>
+<li>(Optional) Change custom domain name to your purchased domain name</li>
+<li><img src="examples/gh-pagesexample1.png" alt="Pages Settings" title="GH-Page Example"></li>
+</ul>
+</li>
+</ol>
+<h3 id="custom-domain-name-optional">Custom Domain Name (Optional)</h3>
+<ol>
+<li>Setting up DNS for Domain to allow GitHub Pages</li>
+</ol>
+<ul>
+<li>If using CloudFlare, login to your dashboard and select the Domain Name to use.
+<ul>
+<li>Go to DNS</li>
+<li>Create an A record for each of the following IP address pointing back at your <code>example.com</code> domain:</li>
+</ul>
+<pre tabindex="0"><code class="language-IPv4s" data-lang="IPv4s">185.199.108.153
+185.199.109.153
+185.199.110.153
+185.199.111.153
+</code></pre><ul>
+<li>
+<p><img src="examples/gh-pagesexample2.png" alt="Pages Settings" title="GH-Page Example"></p>
+</li>
+<li>
+<p>Do the same but for IPv6 by Creating AAAA records for the following:</p>
+</li>
+</ul>
+<pre tabindex="0"><code class="language-IPv6s" data-lang="IPv6s">2606:50c0:8000::153
+2606:50c0:8001::153
+2606:50c0:8002::153
+2606:50c0:8003::153
+</code></pre></li>
+</ul>
+<ol start="2">
+<li>Modify config.toml file (Generated later with Hugo Setup)</li>
+</ol>
+<ul>
+<li>Once you create a Hugo server, it will generate a plethora of files. One of these is a config file. Edit it and change the <code>baseurl</code> varaible to <code>https://example.com/</code></li>
+</ul>
+<ol start="3">
+<li>Create Static site name file</li>
+</ol>
+<ul>
+<li>Again, once the Hugo site is created. There is a static folder. Navigate into it, create a file named CNAME. Add your Domain name to it and save it.</li>
+</ul>
+<h2 id="setup-hugo">Setup Hugo</h2>
+<p>I recommend to clone down the repository created earlier, and generate the Hugo site into that folder structure. This will make commiting changes easier, and much more straightforward for this section.</p>
+<p>Setting up Hugo (There are a few extra steps compared to normal, due to the Theme I will be demonstrating requiring POSTCSS)</p>
+<p><em>This example will cover conducting the setup in Linux</em></p>
+<ol>
+<li>
+<p>Commands to Setup npm versioning (Should be V.14) - <em>Necessary for PostCSS</em></p>
+<ol>
+<li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update
+</span></span><span style="display:flex;"><span>sudo apt install nodejs npm
+</span></span><span style="display:flex;"><span>curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+</span></span><span style="display:flex;"><span>sudo apt install nodejs
+</span></span></code></pre></div></li>
+</ol>
+</li>
+<li>
+<p>Setup Hugo</p>
+<ol>
+<li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget https://github.com/gohugoio/hugo/releases/download/v0.98.0/hugo_extended_0.98.0_Linux-64bit.deb
+</span></span><span style="display:flex;"><span>dpkg --install hugo_extended_0.98.0_Linux-64bit.deb
+</span></span></code></pre></div></li>
+</ol>
+</li>
+<li>
+<p>Build site using Blist</p>
+<ol>
+<li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo new site blist <span style="color:#6272a4"># Can rename blist as needed</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">cd</span> blist 
+</span></span><span style="display:flex;"><span>git clone https://github.com/apvarun/blist-hugo-theme.git themes/blist
+</span></span><span style="display:flex;"><span>cp themes/blist/package.json ./package.json
+</span></span><span style="display:flex;"><span>cp themes/blist/package-lock.json ./package-lock.json
+</span></span><span style="display:flex;"><span>npm install
+</span></span><span style="display:flex;"><span>npm i -g postcss-cli <span style="color:#6272a4"># Necessary for PostCSS</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#f1fa8c">&#34;theme = \&#34;blist\&#34;&#34;</span> &gt;&gt; config.toml <span style="color:#6272a4"># Rename blist if you did so earlier</span>
+</span></span><span style="display:flex;"><span>hugo serve <span style="color:#6272a4"># Starts the Hugo server based on Static information within directory ran</span>
+</span></span></code></pre></div></li>
+</ol>
+</li>
+</ol>
+<h2 id="picking-a-theme">Picking a Theme</h2>
+<p>If you wish to use another theme, I recommend searching online for freely available themes. Generally there isn&rsquo;t too much change for setup in variation between theme to theme.</p>
+<h2 id="commit">Commit</h2>
+<p>Now everytime you commit into the repository, it should update GH-Pages and populate the site!</p>
+<h2 id="useful-resources">Useful Resources</h2>
+<ul>
+<li><a href="https://gohugo.io/">Hugo</a></li>
+<li><a href="https://hugothemesfree.com/">Hugo Themes</a></li>
+</ul>
+
+  </article><div class="bg-blue-100 dark:bg-gray-900">
+  <div class="container px-6 py-12 mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <div>
+      <div class="text-2xl font-bold mb-2">Follow me</div>
+      <p class="opacity-60">I put a little bit of everything on here, so follow along in my journey if you wish</p>
+    </div>
+    <ul class="flex justify-center gap-4">
+      
+      
+      <li>
+        <a
+          href="https://www.linkedin.com/in/austin-barnes-03869218a/"
+          target="_blank"
+          rel="noopener"
+          aria-label="LinkedIn"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <rect x="4" y="4" width="16" height="16" rx="2" />
+            <line x1="8" y1="11" x2="8" y2="16" />
+            <line x1="8" y1="8" x2="8" y2="8.01" />
+            <line x1="12" y1="16" x2="12" y2="11" />
+            <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      <li>
+        <a
+          href="https://github.com/Cinderblook"
+          target="_blank"
+          rel="noopener"
+          aria-label="GitHub"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+            />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      <li>
+        <a
+          href="https://www.buymeacoffee.com/cinderblook"
+          target="_blank"
+          rel="noopener"
+          aria-label="coffeescript"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M4.645 7.472c2.1.53 4.779.8 8.008.8 3.299 0 5.918-.27 8.008-.8 2.23-.52 3.299-1.22 3.299-1.88 0-.47-.48-.93-1.35-1.28.2.13.35.35.35.59 0 .67-1.01 1.22-3.039 1.68-1.88.41-4.279.7-7.198.7-2.82 0-5.329-.29-7.138-.68-1.95-.48-2.97-1-2.97-1.68 0-.28.13-.52.52-.8-1.22.47-1.88.87-1.88 1.47.07.68 1.16 1.36 3.39 1.88zm4.689-2.16c2.27-.2 2.929-1.659 5.588-1.899 1.31-.1 2.14.16 2.23.62.08.43-.57.72-1.36.78-1.09.11-1.54-.28-1.63-.65-.81.09-.94.43-.9.67.09.46 1.07.92 2.75.76 1.9-.15 2.54-.9 2.38-1.65-.2-.98-1.66-1.8-4.28-1.55-3.359.3-3.339 1.86-5.628 2.05-.94.09-1.46-.13-1.55-.5-.06-.37.4-.55.94-.59.5-.05 1.11.04 1.4.2.21-.11.28-.22.26-.35-.1-.35-.79-.5-1.66-.44-1.7.15-1.7.91-1.64 1.25.17.87 1.48 1.45 3.1 1.3zm11.417 3.84c-2.1.49-4.779.809-8.008.809-3.3 0-5.989-.34-8.078-.8-1.88-.48-2.88-1.01-3.23-1.56.18 1.23.49 2.42.89 3.55-.48.3-.91.67-1.3 1.17a4.519 4.519 0 00-1.019 3.098 3.6 3.599 0 001.42 2.62c.87.68 1.81.88 2.879.68.41-.07.87-.28 1.29-.42-.88 0-1.62-.28-2.36-.87a3.55 3.549 0 01-1.49-2.42c-.2-.94 0-1.81.53-2.579.12-.15.25-.28.39-.4.3.73.62 1.45.98 2.12.81 1.23 1.62 2.299 2.43 3.459.35.68.58 1.35.74 2.019a3.899 3.899 0 002.229 1.5c1.15.4 2.35.58 3.579.51h.13a10.197 10.197 0 003.689-.52 4.179 4.179 0 002.16-1.49h.07c.13-.67.35-1.34.67-2.02.799-1.17 1.619-2.229 2.419-3.458A20.995 20.993 0 0024 7.612c-.43.6-1.44 1.13-3.25 1.54z"/></svg>
+            <rect x="4" y="4" width="16" height="16" rx="2" />
+            <path d="M8 9h1l3 3l3 -3h1" />
+            <line x1="8" y1="15" x2="10" y2="15" />
+            <line x1="14" y1="15" x2="16" y2="15" />
+            <line x1="9" y1="9" x2="9" y2="15" />
+            <line x1="15" y1="9" x2="15" y2="15" />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a
+          href="https://www.instagram.com/austin_barnesz/"
+          target="_blank"
+          rel="noopener"
+          aria-label="Instagram"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-brand-instagram"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" />
+            <circle cx="12" cy="12" r="9" />
+            <path d="M10 9l5 3l-5 3z" />
+          </svg>
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+    </main><footer class="container p-6 mx-auto flex justify-between items-center">
+  <span class="text-sm font-light">
+    
+    Copyright © 2021 - Austin Barnes · All rights reserved
+    
+  </span>
+  <span onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="p-1 cursor-pointer">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5"
+      stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M18 15l-6 -6l-6 6h12" />
+    </svg>
+  </span>
+</footer>
+
+<div class="search-ui absolute top-0 left-0 w-full h-full bg-white dark:bg-gray-800 hidden">
+  <div class="container max-w-3xl mx-auto p-12">
+    <div class="relative">
+      <div class="my-4 text-center text-2xl font-bold">Search</div>
+
+      <span class="p-2 absolute right-0 top-0 cursor-pointer close-search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </span>
+    </div>
+
+    <input type="search" class="py-2 px-3 w-full dark:text-black border dark:border-transparent"
+      placeholder="Enter search query" />
+
+    <div class="search-results text-lg font-medium my-4 hidden">Results</div>
+    <ul class="search-list my-2">
+
+    </ul>
+
+    <div class="no-results text-center my-8 hidden">
+      <div class="text-xl font-semibold mb-2">No results found</div>
+      <p class="font-light text-sm">Try adjusting your search query</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<script src="https://www.cinderblook.com/js/scripts.min.js"></script>
+
+
+
+
+
+
+<script>
+  
+  const darkmode = document.querySelector('.toggle-dark-mode');
+  function toggleDarkMode() {
+    if (document.documentElement.classList.contains('dark')) {
+      document.documentElement.classList.remove('dark')
+      localStorage.setItem('darkmode', 'light')
+    } else {
+      document.documentElement.classList.add('dark')
+      localStorage.setItem('darkmode', 'dark')
+    }
+  }
+  if (darkmode) {
+    darkmode.addEventListener('click', toggleDarkMode);
+  }
+
+  const darkStorage = localStorage.getItem('darkmode');
+  const isBrowserDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  if (!darkStorage && isBrowserDark) {
+    document.documentElement.classList.add('dark');
+  }
+
+  if (darkStorage && darkStorage === 'dark') {
+    toggleDarkMode();
+  }
+</script>
+
+
+<script>
+  const mobileMenuButton = document.querySelector('.mobile-menu-button')
+  const mobileMenu = document.querySelector('.mobile-menu')
+  function toggleMenu() {
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('flex');
+  }
+  if(mobileMenu && mobileMenuButton){
+    mobileMenuButton.addEventListener('click', toggleMenu)
+  }
+</script>
+</body>
+</html>
