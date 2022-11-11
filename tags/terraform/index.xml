@@ -14,7 +14,7 @@
       
       <guid>https://www.cinderblook.com/blog/openvpn-sitetosite/</guid>
       <description>Overview A quick guide to setup and create an openvpn server that connects to a client to form a site-to-site. A solution to have a VPN into your home network without having a public IP available to you at home.
-Prerequisites Cloud VM with a public IP running an OpenVPN server Home VM/client running OpenVPN client Steps Create Linux VM in chosen cloud provider Setup Cloud VM OpenVPN Server Configure User Settings Configure VPN Settings Setup Home OpenVPN client Setup Client to forward IPv4 traffic and use NAT Automate connection at boot up Test Create Linux VM in chosen cloud provider It is important to remember to setup the firewall settings applied to the VPN to allow necessary ports.</description>
+Requirements Cloud VM with a public IP running an OpenVPN server Home VM/client running OpenVPN client Steps Create Linux VM in chosen cloud provider Setup Cloud VM OpenVPN Server Configure User Settings Configure VPN Settings Setup Home OpenVPN client Setup Client to forward IPv4 traffic and use NAT Automate connection at boot up Create Linux VM in chosen cloud provider It is important to remember to setup the firewall settings applied to the VPN to allow necessary ports.</description>
     </item>
     
     <item>
