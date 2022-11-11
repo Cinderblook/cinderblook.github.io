@@ -27,14 +27,7 @@ DefaultContentLanguageInSubdir = true
   frontBundle = "blog"
   # Front Page
   introTitle = "Hey! I'm Austin"
-  introSubtitle = "22 y/o Network Technician who enjoys the outdoors, flying drones, homelabbing, and of course, all things tech.
-  <br>
-  <h3 align="center">
-  <code>
-    <a href="https://www.linkedin.com/in/austin-barnes-03869218a/" title="LinkedIn"><img width="24" src="https://github.com/Cinderblook/cinderblook.github.io/blob/main/static/svg/linkedin.svg"> LinkedIn</a></code>
-  <code><a href="https://www.cinderblook.com/" title="Personal Site/Blog"><img width="24" src="https://github.com/Cinderblook/cinderblook.github.io/blob/main/static/svg/blog.svg"> Personal Site/Blog</a></code>
-  <code><a href="https://www.instagram.com/austin_barnesz/" title="Instagram Profile"><img width="24" src="https://github.com/Cinderblook/cinderblook.github.io/blob/main/static/svg/instagram.svg"> Instagram</a></code>
-  </h3>"
+  introSubtitle = "22 y/o Network Technician who enjoys the outdoors, flying drones, homelabbing, and of course, all things tech."
   introPhoto = "/Portrait_Austin.jpg"
   #logo = "/portrait_Austin.jpg"
 
