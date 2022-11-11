@@ -18,7 +18,7 @@ thumbnail: /covers/openvpn_sitetosite.png
 A quick guide to setup and create an openvpn server that connects to a client to form a site-to-site. A solution to have a VPN into your home network without having a public IP available to you at home.
 
 
-## Prerequisites 
+## Requirements
 ---
 - Cloud VM with a public IP running an OpenVPN server
 - Home VM/client running OpenVPN client
@@ -32,7 +32,7 @@ A quick guide to setup and create an openvpn server that connects to a client to
 3. Setup Home OpenVPN client
     1. Setup Client to forward IPv4 traffic and use NAT
     2. Automate connection at boot up
-5. Test 
+
 
 ## Create Linux VM in chosen cloud provider
 ---
@@ -105,7 +105,6 @@ Move client.ovpn file and rename it to client.conf
 1. `mv /etc/openvpn/client.ovpn /etc/openvpn/client.conf` 
 
 ---
-
 
 ## Useful Resources
 * [OpenVPN](https://openvpn.net/)
