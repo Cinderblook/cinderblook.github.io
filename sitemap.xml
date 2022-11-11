@@ -2,10 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.cinderblook.com/tags/automation/</loc>
-    <lastmod>2022-10-08T00:00:00+00:00</lastmod>
+    <loc>https://www.cinderblook.com/tags/azure/</loc>
+    <lastmod>2022-11-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.cinderblook.com/blog/</loc>
+    <lastmod>2022-11-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.cinderblook.com/tags/openvpn/</loc>
+    <lastmod>2022-11-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.cinderblook.com/blog/openvpn-sitetosite/</loc>
+    <lastmod>2022-11-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.cinderblook.com/tags/site-to-site/</loc>
+    <lastmod>2022-11-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.cinderblook.com/tags/</loc>
+    <lastmod>2022-11-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.cinderblook.com/tags/terraform/</loc>
+    <lastmod>2022-11-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.cinderblook.com/tags/vpn/</loc>
+    <lastmod>2022-11-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.cinderblook.com/tags/automation/</loc>
     <lastmod>2022-10-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.cinderblook.com/tags/github/</loc>
@@ -15,9 +36,6 @@
     <lastmod>2022-10-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.cinderblook.com/blog/hugo-github-page/</loc>
-    <lastmod>2022-10-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.cinderblook.com/tags/</loc>
     <lastmod>2022-10-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.cinderblook.com/tags/website/</loc>
@@ -32,16 +50,10 @@
     <loc>https://www.cinderblook.com/tags/proxmox/</loc>
     <lastmod>2022-07-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.cinderblook.com/tags/azure/</loc>
-    <lastmod>2022-06-16T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://www.cinderblook.com/tags/cloudflare/</loc>
     <lastmod>2022-06-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.cinderblook.com/tags/k8s/</loc>
-    <lastmod>2022-06-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.cinderblook.com/tags/terraform/</loc>
     <lastmod>2022-06-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.cinderblook.com/blog/terraform-azure-k8s-helm/</loc>

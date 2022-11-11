@@ -6,7 +6,52 @@
     <description>Recent content in Tags on Austin Barnes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 08 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.cinderblook.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 10 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.cinderblook.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>azure</title>
+      <link>https://www.cinderblook.com/tags/azure/</link>
+      <pubDate>Thu, 10 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.cinderblook.com/tags/azure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>openvpn</title>
+      <link>https://www.cinderblook.com/tags/openvpn/</link>
+      <pubDate>Thu, 10 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.cinderblook.com/tags/openvpn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>site-to-site</title>
+      <link>https://www.cinderblook.com/tags/site-to-site/</link>
+      <pubDate>Thu, 10 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.cinderblook.com/tags/site-to-site/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>terraform</title>
+      <link>https://www.cinderblook.com/tags/terraform/</link>
+      <pubDate>Thu, 10 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.cinderblook.com/tags/terraform/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vpn</title>
+      <link>https://www.cinderblook.com/tags/vpn/</link>
+      <pubDate>Thu, 10 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.cinderblook.com/tags/vpn/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>automation</title>
       <link>https://www.cinderblook.com/tags/automation/</link>
@@ -62,15 +107,6 @@
     </item>
     
     <item>
-      <title>azure</title>
-      <link>https://www.cinderblook.com/tags/azure/</link>
-      <pubDate>Thu, 16 Jun 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.cinderblook.com/tags/azure/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>cloudflare</title>
       <link>https://www.cinderblook.com/tags/cloudflare/</link>
       <pubDate>Thu, 16 Jun 2022 00:00:00 +0000</pubDate>
@@ -85,15 +121,6 @@
       <pubDate>Thu, 16 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>https://www.cinderblook.com/tags/k8s/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>terraform</title>
-      <link>https://www.cinderblook.com/tags/terraform/</link>
-      <pubDate>Thu, 16 Jun 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.cinderblook.com/tags/terraform/</guid>
       <description></description>
     </item>
     
