@@ -10,7 +10,7 @@
   </title>
   <meta name="description" content="VPN Solution without having a Public IP address" />
   <meta name="author" content="Austin Barnes" />
-  <meta name="generator" content="Hugo 0.105.0"><link
+  <meta name="generator" content="Hugo 0.106.0"><link
     rel="stylesheet"
     href="https://www.cinderblook.com/css/styles.min.4c4284cce4f1e6121443c34e1affc66a4652d581177c59a97bd6ea162a1b07fa.css"
     integrity="sha256-TEKEzOTx5hIUQ8NOGv/GakZS1YEXfFmpe9bqFiobB/o="
@@ -33,7 +33,7 @@
   <meta itemprop="name" content="OpenVPN Site-to-Site - HomeLab">
 <meta itemprop="description" content="VPN Solution without having a Public IP address"><meta itemprop="datePublished" content="2022-11-10T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-11-10T00:00:00+00:00" />
-<meta itemprop="wordCount" content="548">
+<meta itemprop="wordCount" content="1288">
 <meta itemprop="keywords" content="openvpn,vpn,terraform,azure,site-to-site," />
 </head>
 <body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
@@ -141,7 +141,7 @@
         <circle cx="12" cy="12" r="9" />
         <polyline points="12 7 12 12 15 15" />
       </svg>
-      3&nbsp;minutes
+      7&nbsp;minutes
       &nbsp;&bull;
       <svg xmlns="http://www.w3.org/2000/svg" class="mx-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -151,7 +151,7 @@
         <line x1="12" y1="6" x2="12" y2="19" />
         <line x1="21" y1="6" x2="21" y2="19" />
       </svg>
-      548&nbsp;words
+      1288&nbsp;words
       
     </h5>
 
@@ -184,8 +184,243 @@
 <hr>
 <p>It is important to remember to setup the firewall settings applied to the VPN to allow necessary ports. Port 22 for SSH and OpenVPN&rsquo;s server port 943 are necessary.</p>
 <ul>
-<li>Might add a Terraform file to set this up in Azure later for automation reasons.</li>
+<li>Check out the Terraform configuration on <a href="https://github.com/Cinderblook/tacklebox/tree/main/Terraform/Azure/Azure-VPN-Setup">GitHub</a></li>
+<li>You will need Azure CLI installed and setup, alongside Terraform for this to work
+For an automated Terraform deployment of a linux node in Azure, create the following files.</li>
 </ul>
+<p>a Providers.tf file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tf" data-lang="tf"><span style="display:flex;"><span><span style="color:#6272a4"># Base config
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>terraform {
+</span></span><span style="display:flex;"><span>  required_providers {
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">azurerm</span> = {
+</span></span><span style="display:flex;"><span>      <span style="color:#50fa7b">source</span>  = <span style="color:#f1fa8c">&#34;hashicorp/azurerm&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#50fa7b">version</span> = <span style="color:#f1fa8c">&#34;&gt;=3.0.0&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">provider</span> <span style="color:#f1fa8c">&#34;azurerm&#34;</span> {
+</span></span><span style="display:flex;"><span>  features {}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>a networking.tf file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tf" data-lang="tf"><span style="display:flex;"><span><span style="color:#6272a4"># Create a resource group to maintain security settings along with network interfaces for VMs
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span><span style="color:#ff79c6">resource</span> <span style="color:#f1fa8c">&#34;azurerm_resource_group&#34;</span> <span style="color:#f1fa8c">&#34;vpn_server&#34;</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">name</span>     = <span style="color:#f1fa8c">&#34;myvpn-resources&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">location</span> = <span style="color:#f1fa8c">&#34;East US&#34;</span>
+</span></span><span style="display:flex;"><span>}<span style="color:#6272a4">
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"># ASSIGN ADDRESS SPACE TO RESOURCE GROUP
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span><span style="color:#ff79c6">resource</span> <span style="color:#f1fa8c">&#34;azurerm_virtual_network&#34;</span> <span style="color:#f1fa8c">&#34;vpn_server&#34;</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">name</span>                = <span style="color:#f1fa8c">&#34;vpn-server-network&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">address_space</span>       = [<span style="color:#f1fa8c">&#34;192.168.0.0/16&#34;</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">location</span>            = azurerm_resource_group.vpn_server.location
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">resource_group_name</span> = azurerm_resource_group.vpn_server.name
+</span></span><span style="display:flex;"><span>}<span style="color:#6272a4">
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"># ASSIGN SUBNET TO NETWORK ADDRESS SPACE
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span><span style="color:#ff79c6">resource</span> <span style="color:#f1fa8c">&#34;azurerm_subnet&#34;</span> <span style="color:#f1fa8c">&#34;myvpn_subnet&#34;</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">name</span>                 = <span style="color:#f1fa8c">&#34;vpnsubnet&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">resource_group_name</span>  = azurerm_resource_group.vpn_server.name
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">virtual_network_name</span> = azurerm_virtual_network.vpn_server.name
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">address_prefixes</span>     = [<span style="color:#f1fa8c">&#34;192.168.10.0/24&#34;</span>]
+</span></span><span style="display:flex;"><span>}<span style="color:#6272a4">
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"># Create public IP variable for Linux machine
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span><span style="color:#ff79c6">resource</span> <span style="color:#f1fa8c">&#34;azurerm_public_ip&#34;</span> <span style="color:#f1fa8c">&#34;myvpn_public&#34;</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">name</span>                = <span style="color:#f1fa8c">&#34;myvpn-PublicIp&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">resource_group_name</span> = azurerm_resource_group.vpn_server.name
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">location</span>            = azurerm_resource_group.vpn_server.location
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">allocation_method</span>   = <span style="color:#f1fa8c">&#34;Static&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}<span style="color:#6272a4">
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"># ASSIGN NETWORK INTERFACE PER VM WE WILL BE USING
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span><span style="color:#ff79c6">resource</span> <span style="color:#f1fa8c">&#34;azurerm_network_interface&#34;</span> <span style="color:#f1fa8c">&#34;myvpn_linux&#34;</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">name</span>                = <span style="color:#f1fa8c">&#34;myvpn-nic&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">location</span>            = azurerm_resource_group.vpn_server.location
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">resource_group_name</span> = azurerm_resource_group.vpn_server.name
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  ip_configuration {
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">name</span>                          = <span style="color:#f1fa8c">&#34;internal&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">subnet_id</span>                     = azurerm_subnet.myvpn_subnet.id
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">private_ip_address_allocation</span> = <span style="color:#f1fa8c">&#34;Static&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">private_ip_address</span>            = <span style="color:#8be9fd;font-style:italic">var</span>.myvpn_linux_priavte_ip    
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">public_ip_address_id</span>          = azurerm_public_ip.myvpn_public.id
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}<span style="color:#6272a4">
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"># Assignign network sec grp in Azure
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span><span style="color:#ff79c6">resource</span> <span style="color:#f1fa8c">&#34;azurerm_network_security_group&#34;</span> <span style="color:#f1fa8c">&#34;myvpn_linux&#34;</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">name</span>                = <span style="color:#f1fa8c">&#34;VPN-Ports&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">location</span>            = azurerm_resource_group.vpn_server.location
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">resource_group_name</span> = azurerm_resource_group.vpn_server.name<span style="color:#6272a4">
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">  #security_rule { #RDP
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">  #  name                       = &#34;RDP&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">  #  priority                   = 101
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">  #  direction                  = &#34;Inbound&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">  #  access                     = &#34;Allow&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">  #  protocol                   = &#34;Tcp&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">  #  source_port_range          = &#34;*&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">  #  destination_port_range     = &#34;3389&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">  #  source_address_prefix      = &#34;*&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">  #  destination_address_prefix = &#34;*&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">  #}
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>  security_rule {<span style="color:#6272a4"> #SSH
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    <span style="color:#50fa7b">name</span>                       = <span style="color:#f1fa8c">&#34;SSH&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">priority</span>                   = <span style="color:#bd93f9">102</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">direction</span>                  = <span style="color:#f1fa8c">&#34;Inbound&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">access</span>                     = <span style="color:#f1fa8c">&#34;Allow&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">protocol</span>                   = <span style="color:#f1fa8c">&#34;Tcp&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">source_port_range</span>          = <span style="color:#f1fa8c">&#34;*&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">destination_port_range</span>     = <span style="color:#f1fa8c">&#34;22&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">source_address_prefix</span>      = <span style="color:#f1fa8c">&#34;*&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">destination_address_prefix</span> = <span style="color:#f1fa8c">&#34;*&#34;</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  security_rule {<span style="color:#6272a4"> #HTTPS
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>   <span style="color:#50fa7b">name</span>                       = <span style="color:#f1fa8c">&#34;HTTPS&#34;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#50fa7b">priority</span>                   = <span style="color:#bd93f9">103</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#50fa7b">direction</span>                  = <span style="color:#f1fa8c">&#34;Inbound&#34;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#50fa7b">access</span>                     = <span style="color:#f1fa8c">&#34;Allow&#34;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#50fa7b">protocol</span>                   = <span style="color:#f1fa8c">&#34;Tcp&#34;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#50fa7b">source_port_range</span>          = <span style="color:#f1fa8c">&#34;*&#34;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#50fa7b">destination_port_range</span>     = <span style="color:#f1fa8c">&#34;443&#34;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#50fa7b">source_address_prefix</span>      = <span style="color:#f1fa8c">&#34;*&#34;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#50fa7b">destination_address_prefix</span> = <span style="color:#f1fa8c">&#34;*&#34;</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  security_rule {<span style="color:#6272a4"> #OpenVPN
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    <span style="color:#50fa7b">name</span>                       = <span style="color:#f1fa8c">&#34;OpenVPN&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">priority</span>                   = <span style="color:#bd93f9">104</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">direction</span>                  = <span style="color:#f1fa8c">&#34;Inbound&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">access</span>                     = <span style="color:#f1fa8c">&#34;Allow&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">protocol</span>                   = <span style="color:#f1fa8c">&#34;Udp&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">source_port_range</span>          = <span style="color:#f1fa8c">&#34;*&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">destination_port_range</span>     = <span style="color:#f1fa8c">&#34;1194&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">source_address_prefix</span>      = <span style="color:#f1fa8c">&#34;*&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">destination_address_prefix</span> = <span style="color:#f1fa8c">&#34;*&#34;</span>
+</span></span><span style="display:flex;"><span>  } 
+</span></span><span style="display:flex;"><span>  security_rule {<span style="color:#6272a4"> #OpenVPN
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    <span style="color:#50fa7b">name</span>                       = <span style="color:#f1fa8c">&#34;OpenVPNsite&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">priority</span>                   = <span style="color:#bd93f9">105</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">direction</span>                  = <span style="color:#f1fa8c">&#34;Inbound&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">access</span>                     = <span style="color:#f1fa8c">&#34;Allow&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">protocol</span>                   = <span style="color:#f1fa8c">&#34;Tcp&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">source_port_range</span>          = <span style="color:#f1fa8c">&#34;*&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">destination_port_range</span>     = <span style="color:#f1fa8c">&#34;943&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">source_address_prefix</span>      = <span style="color:#f1fa8c">&#34;*&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">destination_address_prefix</span> = <span style="color:#f1fa8c">&#34;*&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>}<span style="color:#6272a4">
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"># ASSIGN SECURITY GROUPS TO INTERFACES
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"># LINUX SSH
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span><span style="color:#ff79c6">resource</span> <span style="color:#f1fa8c">&#34;azurerm_network_interface_security_group_association&#34;</span> <span style="color:#f1fa8c">&#34;myvpn_linux&#34;</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">network_interface_id</span>      = azurerm_network_interface.myvpn_linux.id
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">network_security_group_id</span> = azurerm_network_security_group.myvpn_linux.id
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>a outputs.tf file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tf" data-lang="tf"><span style="display:flex;"><span><span style="color:#ff79c6">output</span> <span style="color:#f1fa8c">&#34;Public_IP_Linux&#34;</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">value</span> = azurerm_public_ip.myvpn_public.ip_address
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">output</span> <span style="color:#f1fa8c">&#34;Private_IP_Linux&#34;</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">value</span> = azurerm_network_interface.myvpn_linux.private_ip_address
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>a 01-VPNserver.tf file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tf" data-lang="tf"><span style="display:flex;"><span><span style="color:#ff79c6">resource</span> <span style="color:#f1fa8c">&#34;azurerm_linux_virtual_machine&#34;</span> <span style="color:#f1fa8c">&#34;vpn&#34;</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">name</span>                = <span style="color:#8be9fd;font-style:italic">var</span>.linux_server
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">resource_group_name</span> = azurerm_resource_group.vpn_server.name
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">location</span>            = azurerm_resource_group.vpn_server.location
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">size</span>                = <span style="color:#8be9fd;font-style:italic">var</span>.linux_vm_size
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">admin_username</span>      = <span style="color:#8be9fd;font-style:italic">var</span>.linux_username
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">network_interface_ids</span> = [
+</span></span><span style="display:flex;"><span>    azurerm_network_interface.myvpn_linux.id
+</span></span><span style="display:flex;"><span>  ]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  admin_ssh_key {
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">username</span>   = <span style="color:#8be9fd;font-style:italic">var</span>.linux_username
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">public_key</span> = <span style="color:#8be9fd;font-style:italic">file</span>(<span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">${</span><span style="color:#8be9fd;font-style:italic">var</span>.linux_ssh_key<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&#34;</span>)
+</span></span><span style="display:flex;"><span>  }<span style="color:#6272a4">
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">  # Cloud-Init passed here
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>  <span style="color:#50fa7b">custom_data</span> = <span style="color:#8be9fd;font-style:italic">data</span>.template_cloudinit_config.config.rendered
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  os_disk {
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">caching</span>              = <span style="color:#f1fa8c">&#34;ReadWrite&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">storage_account_type</span> = <span style="color:#8be9fd;font-style:italic">var</span>.linux_sa_type
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  source_image_reference {
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">publisher</span> = <span style="color:#8be9fd;font-style:italic">var</span>.linux_vm_os_publisher
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">offer</span>     = <span style="color:#8be9fd;font-style:italic">var</span>.linux_vm_os_offer
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">sku</span>       = <span style="color:#8be9fd;font-style:italic">var</span>.linux_vm_os_sku
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">version</span>   = <span style="color:#f1fa8c">&#34;latest&#34;</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">depends_on</span> = [azurerm_resource_group.vpn_server, azurerm_network_interface.myvpn_linux]
+</span></span><span style="display:flex;"><span>}<span style="color:#6272a4">
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"># Create cloud-init file to be passed into linux vm
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span><span style="color:#ff79c6">data</span> <span style="color:#f1fa8c">&#34;template_file&#34;</span> <span style="color:#f1fa8c">&#34;user_data&#34;</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">template</span> = <span style="color:#8be9fd;font-style:italic">file</span>(<span style="color:#f1fa8c">&#34;./cloudinit_config.yml&#34;</span>)
+</span></span><span style="display:flex;"><span>}<span style="color:#6272a4">
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"># Render a multi-part cloud-init config making use of the part
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"># above, and other source files
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span><span style="color:#ff79c6">data</span> <span style="color:#f1fa8c">&#34;template_cloudinit_config&#34;</span> <span style="color:#f1fa8c">&#34;config&#34;</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">gzip</span>          = <span style="color:#ff79c6">true</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#50fa7b">base64_encode</span> = <span style="color:#ff79c6">true</span><span style="color:#6272a4">
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">  # Main cloud-config configuration file.
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>  part {
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">filename</span>     = <span style="color:#f1fa8c">&#34;init.cfg&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">content_type</span> = <span style="color:#f1fa8c">&#34;text/cloud-config&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#50fa7b">content</span>      = <span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">${</span><span style="color:#8be9fd;font-style:italic">data</span>.template_file.user_data.rendered<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&#34;</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>a variables.tf file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tf" data-lang="tf"><span style="display:flex;"><span><span style="color:#ff79c6">variable</span> <span style="color:#f1fa8c">&#34;linux_server&#34;</span> {}
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">variable</span> <span style="color:#f1fa8c">&#34;linux_vm_os_publisher&#34;</span> {}
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">variable</span> <span style="color:#f1fa8c">&#34;linux_vm_os_offer&#34;</span> {}
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">variable</span> <span style="color:#f1fa8c">&#34;linux_vm_os_sku&#34;</span> {}
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">variable</span> <span style="color:#f1fa8c">&#34;linux_vm_size&#34;</span> {}
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">variable</span> <span style="color:#f1fa8c">&#34;linux_ssh_key&#34;</span> {}
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">variable</span> <span style="color:#f1fa8c">&#34;linux_sa_type&#34;</span> {}
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">variable</span> <span style="color:#f1fa8c">&#34;myvpn_linux_priavte_ip&#34;</span> {}
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">variable</span> <span style="color:#f1fa8c">&#34;linux_username&#34;</span> {}
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">variable</span> <span style="color:#f1fa8c">&#34;linux_password&#34;</span> {}
+</span></span></code></pre></div><p>a terraform.tfvars file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tf" data-lang="tf"><span style="display:flex;"><span><span style="color:#6272a4"># Azure Linux Server related params
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span><span style="color:#50fa7b">linux_vm_os_publisher</span> = <span style="color:#f1fa8c">&#34;Canonical&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#50fa7b">linux_vm_os_offer</span>     = <span style="color:#f1fa8c">&#34;UbuntuServer&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#50fa7b">linux_vm_os_sku</span>       = <span style="color:#f1fa8c">&#34;18.04-LTS&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#50fa7b">linux_vm_size</span>         = <span style="color:#f1fa8c">&#34;Standard_B1s&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#50fa7b">linux_ssh_key</span>         = <span style="color:#f1fa8c">&#34;/mnt/c/Users/austi/.ssh/id_rsa.pub&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#50fa7b">linux_sa_type</span>         = <span style="color:#f1fa8c">&#34;Premium_LRS&#34;</span><span style="color:#6272a4">
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"># Which administrator password to set during vm customization
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span><span style="color:#50fa7b">linux_username</span> = <span style="color:#f1fa8c">&#34;austin&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#50fa7b">linux_password</span> = <span style="color:#f1fa8c">&#34;X$zz6AkcWMbkKF&#34;</span><span style="color:#6272a4">
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"># Naming Schemes 
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span><span style="color:#50fa7b">linux_server</span>   = <span style="color:#f1fa8c">&#34;Austin-VPN&#34;</span><span style="color:#6272a4">
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"># Networking Variables
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span><span style="color:#50fa7b">myvpn_linux_priavte_ip</span>     = <span style="color:#f1fa8c">&#34;192.168.10.5&#34;</span>
+</span></span></code></pre></div><p>Finally, the cloudinit_config.yml file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#6272a4">#cloud-config</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">package_upgrade</span>: <span style="color:#ff79c6">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">packages</span>:
+</span></span><span style="display:flex;"><span>  - curl
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">users</span>:
+</span></span><span style="display:flex;"><span>- <span style="color:#ff79c6">name</span>: vpn
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">ssh-authorized-keys</span>:
+</span></span><span style="display:flex;"><span>    - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDA9eacR4LWgR5nceoXTmvcf+W8LUzIGCmDNrniaznFRmUuylRGRhPx3blclPB6ToK5bcUQAqTMfothgkB0Rr9xZW41zqqjMgefhyZXBPfEvplxuWTa4tTaxQRL99YOFhxvaRday+mOCqtUybDUvWEMXkVhLFCb8+cCLXEKIyPMMR8mCIh/eYkAZsYgRanRA2DAJ0fVFCfD6qJVq5xaCjEx5q3OrkIIliwsy5etPEYMBgqxKut1FtQKS4mHVckRZCLD95c7XvCAboHXpQuwT8UWTlUw7jg+AoL8e4uQrofCIX1tgZ/vtyb5Xu9Y8rAxURaPf9bEV8Bqrq8B60OU8Dbo7xW9/oQE4TvJbuDSFSgPk0EtOj8EjP4yRQO94M9k5mp/i2olYWWCjpFQ5E2p9ESoDx2Ty3aoLCuIUsD+M7vw3U3sprzC+ogC8jFVgI995LvIqJkj3Bx7I+T6z8Y8Ihg/FO3SbIEKO9tFX7kAheCwAxefYjG+VA7lsWICZgEN+xE= austi@Austin-Desktop
+</span></span><span style="display:flex;"><span>    - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDp2pYRPzxTAwXC0lplkhsJE02X/zlN9iVdrqejBEXbBSK9kUlXu2zsq0J+OGhCTsCoBDjYCE4j0UHQCnMyPFKX2uH1ZVV6jqeLjYvHAthEHoA1T5r/rByhKP8o8S3ud5TIOtD5en9LB8fBAd72865LrLr9v/9RybtKOErcf4Easb3GFLdjkrix0la1rduaBv6ZSCosM833FVVcr/GFwwroDURjd/yW9ROYbQWxfbFpA8B0srY1A6et9McvMoMTqfq5qv6NpPH+1QqAtAa2SjphbIpnVq0y8RL8k+f6frAcl2+qHjkAeURRC+r7yvNJmixyK/C4jJmjG2WtQ/fdHP+x1Kt/WDlGHEenpPR2IqIt5wMAbFES1MPRffHMgwY+c6N5Ia6yFZK/t9lrXglqwQcy4y97S035zw5TnxbRKowcnD39wX4ynfgeLDeHvrp6ZzjgLUM4UK7WvyiJ+EeOm4spy9OUnGYj0Bz2M3oIGEHzsCYJqfVoqDuxevQV69wdYXE= austi@Austin-Desktop
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">sudo</span>: [<span style="color:#f1fa8c">&#39;ALL=(ALL) NOPASSWD:ALL&#39;</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">groups</span>: sudo
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">shell</span>: /bin/bash
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">runcmd</span>:
+</span></span><span style="display:flex;"><span>  - sudo su -
+</span></span><span style="display:flex;"><span>  - apt update &amp;&amp; apt -y install ca-certificates wget net-tools gnupg
+</span></span><span style="display:flex;"><span>  - wget -qO - https://as-repository.openvpn.net/as-repo-public.gpg | apt-key add -
+</span></span><span style="display:flex;"><span>  - echo &#34;deb http://as-repository.openvpn.net/as/debian bionic main&#34;&gt;/etc/apt/sources.list.d/openvpn-as-repo.list
+</span></span><span style="display:flex;"><span>  - apt update &amp;&amp; apt -y install openvpn-as 
+</span></span><span style="display:flex;"><span>  - cat /usr/local/openvpn_as/init.log &gt; openvpnlog.txt
+</span></span></code></pre></div><p>Once these are setup on a machine with Terraform, and the Azure CLI is configured correctly, run:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>1. terraform init --upgrade
+</span></span><span style="display:flex;"><span>2. terraform apply --auto-approve
+</span></span></code></pre></div><p>Retrieve the public</p>
 <h2 id="setup-cloud-vm-openvpn-server">Setup Cloud VM OpenVPN Server</h2>
 <hr>
 <p>SSH into your cloud server using the public IP address.</p>
