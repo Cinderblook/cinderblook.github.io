@@ -40,6 +40,7 @@ It is important to remember to setup the firewall settings applied to the VPN to
 
 - Check out the Terraform configuration on [GitHub](https://github.com/Cinderblook/tacklebox/tree/main/Terraform/Azure/Azure-VPN-Setup)
 - You will need Azure CLI installed and setup, alongside Terraform for this to work
+
 For an automated Terraform deployment of a linux node in Azure, create the following files.
 
 a Providers.tf file:
@@ -298,8 +299,8 @@ runcmd:
 
 Once these are setup on a machine with Terraform, and the Azure CLI is configured correctly, run:
 ```bash
-1. terraform init --upgrade
-2. terraform apply --auto-approve
+terraform init --upgrade
+terraform apply --auto-approve
 ```
 
 Retrieve the public
