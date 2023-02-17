@@ -10,7 +10,7 @@
   </title>
   <meta name="description" content="VPN Solution without having a Public IP address" />
   <meta name="author" content="Austin Barnes" />
-  <meta name="generator" content="Hugo 0.106.0"><link
+  <meta name="generator" content="Hugo 0.110.0"><link
     rel="stylesheet"
     href="https://www.cinderblook.com/css/styles.min.4c4284cce4f1e6121443c34e1affc66a4652d581177c59a97bd6ea162a1b07fa.css"
     integrity="sha256-TEKEzOTx5hIUQ8NOGv/GakZS1YEXfFmpe9bqFiobB/o="
@@ -25,7 +25,6 @@
 <meta property="article:published_time" content="2022-11-10T00:00:00+00:00" />
 <meta property="article:modified_time" content="2022-11-10T00:00:00+00:00" />
 
-
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="OpenVPN Site-to-Site - HomeLab"/>
 <meta name="twitter:description" content="VPN Solution without having a Public IP address"/>
@@ -33,7 +32,7 @@
   <meta itemprop="name" content="OpenVPN Site-to-Site - HomeLab">
 <meta itemprop="description" content="VPN Solution without having a Public IP address"><meta itemprop="datePublished" content="2022-11-10T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-11-10T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1288">
+<meta itemprop="wordCount" content="1286">
 <meta itemprop="keywords" content="openvpn,vpn,terraform,azure,site-to-site," />
 </head>
 <body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
@@ -151,7 +150,7 @@
         <line x1="12" y1="6" x2="12" y2="19" />
         <line x1="21" y1="6" x2="21" y2="19" />
       </svg>
-      1288&nbsp;words
+      1286&nbsp;words
       
     </h5>
 
@@ -185,9 +184,9 @@
 <p>It is important to remember to setup the firewall settings applied to the VPN to allow necessary ports. Port 22 for SSH and OpenVPN&rsquo;s server port 943 are necessary.</p>
 <ul>
 <li>Check out the Terraform configuration on <a href="https://github.com/Cinderblook/tacklebox/tree/main/Terraform/Azure/Azure-VPN-Setup">GitHub</a></li>
-<li>You will need Azure CLI installed and setup, alongside Terraform for this to work
-For an automated Terraform deployment of a linux node in Azure, create the following files.</li>
+<li>You will need Azure CLI installed and setup, alongside Terraform for this to work</li>
 </ul>
+<p>For an automated Terraform deployment of a linux node in Azure, create the following files.</p>
 <p>a Providers.tf file:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tf" data-lang="tf"><span style="display:flex;"><span><span style="color:#6272a4"># Base config
 </span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>terraform {
@@ -418,8 +417,8 @@ For an automated Terraform deployment of a linux node in Azure, create the follo
 </span></span><span style="display:flex;"><span>  - apt update &amp;&amp; apt -y install openvpn-as 
 </span></span><span style="display:flex;"><span>  - cat /usr/local/openvpn_as/init.log &gt; openvpnlog.txt
 </span></span></code></pre></div><p>Once these are setup on a machine with Terraform, and the Azure CLI is configured correctly, run:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>1. terraform init --upgrade
-</span></span><span style="display:flex;"><span>2. terraform apply --auto-approve
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>terraform init --upgrade
+</span></span><span style="display:flex;"><span>terraform apply --auto-approve
 </span></span></code></pre></div><p>Retrieve the public</p>
 <h2 id="setup-cloud-vm-openvpn-server">Setup Cloud VM OpenVPN Server</h2>
 <hr>
