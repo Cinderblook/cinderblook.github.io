@@ -27,7 +27,7 @@ DefaultContentLanguageInSubdir = true
   frontBundle = "blog"
   # Front Page
   introTitle = "Hey! I'm Austin"
-  introSubtitle = "22 y/o Network Technician who enjoys the outdoors, flying drones, homelabbing, and of course, all things tech. Check out my Github: https://github.com/Cinderblook"
+  introSubtitle = "22 y/o Network Technician who enjoys the outdoors, flying drones, homelabbing, and of course, all things tech."
   introPhoto = "/Portrait_Austin.jpg"
   #logo = "/portrait_Austin.jpg"
 
@@ -56,6 +56,10 @@ DefaultContentLanguageInSubdir = true
      name = "Sites"
      url = "page/sites/"
      weight = 4
+  [[menu.main]]
+    name = "Github"
+    url = "https://github.com/Cinderblook"
+    weight = 4
 
 [build]
   writeStats = true

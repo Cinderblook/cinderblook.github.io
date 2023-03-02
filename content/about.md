@@ -10,7 +10,7 @@ type: about
 # Hello, and Welcome!
 Welcome to my site, Cinderblook.com. This is a side project of mine, where I may put anything and everything on here. 
 <br><br>
-I am a tech enthusiast. Professionaly I am a Linux Support Specialist at Pennsylvania State University. Previously I worked as a Network Speciliast at Jersey Shore Area School District, and I'm finishing my degree in Network Admnistration and Engineering at Pennsylvania College of Technology.
+I am a tech enthusiast. Professionaly I am a Infrastructure Engineer at Battelle. Previously I worked as a Linux support for Pennsylvania College of Technology, and a Network Technician for Jersey Shore Area School District. I've graduated with a bachelors in Network Admnistration and Engineering from Pennsylvania College of Technology.
 <br> <br>
 In my free time I like to tackle mini projects of all sort. This site being one of them. 
 
