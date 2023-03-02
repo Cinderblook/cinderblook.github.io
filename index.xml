@@ -29,6 +29,15 @@ Prerequisites Have a Domain name purchased (Will be demonstrating CloudFlare in 
     </item>
     
     <item>
+      <title>About</title>
+      <link>https://www.cinderblook.com/about/</link>
+      <pubDate>Fri, 30 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.cinderblook.com/about/</guid>
+      <description>Hello, and Welcome! Welcome to my site, Cinderblook.com. This is a side project of mine, where I may put anything and everything on here. I am a tech enthusiast. Professionaly I am a Infrastructure Engineer at Battelle. Previously I worked as a Linux support for Pennsylvania College of Technology, and a Network Technician for Jersey Shore Area School District. I&amp;rsquo;ve graduated with a bachelors in Network Admnistration and Engineering from Pennsylvania College of Technology.</description>
+    </item>
+    
+    <item>
       <title>Packer - Proxmox Ubuntu Server Creation</title>
       <link>https://www.cinderblook.com/blog/packer-proxmox-ubuntuserv/</link>
       <pubDate>Sat, 30 Jul 2022 00:00:00 +0000</pubDate>
@@ -91,15 +100,6 @@ Prequisites Have a Proxmox server Have a template made on Proxmox, in my case, I
       <description>Overview Deplying a Kubernetes Cluster in Azure with the AKS service.
 Build a Kubernetes cluster in Azure Have the cluster setup to automatically scale with load Have Kubeconfig file available so it can be managed, changed, altered, destroyed, etc. Ensure Kubeconfig file is secure, and is being encrypted with traffic involved in this Check out all of the configuration files on GitHub (Azure-K8S-Deploy) at the repository!
 Steps to do this Have an Azure account; if you are a student, sign up for a student account and get some free credits along side it.</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://www.cinderblook.com/about/</link>
-      <pubDate>Wed, 30 Mar 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.cinderblook.com/about/</guid>
-      <description>Hello, and Welcome! Welcome to my site, Cinderblook.com. This is a side project of mine, where I may put anything and everything on here. I am a tech enthusiast. Professionaly I am a Infrastructure Engineer at Battelle. Previously I worked as a Linux support for Pennsylvania College of Technology, and a Network Technician for Jersey Shore Area School District. I&amp;rsquo;ve graduated with a bachelors in Network Admnistration and Engineering from Pennsylvania College of Technology.</description>
     </item>
     
     <item>
