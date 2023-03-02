@@ -1,7 +1,7 @@
 ---
 author: "Austin Barnes"
 title: "About"
-date: 2022-03-30
+date: 2022-09-30
 description: "Cinderblook, a site by Austin Barnes"
 keywords: ["about-us", "about-hugo", "contact"]
 type: about
@@ -56,13 +56,21 @@ In my free time I like to tackle mini projects of all sort. This site being one 
 ### Certifications 
 * CompTIA **Network +**
 * CompTIA **Security +**
-* Actively working on **CCNA**
+* Actively working on **CCNA**/**Linux +**/**Terraform**
 
 --------
 
 ## Professional Experience
+*  **Battelle**
+  * Full-Time Contractor Infrastructure Engineer | Janurary 2023 - Present
+
+*  **Pennsylvania College of Technology**
+* Full-Time Linux Support | September 2022 - Janurary 2023
+
 * **Jersey Shore Area School District**
-  * Part-Time Network Technician | June 2020 - Present 
+  * Full-Time Network Technician | June 2022 - September 2022
+
+  * Part-Time Network Technician | June 2020 - May 2022 
 
   * Information Technology Intern | August 2018 - May 2020
 
