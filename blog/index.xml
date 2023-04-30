@@ -61,17 +61,6 @@ Understanding the provider For all Spotify API usage with Terraform, You must ei
     </item>
     
     <item>
-      <title>TackleBox - GitHub Mega Repo</title>
-      <link>https://www.cinderblook.com/blog/github-tacklebox/</link>
-      <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.cinderblook.com/blog/github-tacklebox/</guid>
-      <description>Overview A look into the tacklebox
-Check out all of goods for this repo on GitHub.
-A Quick Peak Hey there, fellow tech users! I figured this may be a good spot to put out there my sort of jumbled up mix of a variety of things I store in this repository of mine. The Tacklebox. You can find anything from network automation scripts with powershell and ansible, to infrastructure as a code solutions with Packer and Terraform.</description>
-    </item>
-    
-    <item>
       <title>&#39;Terrifying&#39; or Converting Azure Resources into Terraform Code</title>
       <link>https://www.cinderblook.com/blog/terraform-azure-resource-conversion/</link>
       <pubDate>Wed, 27 Apr 2022 00:00:00 +0000</pubDate>

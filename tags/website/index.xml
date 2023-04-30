@@ -18,16 +18,5 @@ Check out all of the configuration files on GitHub at the repository.
 Prerequisites Have a Domain name purchased (Will be demonstrating CloudFlare in this guide) Have a GitHub Account Steps Create a Public Repository Change Repository settings Custom Domain Name (Optional) Setup Hugo Picking a Theme Commit Create a Public Repository Go ahead and create a new repository.</description>
     </item>
     
-    <item>
-      <title>TackleBox - GitHub Mega Repo</title>
-      <link>https://www.cinderblook.com/blog/github-tacklebox/</link>
-      <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.cinderblook.com/blog/github-tacklebox/</guid>
-      <description>Overview A look into the tacklebox
-Check out all of goods for this repo on GitHub.
-A Quick Peak Hey there, fellow tech users! I figured this may be a good spot to put out there my sort of jumbled up mix of a variety of things I store in this repository of mine. The Tacklebox. You can find anything from network automation scripts with powershell and ansible, to infrastructure as a code solutions with Packer and Terraform.</description>
-    </item>
-    
   </channel>
 </rss>
