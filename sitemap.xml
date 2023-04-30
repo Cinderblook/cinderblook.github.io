@@ -68,6 +68,15 @@
     <loc>https://www.cinderblook.com/blog/terraform-spotify-multiartist/</loc>
     <lastmod>2022-05-02T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://www.cinderblook.com/tags/documentation/</loc>
+    <lastmod>2022-05-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.cinderblook.com/tags/networking/</loc>
+    <lastmod>2022-05-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.cinderblook.com/blog/github-tacklebox/</loc>
+    <lastmod>2022-05-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.cinderblook.com/blog/terraform-azure-resource-conversion/</loc>
     <lastmod>2022-04-27T00:00:00+00:00</lastmod>
   </url><url>
@@ -123,11 +132,5 @@
     <lastmod>2022-02-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.cinderblook.com/categories/</loc>
-  </url><url>
-    <loc>https://www.cinderblook.com/tags/documentation/</loc>
-  </url><url>
-    <loc>https://www.cinderblook.com/tags/networking/</loc>
-  </url><url>
-    <loc>https://www.cinderblook.com/blog/github-tacklebox/</loc>
   </url>
 </urlset>
