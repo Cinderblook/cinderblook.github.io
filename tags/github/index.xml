@@ -6,7 +6,18 @@
     <description>Recent content in github on Austin Barnes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 08 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.cinderblook.com/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.cinderblook.com/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TackleBox - GitHub Mega Repo</title>
+      <link>https://www.cinderblook.com/blog/github-tacklebox/</link>
+      <pubDate>Mon, 01 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.cinderblook.com/blog/github-tacklebox/</guid>
+      <description>Overview A look into the tacklebox, a repository of mine filled with combination of projects and scripts.
+Check out all of goods for this repo on GitHub.
+A Quick Peak Hey there, fellow tech users! I figured this may be a good spot to put out there my sort of jumbled up mix of a variety of things I store in this repository of mine. The Tacklebox. You can find anything from network automation scripts with powershell and ansible, to infrastructure as a code solutions with Packer and Terraform.</description>
+    </item>
+    
     <item>
       <title>Hugo GitPage - Creating a free website</title>
       <link>https://www.cinderblook.com/blog/hugo-github-page/</link>

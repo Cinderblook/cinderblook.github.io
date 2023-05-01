@@ -2,10 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.cinderblook.com/tags/azure/</loc>
-    <lastmod>2022-11-10T00:00:00+00:00</lastmod>
+    <loc>https://www.cinderblook.com/tags/automation/</loc>
+    <lastmod>2023-05-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.cinderblook.com/blog/</loc>
+    <lastmod>2023-05-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.cinderblook.com/tags/documentation/</loc>
+    <lastmod>2023-05-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.cinderblook.com/tags/github/</loc>
+    <lastmod>2023-05-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.cinderblook.com/tags/networking/</loc>
+    <lastmod>2023-05-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.cinderblook.com/blog/github-tacklebox/</loc>
+    <lastmod>2023-05-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.cinderblook.com/tags/</loc>
+    <lastmod>2023-05-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.cinderblook.com/tags/website/</loc>
+    <lastmod>2023-05-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.cinderblook.com/tags/azure/</loc>
     <lastmod>2022-11-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.cinderblook.com/tags/openvpn/</loc>
@@ -17,28 +38,16 @@
     <loc>https://www.cinderblook.com/tags/site-to-site/</loc>
     <lastmod>2022-11-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.cinderblook.com/tags/</loc>
-    <lastmod>2022-11-10T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://www.cinderblook.com/tags/terraform/</loc>
     <lastmod>2022-11-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.cinderblook.com/tags/vpn/</loc>
     <lastmod>2022-11-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.cinderblook.com/tags/automation/</loc>
-    <lastmod>2022-10-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.cinderblook.com/tags/github/</loc>
-    <lastmod>2022-10-08T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://www.cinderblook.com/tags/hugo/</loc>
     <lastmod>2022-10-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.cinderblook.com/blog/hugo-github-page/</loc>
-    <lastmod>2022-10-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.cinderblook.com/tags/website/</loc>
     <lastmod>2022-10-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.cinderblook.com/about/</loc>
