@@ -14,7 +14,7 @@ thumbnail: /covers/TackleboxGitHub.png
 ---
 
 # Overview
-A look into the tacklebox
+A look into the tacklebox, a repository of mine filled with combination of projects and scripts.
 
 **Check out all of goods for this repo on [GitHub](https://github.com/Cinderblook/tacklebox).**
 
