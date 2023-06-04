@@ -1,104 +1,102 @@
 ---
 author: "Austin Barnes"
 title: "About"
-date: 2022-03-30
+date: 2022-09-30
 description: "Cinderblook, a site by Austin Barnes"
 keywords: ["about-us", "about-hugo", "contact"]
 type: about
 ---
 
-# Hello, and Welcome!
-Welcome to my site, Cinderblook.com. This is a side project of mine, where I may put anything and everything on here. 
-<br><br>
-I am a tech enthusiast. Professionaly I'm a Network Speciliast working at Jersey Shore Area School District, and I am enrolled at Pennsylvania College of Technology in the Network Admnistration and Engineering Bachelor's undergraduate program.
-<br> <br>
-In my free time I like to tackle mini projects of all sort. This site being one of them. 
+# About Austin Barnes and Cinderblook.com
 
-## Items on this page:
-  - [Interests of mine:](#interests-of-mine)
-    - [Information Technology related](#information-technology-related)
-    - [Outside of Tech](#outside-of-tech)
-  - [Education Background](#education-background)
-    - [Certifications](#certifications)
-  - [Professional Experience](#professional-experience)
-  - [Professional Projects](#professional-projects)
+Welcome to Cinderblook.com! My name is Austin Barnes, and this website is my personal side project where I share a variety of content. I'm a tech enthusiast with a passion for exploring different aspects of technology. In my professional life, I work as an Infrastructure Engineer at Battelle. Prior to that, I gained experience as a Linux Support for Pennsylvania College of Technology and as a Network Technician for Jersey Shore Area School District. I hold a Bachelor's degree in Network Administration and Engineering from Pennsylvania College of Technology.
 
---------
+## Interests
 
-## Interests of mine:
-### Information Technology related 
-* IaaS with the Terraform platform
-* All things Networking
-  * Network Automation
-  * Homelab Networking
-  * Cloud Networking
-* Dabbling in mostly AWS and Azure cloud
-* Homelab
-  *  Powered by Proxmox
-  *  Kubernetes
-  *  Much more
-* Websites - built with Wordpress & Hugo
-* Kubernetes! K3s and Rancher
+### Information Technology-related
+
+In the realm of Information Technology, I have a wide range of interests and expertise:
+
+- **IaaS with the Terraform platform:** I enjoy working with Infrastructure as a Service (IaaS) using the Terraform platform.
+- **Networking:** Networking is a particular area of interest for me, and I am well-versed in various aspects such as network automation, homelab networking, and cloud networking.
+- **Cloud Technologies:** I have hands-on experience with cloud platforms like AWS and Azure, and I enjoy exploring different cloud services and functionalities.
+- **Homelab:** I maintain a homelab powered by Proxmox and actively experiment with various technologies, including Kubernetes.
+- **Web Development:** I have experience building websites using platforms like Wordpress and Hugo.
+- **Kubernetes:** I am fascinated by Kubernetes and have worked with K3s and Rancher.
 
 ### Outside of Tech
-* Drones & Photography
-* Snowboarding
-* Hiking
-* Hunting/Fishing
 
---------
+Beyond my tech interests, I enjoy engaging in various activities:
+
+- **Drones & Photography:** I have a passion for drones and enjoy capturing moments through photography.
+- **Snowboarding:** I love hitting the slopes and indulging in snowboarding whenever I get the chance.
+- **Hiking:** Exploring nature through hiking is one of my favorite ways to unwind.
+- **Hunting/Fishing:** I appreciate the outdoors and enjoy hunting and fishing as hobbies.
 
 ## Education Background
-* **Pennyslvania College of Technology**
-  * Bachelors of Sciense - Network Administration and Engineering
-  * Associates of Applied Science -  Network and User Support
 
-### Certifications 
-* CompTIA **Network +**
-* CompTIA **Security +**
-* Actively working on **CCNA**
+My educational journey has equipped me with the necessary knowledge and skills:
 
---------
+- **Pennsylvania College of Technology**
+  - Bachelor of Science - Network Administration and Engineering
+  - Associate of Applied Science - Network and User Support
+
+### Certifications
+
+I have achieved the following certifications:
+
+- **Microsoft Azure Administrator Associate**
+- **CompTIA Network+**
+- **CompTIA Security+**
+- Currently pursuing **Terraform** certification.
 
 ## Professional Experience
-* **Jersey Shore Area School District**
-  * Part-Time Network Technician | June 2020 - Present 
 
-  * Information Technology Intern | August 2018 - May 2020
+Throughout my career, I have gained valuable experience in various roles:
 
-* **Nuweld Inc**
-  * Contract Technician | March 2020 - April 2020    
-  
+- **Battelle**
+  - Full-Time Contractor Infrastructure Engineer | January 2023 - Present
 
---------
+- **Pennsylvania College of Technology**
+  - Full-Time Linux Support | September 2022 - January 2023
+
+- **Jersey Shore Area School District**
+  - Full-Time Network Technician | June 2022 - September 2022
+  - Part-Time Network Technician | June 2020 - May 2022
+  - Information Technology Intern | August 2018 - May 2020
+
+- **Nuweld Inc**
+  - Contract Technician | March 2020 - April 2020
 
 ## Professional Projects
-* Imaging System using Microsoft Deployment Toolkit with Windows Deployment Services
-  * Automation of Driver injection, Software deployment, Updates, and Windows Environment setup
-  * Custom crafted .wim Images 
-* SSTP VPN Setup with Radius & Authentication
-  * Certification & User-based authentication using NPS
-* Zabbix Network Monitoring Implementation
-  * Networking Devices with SNMPv3
-  * Windows & Linux Servers with secure PSK authentication
-  * Notification Alerts
-* Camera Monitoring System
-  * Setting up and implementing Verkada Camera access
-  * Configuring Network requirements
-* NPS Authenitcation with Networking Equipment
-  * User-basedd authentication on Networking Equipment based on role in Active Directory
-* In-progress Migration to Intune MDM system for Windows Devices
-  * Policy Setup for Staff & Students
-  * Software Deployment
-* Managing Active Directory
-* Managing DNS & DHCP
-* Ruckus Wireless Systems
-* Managing Failover Clustering with Microsoft Hyper-V Servicees
-* Supporting Hybrid Windows Active Directory Environment
-* Mobile Device Management with Intune & JAMF Nation
-* Cisco VoIP Phone Setup, and Configuration
-* Interfacing with Vendors for Purchasing and Troubleshooting of Services or Products
-* Help Desk Tickets and Services
-* Microsoft Exchange & Office Admin
 
-Please feel free to check out some of my projects here in [Projects](https://cinderblook.github.io/projects/) and also on [GitHub](https://github.com/Cinderblook).
+Over the course of my career, I have worked on various professional projects, including:
+
+- **Imaging System using Microsoft Deployment Toolkit with Windows Deployment Services**
+  - Automation of driver injection, software deployment, updates, and Windows environment setup
+  - Creation of custom-crafted .wim images
+
+- **SSTP VPN Setup with Radius & Authentication**
+  - Certification and user-based authentication using NPS (Network Policy Server)
+
+- **Zabbix Network Monitoring Implementation**
+  - Monitoring networking devices with SNMPv3
+  - Monitoring Windows and Linux servers with secure PSK authentication
+  - Configuring notification alerts
+
+- **Camera Monitoring System**
+  - Setting up and implementing Verkada Camera access
+  - Configuring network requirements
+
+- **NPS Authentication with Networking Equipment**
+  - User-based authentication on networking equipment based on role in Active Directory
+
+- **Migration to Intune MDM system for Windows Devices**
+  - Policy setup for staff and students
+  - Software deployment
+
+- And more...
+
+Feel free to explore some of my projects on my [Projects page](https://cinderblook.github.io/projects) and also on [GitHub](https://github.com/Cinderblook).
+
+Thank you for visiting Cinderblook.com!
