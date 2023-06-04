@@ -50,7 +50,10 @@
     <loc>https://www.cinderblook.com/blog/hugo-github-page/</loc>
     <lastmod>2022-10-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.cinderblook.com/about/</loc>
+    <loc>https://www.cinderblook.com/page/about/</loc>
+    <lastmod>2022-09-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.cinderblook.com/page/</loc>
     <lastmod>2022-09-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.cinderblook.com/tags/packer/</loc>
@@ -97,12 +100,6 @@
   </url><url>
     <loc>https://www.cinderblook.com/blog/terraform-azure-k8s-deploy/</loc>
     <lastmod>2022-04-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.cinderblook.com/page/about/</loc>
-    <lastmod>2022-03-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.cinderblook.com/page/</loc>
-    <lastmod>2022-03-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.cinderblook.com/</loc>
     <lastmod>2022-03-30T00:00:00+00:00</lastmod>
