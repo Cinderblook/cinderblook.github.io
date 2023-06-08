@@ -10,7 +10,7 @@ tags: [
     "homelab",
 ]
 date: 2023-06-08
-thumbnail: /covers/ansible-semaphore.png
+thumbnail: /covers/Ansible-Semaphore.png
 ---
 # Overview
 
