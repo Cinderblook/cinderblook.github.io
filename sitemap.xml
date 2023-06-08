@@ -2,25 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://www.cinderblook.com/tags/ansible/</loc>
+    <lastmod>2023-06-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.cinderblook.com/blog/ansible-semaphore/</loc>
+    <lastmod>2023-06-08T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.cinderblook.com/tags/automation/</loc>
-    <lastmod>2023-05-01T00:00:00+00:00</lastmod>
+    <lastmod>2023-06-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.cinderblook.com/blog/</loc>
-    <lastmod>2023-05-01T00:00:00+00:00</lastmod>
+    <lastmod>2023-06-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.cinderblook.com/tags/github/</loc>
+    <lastmod>2023-06-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.cinderblook.com/tags/homelab/</loc>
+    <lastmod>2023-06-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.cinderblook.com/tags/networking/</loc>
+    <lastmod>2023-06-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.cinderblook.com/tags/</loc>
+    <lastmod>2023-06-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.cinderblook.com/tags/documentation/</loc>
     <lastmod>2023-05-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.cinderblook.com/tags/github/</loc>
-    <lastmod>2023-05-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.cinderblook.com/tags/networking/</loc>
-    <lastmod>2023-05-01T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://www.cinderblook.com/blog/github-tacklebox/</loc>
-    <lastmod>2023-05-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.cinderblook.com/tags/</loc>
     <lastmod>2023-05-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.cinderblook.com/tags/website/</loc>
@@ -115,9 +124,6 @@
   </url><url>
     <loc>https://www.cinderblook.com/tags/rancher/</loc>
     <lastmod>2022-03-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.cinderblook.com/tags/ansible/</loc>
-    <lastmod>2022-02-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.cinderblook.com/blog/terraform-azure-serv-deploy/</loc>
     <lastmod>2022-02-28T00:00:00+00:00</lastmod>

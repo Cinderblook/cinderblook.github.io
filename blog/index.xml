@@ -6,7 +6,18 @@
     <description>Recent content in Blog on Austin Barnes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.cinderblook.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.cinderblook.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ansible Semaphore - Automating Updates</title>
+      <link>https://www.cinderblook.com/blog/ansible-semaphore/</link>
+      <pubDate>Thu, 08 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.cinderblook.com/blog/ansible-semaphore/</guid>
+      <description>Overview In this blog post, I&amp;rsquo;d like to introduce you to Semaphore, an open-source Ansible management project. With Semaphore, you can automate and keep track of all your Ansible tasks in your homelab. Check out my current Ansible Playbooks in this GitHub repository.
+Prerequisites Before we dive into Semaphore, let&amp;rsquo;s ensure you meet the following prerequisites:
+Some prior experience with Ansible and understanding of playbook formatting. Ideally, some Docker experience as we&amp;rsquo;ll be using Docker-Compose for the setup.</description>
+    </item>
+    
     <item>
       <title>TackleBox - GitHub Mega Repo</title>
       <link>https://www.cinderblook.com/blog/github-tacklebox/</link>
